@@ -33,7 +33,6 @@ MANIFEST
 *.manifest
 *.spec
 
-
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
@@ -130,3 +129,4 @@ dmypy.json
 .pyre/
 
 .DS_Store
+.vscode/
