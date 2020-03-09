@@ -1,4 +1,4 @@
-# ALE-Gorithm : Web-App and Dashboard for all things beer! 🍺 
+# ALE-gorithm: Web-app and Dashboard for all things beer!🍺 
 ### Group Members: 
 Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi | Sheetal Bongale
 
