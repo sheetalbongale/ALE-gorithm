@@ -1,4 +1,4 @@
-# Project-2
+# ALE-Gorithm : Web-App and Dashboard for all things beer! 🍺 
 ### Group Members: 
 Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi | Sheetal Bongale
 
