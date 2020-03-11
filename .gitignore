@@ -131,3 +131,4 @@ dmypy.json
 .DS_Store
 .vscode/
 beer_reviews.csv
+resources/
