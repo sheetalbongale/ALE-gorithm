@@ -15,6 +15,7 @@ notebook = "*"
 pandas = "*"
 bleach = "*"
 lxml = "*"
+fake-useragent = "*"
 
 [requires]
 python_version = "3.7"
