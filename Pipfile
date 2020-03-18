@@ -16,6 +16,11 @@ pymysql = "*"
 plotly = "*"
 flask = "*"
 math = "*"
+blackcellmagic = "*"
+nb-black = "*"
+psutil = "*"
+requests = "*"
+nbformat = "*"
 
 [requires]
 python_version = "3.8"

@@ -131,3 +131,9 @@ dmypy.json
 .DS_Store
 .vscode/
 beer_reviews.csv
+beer_reviews_ratings4.csv
+reviews.csv
+resources/
+
+# Configuration files
+database/config.py
