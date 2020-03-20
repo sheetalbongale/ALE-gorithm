@@ -2175,8 +2175,8 @@ input, select, textarea {
 		margin: 0;
 		line-height: 1em;
 		padding: 1.5em;
-		background: #39454b;
-		color: rgba(185, 186, 187, 0.5);
+		background: #000000;
+		color: rgba(255, 255, 255, 0.5);
 		overflow: hidden;
 	}
 
@@ -2251,7 +2251,7 @@ input, select, textarea {
 
 /* One */
 
-	#one {
+	#recommender {
 		background: url("../img/hero2.jpg") no-repeat center top;
 		background-size: cover;
 		background-attachment: fixed, fixed;
@@ -2260,9 +2260,9 @@ input, select, textarea {
 
 /* Two */
 
-	#two {
-		background: url("images/overlay1.png"), url("../../images/two.jpg");
-		background-size: 256px 256px, cover;
+	#dashboard {
+		background: url("images/hero3.png");
+		background-size: cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
