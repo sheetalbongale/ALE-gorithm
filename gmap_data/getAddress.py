@@ -34,8 +34,6 @@ for brewery in brewery_list:
 
     except Exception as e:
         pass
-
-    ##THIS PORTION IS BROKEN. Needs Fixing. I would suggest 
-df2 = pd.DataFrame([brew_name, brew_address, brew_phone, brew_lat, brew_lng], columns=["name", "address", "phone", "latitude", "longitude"])
-with ExcelWriter("brewery_data.xlsx") as writer:
-    df2.to_excel(writer)
+brew_dict = {"name": brew_name, "address": brew_address, "phone": brew_phone, "latitude": brew_lat, "longitude": brew_lng}
+df2 = pd.DataFrame(brew_dict)
+df2.to_excel("brewery_data.xlsx")
