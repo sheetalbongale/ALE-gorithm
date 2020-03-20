@@ -2261,7 +2261,7 @@ input, select, textarea {
 /* Two */
 
 	#dashboard {
-		background: url("images/hero3.png");
+		background: url("../img/hero3.jpg");
 		background-size: cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
