@@ -72,6 +72,10 @@ input, select, textarea {
 	appearance: none;
 }
 
+.centered {
+	text-align: center;
+  }
+
 /* Basic */
 
 	@-ms-viewport {
