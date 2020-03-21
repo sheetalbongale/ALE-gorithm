@@ -130,4 +130,13 @@ dmypy.json
 
 .DS_Store
 .vscode/
+
+# Unwanted/large files
 beer_reviews.csv
+reviews_ratings_4.csv
+reviews.csv
+config.py
+resources/
+
+# Configuration files
+db/config.py

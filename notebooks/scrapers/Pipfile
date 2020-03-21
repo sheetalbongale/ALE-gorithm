@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+
+[packages]
+requests = "*"
+flask = "*"
+pymongo = "*"
+beautifulsoup4 = "*"
+notebook = "*"
+pandas = "*"
+bleach = "*"
+lxml = "*"
+fake-useragent = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
