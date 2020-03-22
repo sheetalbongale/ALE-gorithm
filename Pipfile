@@ -7,20 +7,11 @@ verify_ssl = true
 black = "*"
 
 [packages]
-ipykernel = "*"
 pandas = "*"
-numpy = "*"
-matplotlib = "*"
-sqlalchemy = "*"
 plotly = "*"
 flask = "*"
-math = "*"
-blackcellmagic = "*"
-nb-black = "*"
-psutil = "*"
-requests = "*"
-nbformat = "*"
 pymysql = "*"
+sqlalchemy = "*"
 
 [requires]
 python_version = "3.8"

@@ -2,9 +2,11 @@ import csv
 import os
 import config
 import pandas as pd
+import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.exc import ProgrammingError
 import warnings
+import pymysql
 
 USER = "root"
 PASSWORD = config.password
@@ -34,7 +36,7 @@ df = pd.read_csv(
     con=engine,
     index=False,
     dtype = {'id': sqlalchemy.types.String(length=50), 
-    'name': sqlalchemy.types.STRING(length=300),
+    'name': sqlalchemy.types.String(length=300),
     'brewery_id': sqlalchemy.types.String(length=50),
     'state': sqlalchemy.types.String(length=50),
     'country': sqlalchemy.types.String(length=50),
