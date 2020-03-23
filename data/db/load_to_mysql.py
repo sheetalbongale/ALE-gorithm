@@ -29,9 +29,7 @@ engine.execute(f"USE {DATABASE}")
 BEERS_TABLENAME1 = "beers"
 engine.execute(f"DROP TABLE IF EXISTS {BEERS_TABLENAME1}")
 
-df = pd.read_csv(
-    os.path.join( "..","csv","beers.csv")
-).to_sql(
+df = pd.read_csv("../csv/clean_beers.csv").to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
     index=False,
