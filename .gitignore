@@ -132,11 +132,11 @@ dmypy.json
 .vscode/
 
 # Unwanted/large files
-beer_reviews.csv
-reviews_ratings_4.csv
 reviews.csv
 config.py
+clean_reviews.csv
 resources/
+final_merged_data.csv
 
 # Configuration files
 db/config.py
