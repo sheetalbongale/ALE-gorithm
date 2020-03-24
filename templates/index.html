@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ale-gorithm Project</title>
+
+    <!-- Favicons -->
+    <link href="../static/img/favicon1.png" rel="icon">
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css">
+    <!-- Main Stylesheet File -->
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <!-- Font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- No Script CSS  -->
+    <noscript>
+        <link rel="stylesheet" href="../static/css/noscript.css" />
+    </noscript>
+
+    <!-- Jinja2 format to refer to css file
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    -->
+</head>
+
+<body class="is-preload">
+
+    <!-- Nav-Bar Header - Copy paste for every page-->
+    <header id="header">
+        <h1><a href="#intro"><img src="../static/img/logo.png" style="width: 15%;"></h1>
+        <nav>
+            <ul>
+                <li><a href="#recommender"><i class="fa fa-beer" aria-hidden="true"></i> Beer Recommender &nbsp;</a></li>
+                <li><a href="#dashboard"><i class="fa fa-th"></i> Beer Dashboard &nbsp;</a></li>
+                <li><a href="#breweries"><i class="fa fa-search" aria-hidden="true"></i> Find Breweries &nbsp;</a></li>
+                <li><a href="#team"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Intro - Only stays for the main landing page -->
+    <section id="intro" class="main style1 dark fullscreen">
+        <div class="content">
+            <header>
+                <p>Welcome to <strong>Ale-gorithm</strong>, a place for everything Beer!
+                    <br> Helping you find the best brew!</p>
+            </header>
+            <footer>
+                <a href="#what" class="button style2 down">More</a>
+            </footer>
+        </div>
+    </section>
+
+    <!-- What is Alegorithm -->
+    <section id="what" class="main style3 primary">
+        <div class="content">
+            <header>
+                <h2>What is Ale-gorithm</h2>
+                <p>Have you ever wandered down the beer aisle feeling overwhelmed by options? Do you have a thirst for deliciously brewed craft beer, but don’t know which to choose?
+                    <br> Then you’ve come to the right place!
+                    <br>The goal of the ALE-gorithm web application & dashboard is to educate consumers on the craft beer space including styles, flavor profiles.
+                    <br>
+                    <br> Drink Good Beer</p>
+            </header>
+        </div>
+        <a href="#recommender" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!-- Recommender -->
+    <section id="recommender" class="main style2 right dark fullscreen">
+        <div class="content box style2">
+            <header>
+                <h2>Beer Recommender</h2>
+            </header>
+            <p>Have you ever wandered down the beer aisle feeling overwhelmed by options? Do you have a thirst for deliciously brewed craft beer, but don’t know which to choose?
+                <br> Then you’ve come to the right place!
+                <br>The goal of the ALE-gorithm web application & dashboard is to educate consumers on the craft beer space including styles, flavor profiles.</p>
+            <a href="recommender.html">
+                <button type="button center" class="btn btn-primary"> Click here! </button>
+            </a>
+        </div>
+        <a href="#dashboard" class="button style2 down anchored"></a>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="main style2 left dark fullscreen">
+        <div class="content box style2">
+            <header>
+                <h2>Dashboard</h2>
+            </header>
+            <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+            <a href="dashboard.html">
+                <button type="button center" class="btn btn-primary"> Click here! </button>
+            </a>
+        </div>
+        <a href="#brewery" class="button style2 down anchored">Next</a>
+    </section>
+
+    <section id="breweries" class="main style2 left dark fullscreen">
+        <div class="content box style2">
+            <header>
+                <h2>Search Breweries</h2>
+            </header>
+
+            <form action="/search" method="POST">
+
+                <div class="form-group">
+                    <label>breweries</label>
+                    <input type="text" class="form-control" id="search_text" name="search_text" placeholder="Select a breweries">
+                </div>
+
+                <button type="submit center" class="btn btn-primary"> Search! </button>
+                </form>
+
+        </div>
+    </section>
+
+    <!-- ==== TEAM MEMBERS ==== -->
+    <section id="what" class="main style3 primary">
+        <div class="content">
+            <div class="container" id="team" name="team">
+
+                <h2 class="align-items-center centered">Meet Our Awesome & Brewtiful Team</h2>
+                <hr>
+
+                <div class="row white align-items-center main style3 primary">
+                    <div class="col-lg-4 col-md-4 col-sm-6 align-items-center">
+                        <img class="img img-circle" src="../static/img/hero1.png" height="120px" width="120px" alt="">
+                        <br>
+                        <h4><b>Barry Haygood</b></h4>
+                        <a href="#" class="fa fa-lg fa-linkedin"></a>
+                        <a href="#" class="fa fa-lg fa-github"></a>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- col-lg col-md-6 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 align-items-center">
+                        <img class="img img-circle" src="../static/img/hero1.png" height="120px" width="120px" alt="">
+                        <br>
+                        <h4><b>Cathy Egboh</b></h4>
+                        <a href="#" class="fa fa-lg fa-linkedin"></a>
+                        <a href="#" class="fa fa-lg fa-github"></a>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- col-lg col-md-6 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 align-items-center">
+                        <img class="img img-circle" src="../static/img/hero1.png" height="120px" width="120px" alt="">
+                        <br>
+                        <h4><b>Maya Saeidi</b></h4>
+                        <a href="#" class="fa fa-lg fa-linkedin"></a>
+                        <a href="#" class="fa fa-lg fa-github"></a>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <!-- col-lg col-md-6 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 align-items-center">
+                        <img class="img img-circle" src="../static/img/hero1.png" height="120px" width="120px" alt="">
+                        <br>
+                        <h4><b>Michelle Brucato</b></h4>
+                        <a href="#" class="fa fa-lg fa-linkedin"></a>
+                        <a href="#" class="fa fa-lg fa-github"></a>
+                    </div>
+                    <!-- col-lg col-md-6 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 align-items-center">
+                        <img class="img img-circle" src="../static/img/hero1.png" height="120px" width="120px" alt="">
+                        <br>
+                        <h4><b>Sahar Mohammadi</b></h4>
+                        <a href="#" class="fa fa-lg fa-linkedin"></a>
+                        <a href="#" class="fa fa-lg fa-github"></a>
+                    </div>
+                    <!-- col-lg col-md-6 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 align-items-center">
+                        <img class="img img-circle" src="../static/img/hero1.png" height="120px" width="120px" alt="">
+                        <br>
+                        <h4><b>Sheetal Bongale</b></h4>
+                        <a href="#" class="fa fa-lg fa-linkedin"></a>
+                        <a href="#" class="fa fa-lg fa-github"></a>
+
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                <!-- col-lg col-md-6 -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer - Copy paste for every page -->
+    <footer id="footer">
+
+        <!-- GitHub -->
+        <ul class="icons">
+            <li>
+                <a href="#" class="fa fa-lg fa-github"></a>
+            </li>
+            <li>Git-Hub Repository</li>
+        </ul>
+
+        <ul class="menu">
+            <li>&copy; Ale-gorithm 2020</li>
+            <li>Group 3</li>
+            <li>UT Data Analysis and Visualization Bootcamp</a>
+            </li>
+        </ul>
+
+    </footer>
+
+    <!-- Scripts -->
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Custom scripts for this template -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.poptrox.min.js"></script>
+    <script src="../static/js/jquery.scrolly.min.js"></script>
+    <script src="../static/js/jquery.scrollex.min.js"></script>
+    <script src="../static/js/browser.min.js"></script>
+    <script src="../static/js/breakpoints.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

@@ -14,6 +14,15 @@ db = SQLAlchemy(app)
 @app.route('/')
 def index():
     return render_template('index.html')
+    
+@app.route("/search", methods=["GET", "POST"])
+def search():
+     if request.method == "POST":
+    
+        search_text = request.form.get("search_text")
+        print(search_text)
+        #to get API's
+        return render_template("brewries_result.html")
 
 
 if __name__ == '__main__':

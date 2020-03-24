@@ -7,14 +7,18 @@ verify_ssl = true
 black = "*"
 
 [packages]
-pandas = "*"
-plotly = "*"
+requests = "*"
 flask = "*"
-pymysql = "*"
-sqlalchemy = "*"
+pymongo = "*"
+beautifulsoup4 = "*"
+notebook = "*"
+pandas = "*"
+bleach = "*"
+lxml = "*"
+fake-useragent = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"
 
 [pipenv]
 allow_prereleases = true
