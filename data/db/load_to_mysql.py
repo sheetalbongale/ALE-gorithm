@@ -34,10 +34,10 @@ df = pd.read_csv("../csv/final_merged_data.csv").to_sql(
     con=engine,
     index=False,
     dtype = {
-    'beer_id': sqlalchemy.types.String(length=50), 
+    'beer_id': sqlalchemy.types.INTEGER, 
     'score': sqlalchemy.types.INTEGER, 
     'beer_name': sqlalchemy.types.String(length=300), 
-    'brewery_id': sqlalchemy.types.String(length=50), 
+    'brewery_id': sqlalchemy.types.INTEGER, 
     'state': sqlalchemy.types.String(length=50), 
     'country': sqlalchemy.types.String(length=10), 
     'beer_style': sqlalchemy.types.String(length=300), 
