@@ -29,15 +29,19 @@ engine.execute(f"USE {DATABASE}")
 BEERS_TABLENAME1 = "beers_and_reviews"
 engine.execute(f"DROP TABLE IF EXISTS {BEERS_TABLENAME1}")
 
-df = pd.read_csv("../csv/final_merged_data.csv").to_sql(
+
+# path = os.path.join( "..","csv","final_merged_data.csv", encoding=‘cp1252’)
+df = pd.read_csv("../csv/final_merged_data.csv")
+df.head()
+df.to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
     index=False,
     dtype = {
-    'beer_id': sqlalchemy.types.String(length=50), 
+    'beer_id': sqlalchemy.types.INTEGER, 
     'score': sqlalchemy.types.INTEGER, 
     'beer_name': sqlalchemy.types.String(length=300), 
-    'brewery_id': sqlalchemy.types.String(length=50), 
+    'brewery_id': sqlalchemy.types.INTEGER, 
     'state': sqlalchemy.types.String(length=50), 
     'country': sqlalchemy.types.String(length=10), 
     'beer_style': sqlalchemy.types.String(length=300), 
@@ -55,6 +59,6 @@ df = pd.read_csv("../csv/final_merged_data.csv").to_sql(
     'IBU (avg)': sqlalchemy.types.INTEGER, 
     'SRM Range': sqlalchemy.types.String(length=50), 
     'Glassware': sqlalchemy.types.String(length=50), 
-    'Description': sqlalchemy.types.String(length=500)
+    'Description': sqlalchemy.types.String(length=800)
     })
 
