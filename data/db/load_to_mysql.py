@@ -54,7 +54,8 @@ df = pd.read_csv("../csv/final_merged_data_renamed.csv").to_sql(
     'IBU_min': sqlalchemy.types.INTEGER,
     'IBU_max': sqlalchemy.types.INTEGER,
     'IBU_avg': sqlalchemy.types.FLOAT,
-    'SRM_range': sqlalchemy.types.String(length=50),
+    'SRM_min': sqlalchemy.types.String(length=50),
+    'SRM_max': sqlalchemy.types.String(length=50),
     'Glassware': sqlalchemy.types.String(length=50),
     'Description': sqlalchemy.types.String(length=1500)
     })
