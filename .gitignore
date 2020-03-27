@@ -137,6 +137,6 @@ config.py
 clean_reviews.csv
 resources/
 final_merged_data.csv
-
+brewery_address_final.csv
 # Configuration files
 db/config.py

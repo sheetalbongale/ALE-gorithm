@@ -12,7 +12,7 @@ USER = "root"
 PASSWORD = config.password
 HOST = "127.0.0.1"
 PORT = "3306"
-DATABASE = "alegorithm_db"
+DATABASE = "alegorithm_db2"
 
 engine = create_engine(f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}")
 
@@ -29,12 +29,11 @@ engine.execute(f"USE {DATABASE}")
 BEERS_TABLENAME1 = "beers_and_reviews"
 engine.execute(f"DROP TABLE IF EXISTS {BEERS_TABLENAME1}")
 
-# path = os.path.join( "..","csv","final_merged_data.csv", encoding=‘cp1252’)
-df = pd.read_csv("../csv/final_merged_data.csv")
-df.to_sql(
+df = pd.read_csv("../csv/final_merged_data_renamed.csv").to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
     index=False,
+    chunksize = 10000,
     dtype = {
     'beer_id': sqlalchemy.types.INTEGER,
     'score': sqlalchemy.types.FLOAT,
@@ -49,14 +48,13 @@ df.to_sql(
     'city': sqlalchemy.types.String(length=50),
     'types': sqlalchemy.types.String(length=50),
     'Category': sqlalchemy.types.String(length=50),
-    'ABV (min)': sqlalchemy.types.FLOAT,
-    'ABV (max)': sqlalchemy.types.FLOAT,
-    'ABV (avg)': sqlalchemy.types.FLOAT,
-    'IBU (min)': sqlalchemy.types.INTEGER,
-    'IBU (max)': sqlalchemy.types.INTEGER,
-    'IBU (avg)': sqlalchemy.types.FLOAT,
-    'SRM Range': sqlalchemy.types.String(length=50),
+    'ABV_min': sqlalchemy.types.FLOAT,
+    'ABV_max': sqlalchemy.types.FLOAT,
+    'ABV_avg': sqlalchemy.types.FLOAT,
+    'IBU_min': sqlalchemy.types.INTEGER,
+    'IBU_max': sqlalchemy.types.INTEGER,
+    'IBU_avg': sqlalchemy.types.FLOAT,
+    'SRM_range': sqlalchemy.types.String(length=50),
     'Glassware': sqlalchemy.types.String(length=50),
-    'Description': sqlalchemy.types.String(length=800)
+    'Description': sqlalchemy.types.String(length=1500)
     })
-
