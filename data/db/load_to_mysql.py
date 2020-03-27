@@ -12,7 +12,7 @@ USER = "root"
 PASSWORD = config.password
 HOST = "127.0.0.1"
 PORT = "3306"
-DATABASE = "beers_db"
+DATABASE = "alegorithm_db2"
 
 engine = create_engine(f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}")
 
@@ -26,23 +26,36 @@ except ProgrammingError:
 
 engine.execute(f"USE {DATABASE}")
 
-BEERS_TABLENAME1 = "beers"
+BEERS_TABLENAME1 = "beers_and_reviews"
 engine.execute(f"DROP TABLE IF EXISTS {BEERS_TABLENAME1}")
 
-df = pd.read_csv(
-    os.path.join( "..","csv","beers.csv")
-).to_sql(
+df = pd.read_csv("../csv/final_merged_data_renamed.csv").to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
     index=False,
-    dtype = {'id': sqlalchemy.types.String(length=50), 
-    'name': sqlalchemy.types.String(length=300),
-    'brewery_id': sqlalchemy.types.String(length=50),
+    chunksize = 10000,
+    dtype = {
+    'beer_id': sqlalchemy.types.INTEGER,
+    'score': sqlalchemy.types.FLOAT,
+    'beer_name': sqlalchemy.types.String(length=300),
+    'brewery_id': sqlalchemy.types.INTEGER,
     'state': sqlalchemy.types.String(length=50),
-    'country': sqlalchemy.types.String(length=50),
-    'style': sqlalchemy.types.String(length=100),
-    'availability': sqlalchemy.types.String(length=50),
-    'abv': sqlalchemy.types.INTEGER, 
-    'retired': sqlalchemy.types.String(length=50)
+    'country': sqlalchemy.types.String(length=10),
+    'beer_style': sqlalchemy.types.String(length=300),
+    'availability': sqlalchemy.types.String(length=100),
+    'abv': sqlalchemy.types.FLOAT,
+    'brewery_name': sqlalchemy.types.String(length=100),
+    'city': sqlalchemy.types.String(length=50),
+    'types': sqlalchemy.types.String(length=50),
+    'Category': sqlalchemy.types.String(length=50),
+    'ABV_min': sqlalchemy.types.FLOAT,
+    'ABV_max': sqlalchemy.types.FLOAT,
+    'ABV_avg': sqlalchemy.types.FLOAT,
+    'IBU_min': sqlalchemy.types.INTEGER,
+    'IBU_max': sqlalchemy.types.INTEGER,
+    'IBU_avg': sqlalchemy.types.FLOAT,
+    'SRM_min': sqlalchemy.types.String(length=50),
+    'SRM_max': sqlalchemy.types.String(length=50),
+    'Glassware': sqlalchemy.types.String(length=50),
+    'Description': sqlalchemy.types.String(length=1500)
     })
-

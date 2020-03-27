@@ -12,6 +12,7 @@ plotly = "*"
 flask = "*"
 pymysql = "*"
 sqlalchemy = "*"
+nb-black = "*"
 
 [requires]
 python_version = "3.8"
