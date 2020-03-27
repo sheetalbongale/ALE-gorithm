@@ -28,6 +28,7 @@ engine.execute(f"USE {DATABASE}")
 
 BEERS_TABLENAME1 = "beers_and_reviews"
 engine.execute(f"DROP TABLE IF EXISTS {BEERS_TABLENAME1}")
+
 df = pd.read_csv("../csv/final_merged_data_renamed.csv").to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
