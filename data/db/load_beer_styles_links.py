@@ -26,18 +26,15 @@ except ProgrammingError:
 
 engine.execute(f"USE {DATABASE}")
 
-BEERS_TABLENAME1 = "brewery_addresses"
+BEERS_TABLENAME1 = "beer_styles_links"
 engine.execute(f"DROP TABLE IF EXISTS {BEERS_TABLENAME1}")
 
-df = pd.read_csv("../csv/brewery_addresses_final.csv").to_sql(
+df = pd.read_csv("../csv/beer_styles_links.csv").to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
     index=False,
     dtype = {
-    'brewery_name': sqlalchemy.types.String(length=300), 
-    'street': sqlalchemy.types.String(length=300), 
-    'city': sqlalchemy.types.String(length=100),
-    'locality': sqlalchemy.types.String(length=100), 
-    'zip_code': sqlalchemy.types.String(length=100), 
-    'full_address': sqlalchemy.types.String(length=500), 
+    'beer_style': sqlalchemy.types.String(length=300), 
+    'info_link': sqlalchemy.types.String(length=300), 
+    'image_link': sqlalchemy.types.String(length=300), 
     })

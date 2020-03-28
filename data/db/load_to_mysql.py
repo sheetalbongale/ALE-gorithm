@@ -12,7 +12,7 @@ USER = "root"
 PASSWORD = config.password
 HOST = "127.0.0.1"
 PORT = "3306"
-DATABASE = "alegorithm_db2"
+DATABASE = "alegorithm_db"
 
 engine = create_engine(f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}")
 
@@ -29,7 +29,7 @@ engine.execute(f"USE {DATABASE}")
 BEERS_TABLENAME1 = "beers_and_reviews"
 engine.execute(f"DROP TABLE IF EXISTS {BEERS_TABLENAME1}")
 
-df = pd.read_csv("../csv/final_merged_data_renamed.csv").to_sql(
+df = pd.read_csv("../csv/final_merged_data.csv").to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
     index=False,
@@ -54,8 +54,8 @@ df = pd.read_csv("../csv/final_merged_data_renamed.csv").to_sql(
     'IBU_min': sqlalchemy.types.INTEGER,
     'IBU_max': sqlalchemy.types.INTEGER,
     'IBU_avg': sqlalchemy.types.FLOAT,
-    'SRM_min': sqlalchemy.types.String(length=50),
-    'SRM_max': sqlalchemy.types.String(length=50),
+    'SRM_min': sqlalchemy.types.INTEGER,
+    'SRM_max': sqlalchemy.types.INTEGER,
     'Glassware': sqlalchemy.types.String(length=50),
     'Description': sqlalchemy.types.String(length=1500)
     })
