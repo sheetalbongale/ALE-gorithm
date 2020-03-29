@@ -138,6 +138,9 @@ clean_reviews.csv
 resources/
 final_merged_data.csv
 brewery_address_final.csv
+final_merged_data_renamed.csv
+final_beers.csv
+
 # Configuration files
 db/config.py
-final_merged_data_renamed.csv
+
