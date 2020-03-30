@@ -666,7 +666,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		background-color: #98c593;
+		background-color: #11110f;
 		border: 0;
 		border-radius: 3.5em;
 		color: #ffffff;
@@ -723,7 +723,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		.button:hover,
 		button:hover {
-			background-color: #a8cea4;
+			background-color: #838276;
 		}
 
 		input[type="button"]:active,
@@ -731,7 +731,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		.button:active,
 		button:active {
-			background-color: #88bc82;
+			background-color: #cebf3d;
 		}
 
 		input[type="button"].style2,
@@ -2271,31 +2271,17 @@ input, select, textarea {
 		background-position: top left, center center;
 	}
 
-/* Contact */
+	
+	  
+/* images */
 
-	#contact {
-		overflow: hidden;
-		padding-bottom: 0;
-	}
-
-		#contact .box {
-			-moz-transition: -moz-transform 1s ease;
-			-webkit-transition: -webkit-transform 1s ease;
-			-ms-transition: -ms-transform 1s ease;
-			transition: transform 1s ease;
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-			position: relative;
-		}
-
-		#contact.inactive .box {
-			-moz-transform: translateY(100%);
-			-webkit-transform: translateY(100%);
-			-ms-transform: translateY(100%);
-			transform: translateY(100%);
-		}
+	#recommenderpage {
+		background-image: url('../img/recommender2.jpg');
+		background-size: cover;
+		background-attachment: fixed, fixed;
+		background-position: bottom center;
+		
+	  }
 
 		@media screen and (max-width: 736px) {
 
