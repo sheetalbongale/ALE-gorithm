@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request
-import sqlalchemy
+import sqlalchemy as sql
 from sqlalchemy.orm import Session
-from sqlalchemy import Column, Integer, String, Float, Date
-from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
 import config
+import pymysql
+import json
+import pandas as pd
+from flask import Response
 
 #################################################
 #       Flask Setup and Database Connection
@@ -16,9 +19,9 @@ HOST = "127.0.0.1"
 PORT = "3306"
 DATABASE = "alegorithm_db"
 
-app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
+CONN = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
 
-db = SQLAlchemy(app)
+sql_engine = sql.create_engine(CONN)
 
 
 #################################################
@@ -35,11 +38,51 @@ def index():
 def recommender():
     return render_template('recommender.html')
 
+@app.route("/top_beers")
+def top_beers():
+    TABLENAME = 'top_5_beers'
+    query = f"SELECT * FROM {TABLENAME}"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"),mimetype='application/json')
+
+@app.route("/beer_style")
+def beer_style():
+    TABLENAME = 'ba_beerstyles'
+    query = f"SELECT * FROM {TABLENAME}"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"), mimetype='application/json')
+
+@app.route("/beer_styles_links")
+def beer_style_links():
+    TABLENAME = 'beer_styles_links'
+    query = f"SELECT * FROM {TABLENAME}"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"), mimetype='application/json')
+
 #-------------- dashboard routes --------------#
 
 @app.route('/dashboard.html')
 def dashboard():
     return render_template('dashboard.html')
+
+@app.route("/brewery_data")
+def brewery_data():
+    TABLENAME = 'us_state_data'
+    query = f"SELECT * FROM {TABLENAME}"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"), mimetype='application/json')
+
+@app.route("/style_rank")
+def style_rank():
+    TABLENAME = 'beer_style_pop'
+    query = f"SELECT beer_style, review_count FROM {TABLENAME} ORDER BY review_count DESC LIMIT 25"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"), mimetype='application/json')
 
 #-------------- breweries routes --------------#
 @app.route('/breweries.html')
