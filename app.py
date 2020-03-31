@@ -60,7 +60,7 @@ def beer_style():
 @app.route("/beerstyle/<beerstyle>")
 def selector1(beerstyle):
     TABLENAME = 'top_5_beers'
-    query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = '{beerstyle}'"
+    query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = {beerstyle}"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"),mimetype='application/json')
@@ -69,7 +69,7 @@ def selector1(beerstyle):
 @app.route("/category/<category>")
 def selector2(category):
     TABLENAME = 'ba_beerstyles'
-    query = f"SELECT * FROM {TABLENAME} WHERE beer_style = '{category}''"
+    query = f"SELECT ABV_avg FROM {TABLENAME} WHERE beer_style = '{category}''"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
