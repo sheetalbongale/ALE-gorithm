@@ -11,12 +11,12 @@ function init() {
 
 
 	var selectorOne = d3.select("#selDatasetOne");
-	d3.json("/category_names").then((sampleCategory) => {
-    sampleCategory.forEach((sample) => {
+	d3.json("/category_names").then((categoryNames) => {
+    categoryNames.forEach((category) => {
 		selectorOne
         .append("option")
         .text(sample)
-        .property("value", sample);
+        .property("record", category);
     });
 	})
 
@@ -26,7 +26,7 @@ function init() {
 		selectorTwo
 		.append("option")
 		.text(beerstyle)
-		.property("value", beerstyle);
+		.property("record", beerstyle);
 	});
 	})
 
@@ -42,6 +42,12 @@ function optionChangedOne(newcategory) {
     drawGauge();
   }
 
+  function optionChangedTwo(newbeerstyle) {
+    category = newbeerstyle;
+    buildPanel();
+    d3.select('#abvGauge').html(""),
+    drawGauge();
+  }
 
 
   /*
