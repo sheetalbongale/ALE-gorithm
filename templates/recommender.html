@@ -50,15 +50,31 @@
                 <p>Find the best beers here - Need good catchy line here</p>
 
                 <ul class="actions special">
-                    <li><select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedOne(this.value)">
+                    <li><select class="custom-select button secondary" id="selDatasetOne" onchange="optionChangedOne(this.value)">
                         <option selected class="custom-option">Select Category</option>
                     </select></li>
-                    <li><select class="custom-select button secondary" id="selDatasetThree" onchange="optionChangedTwo(this.value)">
+                    <li><select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedTwo(this.value)">
                         <option selected class="custom-option">Select Beer Style</option>
-                    </select></li>
-
+                    </select>
+                    </li>
                 </ul>
     </section>
+
+    
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-4">
+                    <div id="gauge_abv"></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="gauge_ibu"></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="gauge_srm"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <!-- Footer -->
@@ -92,6 +108,9 @@
 <script src="../static/js/breakpoints.min.js"></script>
 <script src="../static/js/util.js"></script>
 <script src="../static/js/main.js"></script>
+<!--script src="{{ url_for('static', filename='js/drawGauge_abv.js') }}"></script-->
+<script src="../static/js/app.js"></script>
+<script src="../static/js/drawGauge.js"></script>
 
 </body>
 </html>
