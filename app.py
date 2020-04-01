@@ -43,7 +43,7 @@ def recommender():
 @app.route("/category_names")
 def category():
     TABLENAME = 'ba_beerstyles'
-    query = f"SELECT Category FROM {TABLENAME}"
+    query = f"SELECT DISTINCT Category FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
@@ -52,7 +52,7 @@ def category():
 @app.route("/beerstyle_names")
 def beer_style():
     TABLENAME = 'top_5_beers'
-    query = f"SELECT beer_style FROM {TABLENAME}"
+    query = f"SELECT DISTINCT beer_style FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
@@ -61,7 +61,7 @@ def beer_style():
 @app.route("/beerstyle/<beerstyle>")
 def selector1(beerstyle):
     TABLENAME = 'top_5_beers'
-    query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = {beerstyle}"
+    query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = '{beerstyle}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"),mimetype='application/json')
@@ -70,7 +70,7 @@ def selector1(beerstyle):
 @app.route("/category/<category>")
 def selector2(category):
     TABLENAME = 'ba_beerstyles'
-    query = f"SELECT * FROM {TABLENAME} WHERE beer_style = '{category}''"
+    query = f"SELECT * FROM {TABLENAME} WHERE Category = '{category}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
@@ -127,6 +127,9 @@ def style_rank():
 def breweries():
     return render_template('breweries.html')
 
+@app.route('/test')
+def tester():
+    return render_template('test.html')
 
 #################################################
 #                  Main

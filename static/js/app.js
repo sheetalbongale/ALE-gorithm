@@ -11,22 +11,22 @@ function init() {
 
 
 	var selectorOne = d3.select("#selDatasetOne");
-	d3.json("/category_names").then((sampleCategory) => {
+	d3.json("category_names").then((sampleCategory) => {
     sampleCategory.forEach((sample) => {
 		selectorOne
         .append("option")
-        .text(sample)
-        .property("value", sample);
+        .text(sample.Category)
+        .property("value", sample.Category);
     });
 	})
 
 	var selectorTwo = d3.select('#selDatasetTwo');
-	d3.json("/beerstyle_names").then((sampleBeerstyle) =>{
-	Object.keys(sampleBeerstyle[0]).forEach((beerstyle) =>{
+	d3.json("beerstyle_names").then((sampleBeerstyle) =>{
+	sampleBeerstyle.forEach((beerstyle) =>{
 		selectorTwo
 		.append("option")
-		.text(beerstyle)
-		.property("value", beerstyle);
+		.text(beerstyle.beer_style)
+		.property("value", beerstyle.beer_style);
 	});
 	})
 
