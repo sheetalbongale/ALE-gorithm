@@ -4,8 +4,8 @@ function buildPanel() {
 		});
 };
 
-var category = "Bock";
-var beer_style = "German Bock";
+// var category = "Bock";
+// var beer_style = "German Bock";
 
 function init() {
 
@@ -20,8 +20,11 @@ var selectorOne = d3.select("#selDatasetOne");
     });
 	})
 
-	var selectorTwo = d3.select('#selDatasetTwo');
-	d3.json("beerstyle_names").then((sampleBeerstyle) =>{
+  var selectorTwo = d3.select('#selDatasetTwo');
+  // var category = d3.select("selDatasetOne").text(value);
+
+  category = optionChangedOne(newcategory)
+	d3.json(`beerstyle_names/${category}`).then((sampleBeerstyle) =>{
 	sampleBeerstyle.forEach((beerstyle) =>{
 		selectorTwo
 		.append("option")

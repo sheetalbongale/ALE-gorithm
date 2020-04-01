@@ -49,10 +49,10 @@ def category():
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
 # populate beerstyle dropdown
-@app.route("/beerstyle_names")
+@app.route("/beerstyle_names/<category>")
 def beer_style():
-    TABLENAME = 'top_5_beers'
-    query = f"SELECT DISTINCT beer_style FROM {TABLENAME}"
+    TABLENAME = 'ba_beerstyles'
+    query = f"SELECT Style FROM {TABLENAME} WHERE Category = '{category}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
