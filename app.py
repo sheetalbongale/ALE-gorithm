@@ -57,20 +57,20 @@ def beer_style():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
  
- # selector for category
-@app.route("/category/<category>")
-def selector2(category):
-    TABLENAME = 'ba_beerstyles'
-    query = f"SELECT * FROM {TABLENAME} WHERE Style = '{category}'"
-    df = pd.read_sql_query(query, sql_engine)
-    # return json of the dataframe
-    return Response(df.to_json(orient = "records"), mimetype='application/json')
-
 # selector for beerstyle
 @app.route("/beerstyle/<beerstyle>")
 def selector1(beerstyle):
     TABLENAME = 'top_5_beers'
     query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = '{beerstyle}'"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"),mimetype='application/json')
+
+# selector for category
+@app.route("/category/<category>")
+def selector2(category):
+    TABLENAME = 'ba_beerstyles'
+    query = f"SELECT * FROM {TABLENAME} WHERE Category = '{category}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
@@ -106,8 +106,8 @@ def beer_style_links():
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route("/brewery_data")
-def brewery_data():
+@app.route("/state_data")
+def state_data():
     TABLENAME = 'us_state_data'
     query = f"SELECT * FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
@@ -122,11 +122,22 @@ def style_rank():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
+@app.route("/category_data")
+def category_data():
+    TABLENAME = 'ba_beerstyles'
+    query = f"SELECT * FROM {TABLENAME}"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"), mimetype='application/json')
+
 #-------------- breweries routes --------------#
 @app.route('/breweries.html')
 def breweries():
     return render_template('breweries.html')
 
+@app.route('/test')
+def tester():
+    return render_template('test.html')
 
 #################################################
 #                  Main

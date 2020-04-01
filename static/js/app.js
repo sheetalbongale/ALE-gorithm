@@ -10,23 +10,23 @@ var beer_style = "German Bock";
 function init() {
 
 
-	var selectorOne = d3.select("#selDatasetOne");
-	d3.json("/category_names").then((categoryNames) => {
-    categoryNames.forEach((category) => {
+    var selectorOne = d3.select("#selDatasetOne");
+	d3.json("category_names").then((categoryNames) => {
+    categoryNames.forEach((categoryData) => {
 		selectorOne
         .append("option")
-        .text(sample)
-        .property("record", category);
+        .text(categoryData.Category)
+        .property("value", categoryData.Category);
     });
 	})
 
 	var selectorTwo = d3.select('#selDatasetTwo');
-	d3.json("/beerstyle_names").then((sampleBeerstyle) =>{
-	Object.keys(sampleBeerstyle[0]).forEach((beerstyle) =>{
+	d3.json("beerstyle_names").then((sampleBeerstyle) =>{
+	sampleBeerstyle.forEach((beerstyle) =>{
 		selectorTwo
 		.append("option")
-		.text(beerstyle)
-		.property("record", beerstyle);
+		.text(beerstyle.beer_style)
+		.property("value", beerstyle.beer_style);
 	});
 	})
 
