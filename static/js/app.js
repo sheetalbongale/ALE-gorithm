@@ -10,12 +10,12 @@ var beer_style = "German Bock";
 function init() {
 
 
-	var selectorOne = d3.select("#selDatasetOne");
+var selectorOne = d3.select("#selDatasetOne");
 	d3.json("category_names").then((categoryNames) => {
     categoryNames.forEach((categoryData) => {
 		selectorOne
         .append("option")
-        .text(categoryData.CategoryData)
+        .text(categoryData.Category)
         .property("value", categoryData.Category);
     });
 	})
