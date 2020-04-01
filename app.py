@@ -106,8 +106,8 @@ def beer_style_links():
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route("/brewery_data")
-def brewery_data():
+@app.route("/state_data")
+def state_data():
     TABLENAME = 'us_state_data'
     query = f"SELECT * FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
@@ -118,6 +118,14 @@ def brewery_data():
 def style_rank():
     TABLENAME = 'beer_style_pop'
     query = f"SELECT beer_style, review_count FROM {TABLENAME} ORDER BY review_count DESC LIMIT 25"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"), mimetype='application/json')
+
+@app.route("/category_data")
+def category_data():
+    TABLENAME = 'ba_beerstyles'
+    query = f"SELECT * FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
