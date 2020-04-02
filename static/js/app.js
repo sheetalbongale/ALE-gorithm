@@ -21,15 +21,14 @@ var selectorOne = d3.select("#selDatasetOne");
 	})
 
   var selectorTwo = d3.select('#selDatasetTwo');
-  // var category = d3.select("selDatasetOne").text(value);
 
-  category = optionChangedOne(newcategory)
+
 	d3.json(`beerstyle_names/${category}`).then((sampleBeerstyle) =>{
 	sampleBeerstyle.forEach((beerstyle) =>{
 		selectorTwo
 		.append("option")
-		.text(beerstyle.beer_style)
-		.property("value", beerstyle.beer_style);
+		.text(beerstyle.Style)
+		.property("value", beerstyle.Style);
 	});
 	})
 

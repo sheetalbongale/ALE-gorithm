@@ -50,48 +50,48 @@ def category():
 
 # populate beerstyle dropdown
 @app.route("/beerstyle_names/<category>")
-def beer_style():
+def beer_style(category):
     TABLENAME = 'ba_beerstyles'
     query = f"SELECT Style FROM {TABLENAME} WHERE Category = '{category}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
  
-# selector for beerstyle
-@app.route("/beerstyle/<beerstyle>")
-def selector1(beerstyle):
-    TABLENAME = 'top_5_beers'
-    query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = '{beerstyle}'"
-    df = pd.read_sql_query(query, sql_engine)
-    # return json of the dataframe
-    return Response(df.to_json(orient = "records"),mimetype='application/json')
+# # selector for beerstyle ****broken top_5_beers has been changed****
+# @app.route("/beerstyle/<beerstyle>")
+# def selector1(beerstyle):
+#     TABLENAME = 'top_5_beers'
+#     query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = '{beerstyle}'"
+#     df = pd.read_sql_query(query, sql_engine)
+#     # return json of the dataframe
+#     return Response(df.to_json(orient = "records"),mimetype='application/json')
 
-# selector for category
-@app.route("/category/<category>")
-def selector2(category):
+# selector for category - Works 
+@app.route("/style/<Style>")
+def selector2(Style):
     TABLENAME = 'ba_beerstyles'
-    query = f"SELECT * FROM {TABLENAME} WHERE Category = '{category}'"
+    query = f"SELECT * FROM {TABLENAME} WHERE Style = '{category}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
-@app.route("/selector/<selection>")
-def selector(selection):
-    TABLENAME = 'top_5_beers'
-    query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = '{selection}'"
-    df = pd.read_sql_query(query, sql_engine)
-    # return json of the dataframe
-    return Response(df.to_json(orient = "records"),mimetype='application/json')
+# @app.route("/selector/<selection>") ****broken top_5_beers has been changed****
+# def selector(selection):
+#     TABLENAME = 'top_5_beers'
+#     query = f"SELECT beer_name FROM {TABLENAME} WHERE beer_style = '{selection}'"
+#     df = pd.read_sql_query(query, sql_engine)
+#     # return json of the dataframe
+#     return Response(df.to_json(orient = "records"),mimetype='application/json')
 
-@app.route("/top_beers")
-def top_beers():
-    TABLENAME = 'top_5_beers'
-    query = f"SELECT beer_style FROM {TABLENAME}"
-    df = pd.read_sql_query(query, sql_engine)
-    # return json of the dataframe
-    return Response(df.to_json(orient = "records"), mimetype='application/json')
+# @app.route("/top_beers") ****broken top_5_beers has been changed****
+# def top_beers():
+#     TABLENAME = 'top_5_beers'
+#     query = f"SELECT beer_style FROM {TABLENAME}"
+#     df = pd.read_sql_query(query, sql_engine)
+#     # return json of the dataframe
+#     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
-
+# Returns links and images from craft beers 
 @app.route("/beer_styles_links")
 def beer_style_links():
     TABLENAME = 'beer_styles_links'
@@ -121,6 +121,7 @@ def style_rank():
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
+
 
 @app.route("/category_data")
 def category_data():
