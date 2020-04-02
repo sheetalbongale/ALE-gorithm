@@ -1,0 +1,464 @@
+"beer_style","beer_id","avg_rating","review_count"
+"American Amber / Red Ale",54522,4.3,2070
+"American Amber / Red Ale",1655,4.26,1815
+"American Amber / Red Ale",607,4.22,2176
+"American Amber / Red Ale",6322,4.22,1840
+"American Amber / Red Ale",6301,4.18,1896
+"American Amber / Red Lager",1351,4.28,1175
+"American Amber / Red Lager",2318,4.23,323
+"American Amber / Red Lager",909,4.23,224
+"American Amber / Red Lager",2219,4.22,283
+"American Amber / Red Lager",148,4.18,1255
+"American Barleywine",41300,4.4,2191
+"American Barleywine",20931,4.35,2006
+"American Barleywine",2671,4.32,5817
+"American Barleywine",1891,4.29,2065
+"American Barleywine",6533,4.27,1615
+"American Black Ale",38470,4.35,4913
+"American Black Ale",79286,4.35,4002
+"American Black Ale",67046,4.29,1651
+"American Black Ale",112938,4.26,1989
+"American Black Ale",127483,4.23,1735
+"American Blonde Ale",109105,4.34,837
+"American Blonde Ale",22193,4.24,1186
+"American Blonde Ale",160820,4.22,495
+"American Blonde Ale",68008,4.21,459
+"American Blonde Ale",59987,4.19,749
+"American Brett",96817,4.44,527
+"American Brett",88816,4.24,329
+"American Brett",92669,4.22,297
+"American Brett",102895,4.21,470
+"American Brett",88815,4.2,374
+"American Brown Ale",33832,4.36,4696
+"American Brown Ale",1339,4.32,2941
+"American Brown Ale",30764,4.31,2138
+"American Brown Ale",1161,4.29,4538
+"American Brown Ale",60420,4.19,1529
+"American Brut IPA",364202,4.28,11
+"American Brut IPA",358642,4.2,11
+"American Brut IPA",366774,4.16,18
+"American Brut IPA",363015,4.14,11
+"American Cream Ale",205179,4.47,199
+"American Cream Ale",108008,4.37,518
+"American Cream Ale",1963,4.26,1269
+"American Cream Ale",23506,4.24,488
+"American Cream Ale",169625,4.19,457
+"American Dark Wheat Ale",118675,4.38,94
+"American Dark Wheat Ale",95054,4.26,108
+"American Dark Wheat Ale",133488,4.2,117
+"American Dark Wheat Ale",2370,4.19,124
+"American Dark Wheat Ale",101936,4.14,133
+"American Imperial IPA",7971,4.68,14432
+"American Imperial IPA",17112,4.54,12327
+"American Imperial IPA",84596,4.49,10135
+"American Imperial IPA",2093,4.42,13409
+"American Imperial IPA",4083,4.41,9463
+"American Imperial Pilsner",75414,4.4,1342
+"American Imperial Pilsner",51557,4.39,875
+"American Imperial Pilsner",99033,4.33,1351
+"American Imperial Pilsner",119960,4.24,1219
+"American Imperial Pilsner",60078,4.24,1146
+"American Imperial Porter",172420,4.55,1241
+"American Imperial Porter",75502,4.51,1188
+"American Imperial Porter",48505,4.47,6432
+"American Imperial Porter",84140,4.3,1076
+"American Imperial Porter",90473,4.29,1426
+"American Imperial Stout",57747,4.71,7132
+"American Imperial Stout",10672,4.66,12094
+"American Imperial Stout",19960,4.65,12761
+"American Imperial Stout",11757,4.58,16119
+"American Imperial Stout",34420,4.55,6792
+"American IPA",29619,4.48,12814
+"American IPA",1093,4.4,12653
+"American IPA",88,4.35,9177
+"American IPA",1904,4.33,8034
+"American IPA",30420,4.32,8702
+"American Lager",71820,4.34,2389
+"American Lager",152542,4.21,781
+"American Lager",110546,4.19,607
+"American Lager",88429,4.15,521
+"American Lager",127725,4.13,571
+"American Light Lager",837,4.49,119
+"American Light Lager",1320,4.43,116
+"American Light Lager",332,4.41,145
+"American Light Lager",1503,4.19,279
+"American Light Lager",154597,4.17,83
+"American Pale Wheat Ale",9478,4.35,4801
+"American Pale Wheat Ale",49789,4.34,7565
+"American Pale Wheat Ale",96436,4.24,911
+"American Pale Wheat Ale",1094,4.22,2915
+"American Pale Wheat Ale",65113,4.2,890
+"American Porter",61062,4.53,2634
+"American Porter",62761,4.53,1964
+"American Porter",226,4.37,5568
+"American Porter",198,4.34,4949
+"American Porter",61,4.3,2729
+"American Stout",1118,4.36,3232
+"American Stout",197,4.33,3238
+"American Stout",283,4.27,2419
+"American Stout",1117,4.21,2769
+"American Stout",2010,4.21,1873
+"American Strong Ale",1056,4.41,5622
+"American Strong Ale",8951,4.37,4198
+"American Strong Ale",92,4.34,8385
+"American Strong Ale",48385,4.25,3164
+"American Strong Ale",2264,4.25,3975
+"American Wheatwine Ale",84078,4.36,1038
+"American Wheatwine Ale",105784,4.34,884
+"American Wheatwine Ale",14954,4.23,577
+"American Wheatwine Ale",53764,4.22,567
+"American Wheatwine Ale",51069,4.2,736
+"American Wild Ale",27992,4.61,2615
+"American Wild Ale",22227,4.61,6236
+"American Wild Ale",45653,4.56,5123
+"American Wild Ale",9474,4.51,3555
+"American Wild Ale",20518,4.4,2529
+"Baltic Porter",79898,4.39,1402
+"Baltic Porter",93101,4.38,865
+"Baltic Porter",40674,4.35,1241
+"Baltic Porter",24071,4.25,1914
+"Baltic Porter",88889,4.24,880
+"Belgian Blonde Ale",1808,4.38,777
+"Belgian Blonde Ale",2137,4.21,958
+"Belgian Blonde Ale",620,4.2,631
+"Belgian Blonde Ale",36539,4.15,447
+"Belgian Blonde Ale",127728,4.12,446
+"Belgian Dark Ale",1862,4.23,741
+"Belgian Dark Ale",76521,4.2,186
+"Belgian Dark Ale",38818,4.19,569
+"Belgian Dark Ale",26072,4.16,223
+"Belgian Dark Ale",99130,4.15,346
+"Belgian Faro",61616,4.27,73
+"Belgian Faro",8772,4.22,28
+"Belgian Faro",7761,4.22,86
+"Belgian Faro",7712,4.21,338
+"Belgian Faro",30533,4.17,23
+"Belgian Fruit Lambic",5281,4.68,2975
+"Belgian Fruit Lambic",3659,4.65,1744
+"Belgian Fruit Lambic",8954,4.58,2089
+"Belgian Fruit Lambic",1632,4.45,2287
+"Belgian Fruit Lambic",2557,4.42,2152
+"Belgian Gueuze",51116,4.65,1812
+"Belgian Gueuze",1703,4.52,3579
+"Belgian Gueuze",6305,4.46,2699
+"Belgian Gueuze",70745,4.4,1923
+"Belgian Gueuze",6104,4.29,1595
+"Belgian IPA",27804,4.36,2212
+"Belgian IPA",57912,4.27,2707
+"Belgian IPA",36727,4.24,1653
+"Belgian IPA",52855,4.24,2046
+"Belgian IPA",43905,4.22,2106
+"Belgian Lambic",188570,4.74,249
+"Belgian Lambic",7435,4.43,1923
+"Belgian Lambic",8961,4.37,283
+"Belgian Lambic",7758,4.25,223
+"Belgian Lambic",2559,4.22,501
+"Belgian Pale Ale",129,4.41,4275
+"Belgian Pale Ale",2184,4.3,1831
+"Belgian Pale Ale",593,4.27,2423
+"Belgian Pale Ale",13741,4.22,1171
+"Belgian Pale Ale",56875,4.22,857
+"Belgian Saison",36333,4.4,2835
+"Belgian Saison",1717,4.33,3484
+"Belgian Saison",50570,4.32,4297
+"Belgian Saison",141,4.32,4740
+"Belgian Saison",48824,4.26,3454
+"Belgian Strong Dark Ale",1696,4.43,4794
+"Belgian Strong Dark Ale",2512,4.42,6864
+"Belgian Strong Dark Ale",155,4.4,3349
+"Belgian Strong Dark Ale",30,4.38,4140
+"Belgian Strong Dark Ale",33,4.35,3753
+"Belgian Strong Pale Ale",695,4.42,6630
+"Belgian Strong Pale Ale",1385,4.33,4420
+"Belgian Strong Pale Ale",411,4.28,2302
+"Belgian Strong Pale Ale",12770,4.27,2998
+"Belgian Strong Pale Ale",4318,4.27,3246
+"Berliner Weisse",119759,4.45,896
+"Berliner Weisse",43456,4.29,1198
+"Berliner Weisse",36378,4.27,1057
+"Berliner Weisse",43889,4.23,1132
+"Berliner Weisse",35720,4.22,1564
+"Bohemian Pilsener",429,4.26,996
+"Bohemian Pilsener",3558,4.17,1209
+"Bohemian Pilsener",19589,4.17,653
+"Bohemian Pilsener",98220,4.16,559
+"Bohemian Pilsener",48139,4.14,659
+"Braggot",69407,4.24,160
+"Braggot",2486,4.22,110
+"Braggot",88888,4.21,106
+"Braggot",123309,4.2,102
+"Braggot",12844,4.17,81
+"California Common / Steam Beer",158753,4.26,88
+"California Common / Steam Beer",63,4.23,2761
+"California Common / Steam Beer",44143,4.21,85
+"California Common / Steam Beer",63754,4.18,181
+"California Common / Steam Beer",68960,4.17,161
+"Chile Beer",41702,4.27,1089
+"Chile Beer",77601,4.27,641
+"Chile Beer",75086,4.22,736
+"Chile Beer",85468,4.21,112
+"Chile Beer",354,4.21,393
+"English Bitter",828,4.25,214
+"English Bitter",36672,4.23,664
+"English Bitter",2679,4.21,188
+"English Bitter",1157,4.16,966
+"English Bitter",127724,4.1,302
+"English Brown Ale",576,4.33,2723
+"English Brown Ale",50082,4.27,1010
+"English Brown Ale",639,4.25,766
+"English Brown Ale",47731,4.2,1530
+"English Brown Ale",6,4.18,849
+"English Dark Mild Ale",341,4.23,82
+"English Dark Mild Ale",46504,4.22,368
+"English Dark Mild Ale",86414,4.21,83
+"English Dark Mild Ale",40641,4.19,101
+"English Dark Mild Ale",44377,4.15,274
+"English Oatmeal Stout",46021,4.38,2228
+"English Oatmeal Stout",571,4.37,5438
+"English Oatmeal Stout",56973,4.32,2603
+"English Oatmeal Stout",28877,4.27,1936
+"English Oatmeal Stout",45897,4.21,1979
+"English Old Ale",34313,4.6,1867
+"English Old Ale",945,4.38,2152
+"English Old Ale",1867,4.3,2449
+"English Old Ale",1446,4.24,2012
+"English Old Ale",24905,4.23,3216
+"English Pale Ale",222,4.25,1391
+"English Pale Ale",575,4.24,723
+"English Pale Ale",186,4.19,604
+"English Pale Ale",5653,4.16,699
+"English Pale Ale",1193,4.16,536
+"English Pale Mild Ale",9668,4.24,13
+"English Pale Mild Ale",94081,4.22,18
+"English Pale Mild Ale",139180,4.18,30
+"English Pale Mild Ale",3275,4.17,42
+"English Pale Mild Ale",84762,4.16,13
+"English Porter",572,4.36,2388
+"English Porter",221,4.34,2179
+"English Porter",875,4.32,1319
+"English Porter",116648,4.28,1579
+"English Porter",55861,4.19,723
+"English Stout",86189,4.41,2686
+"English Stout",48194,4.23,376
+"English Stout",77595,4.23,287
+"English Stout",297,4.22,738
+"English Stout",75364,4.19,360
+"English Strong Ale",18698,4.31,1114
+"English Strong Ale",560,4.3,812
+"English Strong Ale",46749,4.28,691
+"English Strong Ale",1630,4.25,326
+"English Strong Ale",199,4.23,1320
+"English Sweet / Milk Stout",128500,4.43,3593
+"English Sweet / Milk Stout",43687,4.33,2703
+"English Sweet / Milk Stout",73,4.3,3717
+"English Sweet / Milk Stout",3434,4.27,4165
+"English Sweet / Milk Stout",2403,4.2,2275
+"European Dark Lager",57285,4.22,216
+"European Dark Lager",1914,4.22,1683
+"European Dark Lager",2940,4.21,140
+"European Dark Lager",1186,4.19,101
+"European Dark Lager",48508,4.11,122
+"European Export / Dortmunder",228,4.29,2282
+"European Export / Dortmunder",42571,4.27,102
+"European Export / Dortmunder",133,4.23,561
+"European Export / Dortmunder",34834,4.19,92
+"European Export / Dortmunder",50443,4.17,290
+"European Pale Lager",246,4.27,259
+"European Pale Lager",449,4.27,472
+"European Pale Lager",778,4.24,447
+"European Pale Lager",3970,4.22,170
+"European Pale Lager",862,4.19,253
+"European Strong Lager",132899,4.43,47
+"European Strong Lager",1996,4.24,38
+"European Strong Lager",86367,4.22,86
+"European Strong Lager",46952,4.2,34
+"European Strong Lager",1967,4.19,36
+"Finnish Sahti",95992,4.38,126
+"Finnish Sahti",45086,4.26,975
+"Finnish Sahti",48250,4.21,77
+"Finnish Sahti",46302,4.19,85
+"Finnish Sahti",80554,4.13,110
+"Flanders Red Ale",50772,4.43,2552
+"Flanders Red Ale",673,4.42,3576
+"Flanders Red Ale",38530,4.38,1757
+"Flanders Red Ale",1745,4.38,3401
+"Flanders Red Ale",54888,4.37,2244
+"Foreign / Export Stout",752,4.3,1663
+"Foreign / Export Stout",10848,4.3,421
+"Foreign / Export Stout",69792,4.27,506
+"Foreign / Export Stout",54076,4.24,715
+"Foreign / Export Stout",1115,4.23,854
+"Fruit and Field Beer",1577,4.48,3294
+"Fruit and Field Beer",1585,4.47,3492
+"Fruit and Field Beer",86172,4.44,2642
+"Fruit and Field Beer",96831,4.41,1337
+"Fruit and Field Beer",25852,4.35,1809
+"German Altbier",49474,4.35,274
+"German Altbier",24042,4.32,487
+"German Altbier",16146,4.29,333
+"German Altbier",273,4.22,829
+"German Altbier",1309,4.21,488
+"German Bock",1352,4.29,490
+"German Bock",14309,4.23,919
+"German Bock",101,4.17,1361
+"German Bock",23942,4.16,278
+"German Bock",127735,4.1,372
+"German Doppelbock",131,4.45,5841
+"German Doppelbock",779,4.32,2231
+"German Doppelbock",4109,4.24,1827
+"German Doppelbock",387,4.23,1505
+"German Doppelbock",99,4.22,1548
+"German Eisbock",90178,4.55,130
+"German Eisbock",11784,4.51,1134
+"German Eisbock",1934,4.4,2249
+"German Eisbock",11582,4.28,785
+"German Eisbock",28944,4.27,146
+"German Hefeweizen",731,4.51,7800
+"German Hefeweizen",132,4.31,1803
+"German Hefeweizen",1946,4.3,3068
+"German Hefeweizen",1256,4.28,2371
+"German Hefeweizen",48434,4.28,2793
+"German Helles",712,4.32,1684
+"German Helles",1944,4.26,423
+"German Helles",3062,4.23,647
+"German Helles",57471,4.22,658
+"German Helles",44531,4.17,501
+"German Kellerbier / Zwickelbier",31549,4.24,256
+"German Kellerbier / Zwickelbier",2412,4.24,226
+"German Kellerbier / Zwickelbier",70188,4.23,154
+"German Kellerbier / Zwickelbier",215147,4.22,263
+"German Kellerbier / Zwickelbier",76571,4.17,513
+"German Kristalweizen",273571,4.29,154
+"German Kristalweizen",760,4.25,1317
+"German Kristalweizen",80745,4.24,368
+"German Kristalweizen",72382,4.22,175
+"German Kristalweizen",2958,4.18,121
+"German Maibock",355,4.25,4325
+"German Maibock",1565,4.25,375
+"German Maibock",3397,4.2,369
+"German Maibock",55243,4.14,334
+"German Maibock",127733,4.12,466
+"German Pilsner",1010,4.27,3518
+"German Pilsner",62989,4.23,973
+"German Pilsner",83473,4.22,1097
+"German Pilsner",409,4.21,732
+"German Pilsner",54904,4.21,1494
+"German Rauchbier",1324,4.35,1071
+"German Rauchbier",727,4.34,1672
+"German Rauchbier",21704,4.34,329
+"German Rauchbier",1018,4.24,448
+"German Rauchbier",71501,4.18,586
+"German Roggenbier",69904,4.25,38
+"German Roggenbier",70832,4.23,49
+"German Roggenbier",57030,4.23,36
+"German Roggenbier",115028,4.16,33
+"German Roggenbier",87218,4.07,34
+"German Schwarzbier",2409,4.27,443
+"German Schwarzbier",96,4.25,623
+"German Schwarzbier",1774,4.25,972
+"German Schwarzbier",54929,4.21,421
+"German Schwarzbier",21300,4.16,808
+"German Weizenbock",224,4.44,4019
+"German Weizenbock",35625,4.38,3121
+"German Weizenbock",37192,4.32,705
+"German Weizenbock",37774,4.29,1028
+"German Weizenbock",1008,4.27,983
+"Herb and Spice Beer",86622,4.5,590
+"Herb and Spice Beer",86621,4.43,1711
+"Herb and Spice Beer",1587,4.24,1807
+"Herb and Spice Beer",24259,4.23,589
+"Herb and Spice Beer",86626,4.22,542
+"Irish Dry Stout",754,4.37,2289
+"Irish Dry Stout",3338,4.33,980
+"Irish Dry Stout",650,4.26,1570
+"Irish Dry Stout",7560,4.25,568
+"Irish Dry Stout",703,4.25,893
+"Irish Red Ale",16520,4.26,655
+"Irish Red Ale",48246,4.25,159
+"Irish Red Ale",5096,4.19,556
+"Irish Red Ale",29602,4.19,531
+"Irish Red Ale",38365,4.15,418
+"Japanese Happoshu",58111,4.19,12
+"Japanese Rice Lager",827,4.41,26
+"Japanese Rice Lager",56919,4.32,40
+"Japanese Rice Lager",17036,4.29,29
+"Japanese Rice Lager",2779,4.29,59
+"Japanese Rice Lager",89760,4.15,36
+"Leipzig Gose",121506,4.45,1030
+"Leipzig Gose",81010,4.32,2174
+"Leipzig Gose",132073,4.21,1000
+"Leipzig Gose",156202,4.21,543
+"Leipzig Gose",99790,4.19,878
+"Low Alcohol Beer",6906,4.51,12
+"Low Alcohol Beer",5333,4.33,12
+"Low Alcohol Beer",7211,4.26,11
+"Munich Dunkel Lager",134,4.22,623
+"Munich Dunkel Lager",8116,4.21,437
+"Munich Dunkel Lager",667,4.21,400
+"Munich Dunkel Lager",1611,4.2,281
+"Munich Dunkel Lager",314,4.15,266
+"New England IPA",16814,4.74,13927
+"New England IPA",86237,4.68,4296
+"New England IPA",58299,4.66,2677
+"New England IPA",88969,4.61,2880
+"New England IPA",111616,4.61,3628
+"Pumpkin Beer",47020,4.41,1189
+"Pumpkin Beer",38394,4.4,5208
+"Pumpkin Beer",32767,4.37,1873
+"Pumpkin Beer",6260,4.25,3636
+"Pumpkin Beer",25880,4.24,1400
+"Robust Porter",7348,4.36,6596
+"Robust Porter",622,4.29,2116
+"Robust Porter",48162,4.21,132
+"Robust Porter",93070,4.19,115
+"Robust Porter",189358,4.16,113
+"Russian Imperial Stout",41815,4.65,6624
+"Russian Imperial Stout",34483,4.46,9178
+"Russian Imperial Stout",21822,4.43,7255
+"Russian Imperial Stout",1160,4.42,7572
+"Russian Imperial Stout",412,4.41,10913
+"Russian Kvass",255879,4.35,12
+"Russian Kvass",37015,4.25,18
+"Russian Kvass",87176,4.17,21
+"Russian Kvass",190558,4.17,14
+"Russian Kvass",257449,4.15,32
+"Rye Beer",56168,4.36,1501
+"Rye Beer",16074,4.32,4277
+"Rye Beer",30502,4.27,1235
+"Rye Beer",16115,4.21,991
+"Rye Beer",76816,4.19,2677
+"Scotch Ale / Wee Heavy",35036,4.45,7556
+"Scotch Ale / Wee Heavy",94714,4.43,1517
+"Scotch Ale / Wee Heavy",402,4.33,1540
+"Scotch Ale / Wee Heavy",7463,4.25,5403
+"Scotch Ale / Wee Heavy",14712,4.23,3567
+"Scottish Ale",1163,4.26,891
+"Scottish Ale",12719,4.24,696
+"Scottish Ale",740,4.23,858
+"Scottish Ale",1159,4.19,1524
+"Scottish Ale",45765,4.13,373
+"Scottish Gruit / Ancient Herbed Ale",98032,4.42,188
+"Scottish Gruit / Ancient Herbed Ale",245,4.23,390
+"Scottish Gruit / Ancient Herbed Ale",243,4.22,275
+"Scottish Gruit / Ancient Herbed Ale",1555,4.19,193
+"Scottish Gruit / Ancient Herbed Ale",102896,4.17,219
+"Smoke Beer",75508,4.29,646
+"Smoke Beer",72720,4.28,200
+"Smoke Beer",79538,4.28,496
+"Smoke Beer",71483,4.22,184
+"Smoke Beer",7697,4.16,594
+"Smoke Porter",1769,4.32,1611
+"Smoke Porter",51483,4.3,643
+"Smoke Porter",90,4.23,2715
+"Smoke Porter",38446,4.22,1195
+"Smoke Porter",36707,4.17,548
+"Vienna Lager",229,4.29,2289
+"Vienna Lager",46793,4.25,303
+"Vienna Lager",104,4.22,3386
+"Vienna Lager",5,4.2,332
+"Vienna Lager",50671,4.15,284
+"Winter Warmer",149554,4.59,913
+"Winter Warmer",1576,4.27,1766
+"Winter Warmer",2081,4.26,879
+"Winter Warmer",2178,4.24,1512
+"Winter Warmer",1881,4.2,1433
