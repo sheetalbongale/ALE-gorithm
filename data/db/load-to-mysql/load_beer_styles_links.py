@@ -33,8 +33,9 @@ df = pd.read_csv("../csv/beer_styles_links.csv").to_sql(
     name=BEERS_TABLENAME1,
     con=engine,
     index=False,
-    dtype = {
-    'beer_style': sqlalchemy.types.String(length=300), 
-    'info_link': sqlalchemy.types.String(length=300), 
-    'image_link': sqlalchemy.types.String(length=300), 
-    })
+    dtype={
+        "beer_style": sqlalchemy.types.String(length=300),
+        "info_link": sqlalchemy.types.String(length=300),
+        "image_link": sqlalchemy.types.String(length=300),
+    },
+)
