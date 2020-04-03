@@ -1,8 +1,7 @@
 function drawCloud() {
-
     
     anychart.onDocumentReady(function() {
-      anychart.data.loadJsonFile(`${category}`, function(beerstyle_data) {
+      anychart.data.loadJsonFile(`category`, function(beerstyle_data) {
         var data =[]
         beerstyle_data.forEach(d =>{
           var datadict={};
@@ -68,3 +67,12 @@ function drawCloud() {
       });
     });
   }
+
+function init() {
+  d3.json(`/category`).then (data =>{
+    drawCloud(data);
+    d3.select('#cloud').html("");
+    })
+}
+
+init();
