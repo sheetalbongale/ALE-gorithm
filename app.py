@@ -8,9 +8,9 @@ import json
 import pandas as pd
 from flask import Response
 
-#################################################
-#       Flask Setup and Database Connection
-#################################################
+################################################################
+#               Flask Setup and Database Connection            #
+################################################################
 app = Flask(__name__)
 
 USER = "root"
@@ -24,15 +24,16 @@ CONN = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
 sql_engine = sql.create_engine(CONN)
 
 
-#################################################
-#                  Flask Routes
-#################################################
+################################################################
+#                        Flask Routes                          #
+################################################################
 @app.route('/')
 def index():
     return render_template('index.html')
 
-
-#-------------- recommender routes --------------#
+#--------------------------------------------------------------#
+#                       recommender routes                     #
+#--------------------------------------------------------------#
 
 @app.route('/recommender.html')
 def recommender():
@@ -56,27 +57,17 @@ def beer_style():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
-
 # selector for beerstyle for gaugechart
-@app.route("/gaugechart/<beerstyle>")
+@app.route("/beerstyle/<beerstyle>")
 def guagechart(beerstyle):
     TABLENAME = 'ba_beerstyles'
     query = f"SELECT * FROM {TABLENAME} WHERE Style = '{beerstyle}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"),mimetype='application/json')
-''''''''''
-# selector for category
-@app.route("/gaugechart/<beerstyle>")
-def selector2(beerstyle):
-    TABLENAME = 'ba_beerstyles'
-    query = f"SELECT * FROM {TABLENAME} WHERE Style = '{beerstyle}'"
-    df = pd.read_sql_query(query, sql_engine)
-    # return json of the dataframe
-    return Response(df.to_json(orient = "records"), mimetype='application/json')
-'''''''''
+
 # route to display top 5 beer recommendations
-@app.route("/dropdown2/<beerstyle>")
+@app.route("/recommender/<beerstyle>")
 def selector(beerstyle):
     TABLENAME1 = 'top_5_beers'
     TABLENAME2 = 'final_beers'
@@ -85,7 +76,7 @@ def selector(beerstyle):
     # return json of the dataframe
     return Response(df.to_json(orient = "records"),mimetype='application/json')
 
-# route fo generate wordcloud for top beerstyles
+# route to generate wordcloud for top beerstyles
 @app.route("/category")
 def top_beerstyles():
     TABLENAME = 'final_beers'
@@ -93,8 +84,8 @@ def top_beerstyles():
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
-#-----------------------------------------------------------------------------------
 
+# route to add beerstyle image
 @app.route("/beer_styles_links")
 def beer_style_links():
     TABLENAME = 'beer_styles_links'
@@ -103,7 +94,9 @@ def beer_style_links():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
-#-------------- dashboard routes --------------#
+#--------------------------------------------------------------#
+#                       dashboard routes                       #
+#--------------------------------------------------------------#
 
 @app.route('/dashboard.html')
 def dashboard():
@@ -133,17 +126,15 @@ def category_data():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
-#-------------- breweries routes --------------#
+#--------------------------------------------------------------#
+#                       breweries routes                       #
+#--------------------------------------------------------------#
 @app.route('/breweries.html')
 def breweries():
     return render_template('breweries.html')
 
-@app.route('/test')
-def tester():
-    return render_template('test.html')
-
-#################################################
-#                  Main
-#################################################
+################################################################
+#                           Main                               #
+################################################################
 if __name__ == '__main__':
     app.run()
