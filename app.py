@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DB_CONN")
 
-sql_engine = sql.create_engine(SQLALCHEMY_DATABASE_URL)
+sql_engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 ################################################################
 #                        Flask Routes                          #
