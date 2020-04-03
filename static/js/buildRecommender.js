@@ -218,7 +218,7 @@ function drawGaugeSRM(beerstyle) {
 }
 
 
-
+// Function to create the description section for beerstyle
 function buildCharts(beerstyle){
     
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e => {
@@ -233,7 +233,12 @@ function buildCharts(beerstyle){
             .text(e.Style)
         cardBody.append("p")
             .classed("card-text", true)
-            .text(e.Description);
+            .text(e.Description)
+        cardBody.append("h4")
+            .classed("glassware", true)
+            .text(e.Glassware);
+
+        
     }))
 
 
@@ -263,10 +268,12 @@ function init() {
         });
         })
 
-        drawGaugeABV();
-        drawGaugeIBU();
-        drawGaugeSRM();
-        buildCharts();
+        const firstStyle = dropdown2Names[1];
+
+        drawGaugeABV(firstStyle);
+        drawGaugeIBU(firstStyle);
+        drawGaugeSRM(firstStyle);
+        buildCharts(firstStyle);
 
     
 }
