@@ -51,9 +51,9 @@ function drawGaugeABV(beerstyle) {
             shapes:[{
                 type: 'path',
                 path: path,
-                fillcolor: '850000',
+                fillcolor: '190707',
                 line: {
-                color: '850000'
+                color: '190707'
                 }
             }],
     
@@ -109,9 +109,9 @@ function drawGaugeIBU(beerstyle) {
         textfont:{
             size : 30,
             },
-        marker: {colors:['rgb(77, 77, 0)','rgb(153, 153, 0)',
-        'rgb(204, 204, 0)', 'rgb(255, 255, 51)', 
-            'rgb(255, 255, 128)','rgba(255, 255, 255, 0)'
+        marker: {colors:['rgb(227, 153, 7)','rgb(224, 164, 45)',
+        'rgb(227, 179, 84)', 'rgb(227, 202, 152)', 
+        'rgb(232, 222, 202)','rgba(255, 255, 255, 0)'
                         ]},
         hoverinfo: 'text',
         hole: .5,
@@ -123,9 +123,9 @@ function drawGaugeIBU(beerstyle) {
         shapes:[{
             type: 'path',
             path: path,
-            fillcolor: '850000',
+            fillcolor: '190707',
             line: {
-                color: '850000'
+                color: '190707'
             }
             }],
 
@@ -174,7 +174,7 @@ function drawGaugeSRM(beerstyle) {
             name: 'SRM %',
             text: e.SRM_avg,
             hoverinfo: 'text+name'},
-        { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50],
+        { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50/5, 50],
         rotation: 90,
         text: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light'],
         textinfo: 'text',
@@ -195,9 +195,9 @@ function drawGaugeSRM(beerstyle) {
         shapes:[{
             type: 'path',
             path: path,
-            fillcolor: 'rgba(44, 160, 101, 0.5)',
+            fillcolor: '190707',
             line: {
-                color: '850000'
+                color: '190707'
             }
             }],
 
@@ -238,6 +238,28 @@ function buildCharts(beerstyle){
             .classed("glassware", true)
             .text(e.Glassware);
 
+        cardBody.append("p")
+            .classed("chosenbeername", true)
+            .text(e.Style);
+        cardBody.append("p")
+            .classed("chosenbeerabvmin", true)
+            .text(e.ABV_min);
+        cardBody.append("p")
+            .classed("chosenbeerabvmax", true)
+            .text(e.ABV_max);
+        cardBody.append("p")
+            .classed("chosenbeeribumin", true)
+            .text(e.IBU_min);
+        cardBody.append("p")
+            .classed("chosenbeeribumax", true)
+            .text(e.IBU_min);
+        cardBody.append("p")
+            .classed("chosenbeersrmmin", true)
+            .text(e.SRM_min);
+        cardBody.append("p")
+            .classed("chosenbeersrmmax", true)
+            .text(e.SRM_min);
+
         
     }))
 
@@ -274,6 +296,7 @@ function init() {
         drawGaugeIBU(firstStyle);
         drawGaugeSRM(firstStyle);
         buildCharts(firstStyle);
+        drawCloud();
 
     
 }
@@ -286,10 +309,14 @@ function optionChangedOne(newCategory) {
 function optionChangedTwo(newBeerstyle) {
     beerstyle = newBeerstyle;
     console.log(beerstyle);
+    d3.select('#description').html(""),
     buildCharts(beerstyle);
+
     drawGaugeABV(beerstyle);
     drawGaugeIBU(beerstyle);
     drawGaugeSRM(beerstyle);
+    d3.select('#cloud').html(""),
+    drawCloud();
                         
 }
 
