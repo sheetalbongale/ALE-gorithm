@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy as sql
+import sqlalchemy as sql
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-import config
 import pymysql
 import json
 import pandas as pd
