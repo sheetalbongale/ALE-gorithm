@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+ 
+<head >
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+ 
+<body>
+    <div id="bar" beerStyle="{{ beerStyle|safe }}" reviewCount="{{ reviewCount|safe }}"></div>
+        <script>
+                    let style = {{ beerStyle|safe }}
+                    let count = {{ reviewCount|safe }}
+                    let trace1 = {
+                        x: count,
+                        y: style,
+                        type: 'bar',
+                        orientation: 'h',
+                        textposition: 'auto',
+                        hoverinfo: 'none',
+                        marker: {
+                                color: 'rgb(255,205,88)',
+                                opacity: 0.4,
+                                line: {
+                                color: 'rgb(255,182,12)',
+                                width: 1.5
+                                }
+                            }
+                        }
+    
+                    var barData = [trace1]
+    
+                    var layout = {
+                                title: 'Top 25 Most Popular Beer Styles',
+                                barmode: 'stack'
+                                }
+    
+                    Plotly.newPlot('bar', barData, layout)
+            </script>
+    
+    </body> 
+    </html>
