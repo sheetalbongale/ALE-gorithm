@@ -5,7 +5,7 @@ function drawMap(data) {
             type: "choropleth",
             locationmode: "USA-states",
             locations: data.map(e => e.abbr),
-            z: data.map(e => e.yearly_barrels),
+            z: data.map(e => parseInt(e.yearly_barrels)),
             text: data.map(e => e.state),
             zmin: 10000,
             zmax: 1500000,
@@ -18,7 +18,7 @@ function drawMap(data) {
             [1, "rgb(84,39,143)"]
             ],
             colorbar: {
-            title: "Barrels per Year",
+            title: "<b>Barrels per Year</b>",
             thickness: 0.7
             },
             marker: {
@@ -31,7 +31,7 @@ function drawMap(data) {
         ];
 
         let layout = {
-        title: "Barrels of Craft Beer Produced per Year",
+        title: "<b>Beer Barrels Produced by State</b>",
         geo: {
             scope: "usa",
             showlakes: true,
@@ -48,7 +48,6 @@ function drawMap(data) {
 //         console.log("Heat Map")
     
 //         drawMap(data);
-//         drawMap2(data)
 //     })
 // }
 
@@ -64,7 +63,7 @@ function drawMap2(data) {
         z: data.map(e => e.breweries),
         text: data.map(e => e.state),
         zmin: 0,
-        zmax: 800,
+        zmax: 500,
         colorscale: [
         [0, "rgb(242,240,247)"],
         [0.2, "rgb(218,218,235)"],
@@ -74,28 +73,28 @@ function drawMap2(data) {
         [1, "rgb(84,39,143)"]
         ],
         colorbar: {
-        title: "Barrels per Year",
+        title: "<b>Brewery Count</b>",
         thickness: 0.7
         },
         marker: {
         line: {
             color: "rgb(255,255,255)",
             width: 2
-        }
-        }
-    },
-    ];
+            }
+            }
+        },
+        ];
     
-    let layout = {
-    title: "Brewery Count by State",
-    geo: {
-        scope: "usa",
-        showlakes: true,
-        lakecolor: "rgb(255,255,255)"
+        let layout = {
+        title: "<b>Breweries by State</b>",
+        geo: {
+            scope: "usa",
+            showlakes: true,
+            lakecolor: "rgb(255,255,255)"
+        }
+        };
+        Plotly.newPlot("heatMap2", plotData, layout, { showLink: false });
     }
-    };
-    Plotly.newPlot("heatMap2", plotData, layout, { showLink: false });
-}
 
 
 function init() {
