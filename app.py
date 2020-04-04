@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import sqlalchemy as sql
+from flask_sqlalchemy import SQLAlchemy as sql
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import config
@@ -146,4 +146,4 @@ def breweries():
 #                           Main                               #
 ################################################################
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
