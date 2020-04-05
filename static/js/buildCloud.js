@@ -14,7 +14,7 @@ function drawCloud() {
   
         var dataSet = anychart.data.set(data);
 
-        var colors = anychart.scales.ordinalColor().colors(['#000000','#FFA500','#808000', '#8B4513','#DAA520', '#4B0082','#FFD700', '#483D8B', '#f18126', '#3b8ad8', '#60727b', '#e24b26', '#26959f', '#8B0000', ]);
+        var colors = anychart.scales.ordinalColor().colors(['#000000','#FFA500','#808000', '#8B4513','#DAA520', '#4B0082','#FFD700', '#483D8B', '#f18126', '#3b8ad8', '#60727b', '#2E8B57', '#26959f', '#8B0000', ]);
 
         // create tag cloud
         var chart = anychart.tagCloud();
