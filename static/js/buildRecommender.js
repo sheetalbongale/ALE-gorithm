@@ -24,7 +24,7 @@ function drawGaugeABV(beerstyle) {
     
             let trace = [{ type: 'scatter',
             x: [0], y:[0],
-            marker: {size: 28, color:'850000'},
+            marker: {size: 28, color:'190707'},
             showlegend: false,
             name: 'ABV %',
             text: e.ABV_avg,
@@ -96,7 +96,7 @@ function drawGaugeIBU(beerstyle) {
 
         let trace = [{ type: 'scatter',
             x: [0], y:[0],
-            marker: {size: 28, color:'850000'},
+            marker: {size: 28, color:'190707'},
             showlegend: false,
             name: 'IBU %',
             text: e.IBU_avg,
@@ -169,7 +169,7 @@ function drawGaugeSRM(beerstyle) {
 
         let trace = [{ type: 'scatter',
             x: [0], y:[0],
-            marker: {size: 28, color:'850000'},
+            marker: {size: 28, color:'190707'},
             showlegend: false,
             name: 'SRM %',
             text: e.SRM_avg,
@@ -296,8 +296,6 @@ function init() {
         drawGaugeIBU(firstStyle);
         drawGaugeSRM(firstStyle);
         buildCharts(firstStyle);
-        drawCloud();
-
     
 }
 
@@ -315,8 +313,7 @@ function optionChangedTwo(newBeerstyle) {
     drawGaugeABV(beerstyle);
     drawGaugeIBU(beerstyle);
     drawGaugeSRM(beerstyle);
-    d3.select('#cloud').html(""),
-    drawCloud();
+
                         
 }
 
