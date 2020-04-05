@@ -20,9 +20,8 @@
         <link rel="stylesheet" href="../static/css/noscript.css" />
     </noscript>
     <!-- Anychart -->
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js" />
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css" />
-
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
 
     <!-- Jinja2 format to refer to css file
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
@@ -39,7 +38,7 @@
                 <li><a href="recommender.html"><i class="fa fa-beer" aria-hidden="true"></i> Beer Recommender &nbsp;</a></li>
                 <li><a href="dashboard.html"><i class="fa fa-th"></i> Beer Dashboard &nbsp;</a></li>
                 <li><a href="breweries.html"><i class="fa fa-search" aria-hidden="true"></i> Find Breweries &nbsp;</a></li>
-                <li><a href="team.html"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
+                <li><a href="#team"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
             </ul>
         </nav>
     </header>
@@ -70,20 +69,20 @@
     </section>
     <br>
     <div id="chosenbeer">
-        
+
     </div>
     <br>
-    <h3 class="title text-center">Know more about this Beer Style</h3>
+    <h3 class="title text-center">Good Choice! Know more about this Beer Style</h3>
 
     <!-- Description about the selected Beer Style -->
-    
+
     <div class="container-fluid" id="description" style="padding: 30px;">
         <div class="row">
             <div class="card-deck">
                 <div class="col-lg-8 col-md">
                     <div id="description" class="card bg-default mb-3" style="max-width: 20rem;">
                         <div class="card-body text-center">
-                            <h2 class="card-title text-center">Good Choice! You have chosen</h2>
+                            <h2 class="card-title text-center">You have chosen</h2>
                             <h4 class="card-title"></h4>
                             <p class="card-text"></p>
                         </div>
@@ -91,43 +90,48 @@
                 </div>
                 <div class="col-lg-4 col-md">
                     <div id="description" class="card bg-default mb-3"></div>
-                        <div class="card-body text-center">
-                            <h5 class="card-text">Min ABV  </h5><p class="chosenbeerabvmin"></p>
-                            
-                            <h5 class="card-text">Max ABV  </h5><p class="chosenbeerabvmax"></p>
-                            <br>
-                            <h5 class="card-text">Min IBU  </h5><p class="chosenbeeribumin"></p>
-                            
-                            <h5 class="card-text">Max IBU  </h5><p class="chosenbeeribumax"></p>
-                            <br>
-                            <h5 class="card-text">Min SRM  </h5><p class="chosenbeersrmmin"></p>
-                            
-                            <h5 class="card-text">Max SRM  </h5><p class="chosenbeersrmmax"></p>
-                        </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-text">Min ABV  </h5>
+                        <p class="chosenbeerabvmin"></p>
+
+                        <h5 class="card-text">Max ABV  </h5>
+                        <p class="chosenbeerabvmax"></p>
+                        <br>
+                        <h5 class="card-text">Min IBU  </h5>
+                        <p class="chosenbeeribumin"></p>
+
+                        <h5 class="card-text">Max IBU  </h5>
+                        <p class="chosenbeeribumax"></p>
+                        <br>
+                        <h5 class="card-text">Min SRM  </h5>
+                        <p class="chosenbeersrmmin"></p>
+
+                        <h5 class="card-text">Max SRM  </h5>
+                        <p class="chosenbeersrmmax"></p>
                     </div>
                 </div>
-            </div>                
+            </div>
         </div>
     </div>
-    <br>
+
     <!-- Gauge Charts -->
-    <div class="container">
+    <div class="container-fluid" style="padding: 30px;">
+
         <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-lg col-md-3">
                 <div id="gauge_abv"></div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg col-md-3">
                 <div id="gauge_ibu"></div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg col-md-3">
                 <div id="gauge_srm"></div>
             </div>
         </div>
     </div>
-
 
     <!-- Card deck -->
     <h4 class="title text-center">Our Beer Recommendations based on your selection</h4>
@@ -182,12 +186,14 @@
             </div>
         </div>
     </div>
-    
-
+    <hr>
+    <br>
     <!-- Word CLoud-->
-    <div class="container-fluid" id="cloud-section">
+    <h2 class="title text-center">Beer Styles that are consistently popular</h2>
+    <div class="container-fluid" id="cloud" style="padding: 30px;">
+        <hr class="my-4">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg">
                 <div id="cloud"></div>
             </div>
         </div>
@@ -227,16 +233,14 @@
     <script src="../static/js/breakpoints.min.js"></script>
     <script src="../static/js/util.js"></script>
     <script src="../static/js/main.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-bundle.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-ui.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-tag-cloud.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
     <!--script src="{{ url_for('static', filename='js/drawGauge_abv.js') }}"></script-->
     <script src="../static/js/buildRecommender.js"></script>
     <script src="../static/js/buildCloud.js"></script>
-
 
 </body>
 
