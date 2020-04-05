@@ -2,27 +2,27 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ale-gorithm Project</title>
-  
-  <!-- Favicons -->
-  <link href="../static/img/favicon1.png" rel="icon">
-  <!-- Bootstrap CSS File -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css">
-  <!-- Main Stylesheet File -->
-  <link rel="stylesheet" href="../static/css/main.css"/>
-  <!-- Font-awesome  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- No Script CSS  -->
-  <noscript><link rel="stylesheet" href="../static/css/noscript.css" /></noscript>
-  
-  <!-- Jinja2 format to refer to css file
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  -->
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ale-gorithm Project</title>
 
+    <!-- Favicons -->
+    <link href="../static/img/favicon1.png" rel="icon">
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css">
+    <!-- Main Stylesheet File -->
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <!-- Font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- No Script CSS  -->
+    <noscript>
+        <link rel="stylesheet" href="../static/css/noscript.css" />
+    </noscript>
+
+    <!-- Jinja2 format to refer to css file
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+</head>
 
 <body class="is-preload">
 
@@ -34,24 +34,27 @@
                 <li><a href="recommender.html"><i class="fa fa-beer" aria-hidden="true"></i> Beer Recommender &nbsp;</a></li>
                 <li><a href="dashboard.html"><i class="fa fa-th"></i> Beer Dashboard &nbsp;</a></li>
                 <li><a href="breweries.html"><i class="fa fa-search" aria-hidden="true"></i> Find Breweries &nbsp;</a></li>
-                <li><a href="team.html"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
+                <li><a href="index.html"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- ABV IBU SRM -->
     <content>
-        
+
         <div class="container-fluid" style="padding: 20px;">
-        <p><strong>Reference Method (SRM):</strong> Provides a numerical range representing the color of a beer. The common range is 2-50. The higher the SRM, the darker the beer. SRM represents the absorption of specific wavelengths of light. It provides an analytical method that brewers use to measure and quantify the color of a beer. The SRM concept was originally published by the American Society of Brewing Chemists.
-            <br>Examples: Very Light (1-1.5), Straw (2-3 SRM), Pale (4), Gold (5-6), Light Amber (7), Amber (8), Medium Amber (9), Copper/Garnet (10-12), Light Brown (13-15), Brown/Reddish Brown/Chestnut Brown (16-17), Dark Brown (18-24), Very Dark (25-39), Black (40+)</p>
-        <p><strong>Alcohol By Volume (ABV):</strong> A measurement of the alcohol content in terms of the percentage volume of alcohol per volume of beer. Caution: This measurement is always higher than Alcohol by Weight (not included in this guide). To calculate the approximate volumetric alcohol content, subtract FG from OG and divide by 0.0075.
-            <br>Example: OG = 1.050, FG = 1.012 ABV = (1.050 – 1.012) / 0.0075 ABV = 0.038 / 0.0075 ABV = 5.067 ABV = 5% (approximately)</p>
-        <p><strong>International Bitterness Units (IBUs):</strong> 1 bitterness unit = 1 milligram of isomerized (exposed to heat) hop alpha acids in one liter of beer. Can range from 0 (lowest—no bitterness) to above 100 IBUs. Usually the general population cannot perceive bitterness above or below a specific range of IBUs (said to be below 8 and above 80 IBUs by some sources).</p>
-        
+            <p><strong>Reference Method (SRM):</strong> Provides a numerical range representing the color of a beer. The common range is 2-50. The higher the SRM, the darker the beer. SRM represents the absorption of specific wavelengths of light. It provides an analytical method that brewers use to measure and quantify the color of a beer. The SRM concept was originally published by the American Society of Brewing Chemists.
+                <br>Examples: Very Light (1-1.5), Straw (2-3 SRM), Pale (4), Gold (5-6), Light Amber (7), Amber (8), Medium Amber (9), Copper/Garnet (10-12), Light Brown (13-15), Brown/Reddish Brown/Chestnut Brown (16-17), Dark Brown (18-24), Very Dark (25-39), Black (40+)</p>
+            <p><strong>Alcohol By Volume (ABV):</strong> A measurement of the alcohol content in terms of the percentage volume of alcohol per volume of beer. Caution: This measurement is always higher than Alcohol by Weight (not included in this guide). To calculate the approximate volumetric alcohol content, subtract FG from OG and divide by 0.0075.
+                <br>Example: OG = 1.050, FG = 1.012 ABV = (1.050 – 1.012) / 0.0075 ABV = 0.038 / 0.0075 ABV = 5.067 ABV = 5% (approximately)</p>
+            <p><strong>International Bitterness Units (IBUs):</strong> 1 bitterness unit = 1 milligram of isomerized (exposed to heat) hop alpha acids in one liter of beer. Can range from 0 (lowest—no bitterness) to above 100 IBUs. Usually the general population cannot perceive bitterness above or below a specific range of IBUs (said to be below 8 and above 80 IBUs by some sources).</p>
+
         </div>
     </content>
-    
+
     <hr>
-    <div class="container" >
+    <!-- US Barrels Map Chart for Top 25 Beer Styles -->
+    <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <div id="heatMap"></div>
@@ -62,64 +65,65 @@
                 </div>
             <div class="col-md-4">
                 <div class="jumbotron">
-                    <p>A Left Hand Milk Stout<br>The Busch requires assistance from a chain saw. When you see the Corona, it means that a carelessly loose hops ruminates. 
+                    <p>A Left Hand Milk Stout
+                        <br>The Busch requires assistance from a chain saw. When you see the Corona, it means that a carelessly loose hops ruminates.
                     </p>
                 </div>
             </div>
         </div>
-        
+
+        <!-- Bar Chart for Top 25 Beer Styles -->
         <div class="row">
-            <div class="col-md-6">
-                <div id="chart3"></div>
-            </div>
-            <div class="col-md-6">
-                <div id="chart4"></div>
+            <div class="col-md-12">
+                <div id="barchart"></div>
             </div>
         </div>
+
         <div class="container">
-        <img src="../static/img/brewing.jpg">
+            <img src="../static/img/brewing.jpg">
         </div>
     </div>
 
-    
+    <!-- Footer -->
+    <footer id="footer">
 
+        <!-- GitHub -->
+        <ul class="icons">
 
+            <li>
+                <a href="#" class="fa fa-lg fa-github"></a>
+            </li>
+            <li>Git-Hub Repository</li>
+        </ul>
 
-<!-- Footer -->
-<footer id="footer">
+        <ul class="menu">
+            <li>&copy; Ale-gorithm 2020</li>
+            <li>Group 3</li>
+            <li>UT Data Analysis and Visualization Bootcamp</a>
+            </li>
+        </ul>
 
-    <!-- GitHub -->
-    <ul class="icons">
-        
-        <li><a href="#" class="fa fa-lg fa-github"></a></li><li>Git-Hub Repository</li>
-    </ul>
+    </footer>
 
-    <ul class="menu">
-        <li>&copy; Ale-gorithm 2020</li><li>Group 3</li><li>UT Data Analysis and Visualization Bootcamp</a></li>
-    </ul>
-
-</footer>
-
-<!-- Scripts -->
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<!-- Custom scripts for this template -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="../static/js/jquery.min.js"></script>
-<script src="../static/js/jquery.poptrox.min.js"></script>
-<script src="../static/js/jquery.scrolly.min.js"></script>
-<script src="../static/js/jquery.scrollex.min.js"></script>
-<script src="../static/js/browser.min.js"></script>
-<script src="../static/js/breakpoints.min.js"></script>
-<script src="../static/js/util.js"></script>
-<script src="../static/js/main.js"></script>
-<script src="../static/js/drawMap.js"></script>
-
+    <!-- Scripts -->
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Custom scripts for this template -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.poptrox.min.js"></script>
+    <script src="../static/js/jquery.scrolly.min.js"></script>
+    <script src="../static/js/jquery.scrollex.min.js"></script>
+    <script src="../static/js/browser.min.js"></script>
+    <script src="../static/js/breakpoints.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/drawMap.js"></script>
+    <script src="../static/js/drawBar.js"></script>
 
 </body>
+
 </html>
-
-
