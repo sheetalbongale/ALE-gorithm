@@ -58,21 +58,21 @@ function drawScatter(data) {
   // Build xText details (css class)
   xText.append("text")
     .attr("y", -19)
-    .attr("data-name", data.map(e => e.ABV_avg))
+    .attr("data-name", "ABV_avg")
     .attr("data-axis", "x")
     .attr("class", "aText active x")
     .text("ABV");
 
   xText.append("text")
     .attr("y", 0)
-    .attr("data-name", data.map(e => e.ABV_avg))
+    .attr("data-name", "IBU_avg")
     .attr("data-axis", "x")
     .attr("class", "aText inactive x")
     .text("IBU");
 
   xText.append("text")
     .attr("y", 19)
-    .attr("data-name", data.map(e => e.ABV_avg))
+    .attr("data-name", "SRM_avg")
     .attr("data-axis", "x")
     .attr("class", "aText inactive x")
     .text("SRM");
@@ -94,21 +94,21 @@ function drawScatter(data) {
   // Build yText details (css class)
   yText.append("text")
     .attr("y", -22)
-    .attr("data-name", data.map(e => e.ABV_avg))
+    .attr("data-name", "ABV_avg")
     .attr("data-axis", "y")
     .attr("class", "aText active y")
     .text("ABV");
 
   yText.append("text")
     .attr("y", 0)
-    .attr("data-name", data.map(e => e.ABV_avg))
+    .attr("data-name", "IBU_avg")
     .attr("data-axis", "y")
     .attr("class", "aText inactive y")
     .text("IBU");
 
   yText.append("text")
     .attr("y", 22)
-    .attr("data-name", data.map(e => e.ABV_avg))
+    .attr("data-name", "SRM_avg")
     .attr("data-axis", "y")
     .attr("class", "aText inactive y")
     .text("SRM");
@@ -163,8 +163,8 @@ function drawScatter(data) {
     var yMax;
 
     // Current X & Y default selections
-    var currentX = "ABV (avg)";
-    var currentY = "SRM (avg)";
+    var currentX = "ABV_avg";
+    var currentY = "SRM_avg";
 
 
     var z = d3.scaleSqrt()
@@ -239,19 +239,8 @@ function drawScatter(data) {
       .on("mouseover", highlight)
       .on("mouseleave", noHighlight)
 
-    // Add labels beside legend dots
-    svg.selectAll("mylabels")
-      .data(allgroups)
-      .enter()
-      .append("text")
-      .attr("x", 690 + size * .8)
-      .attr("y", function (d, i) { return i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
-      .style("fill", function (d) { return myColor(d) })
-      .text(function (d) { return d })
-      .attr("text-anchor", "left")
-      .style("alignment-baseline", "middle")
-      .on("mouseover", highlight)
-      .on("mouseleave", noHighlight)
+  // Add labels beside legend dots
+
 
 
     // Tool Tip info box (state, X stats,  Y stats)
@@ -263,7 +252,7 @@ function drawScatter(data) {
         var Category = `<div>${d.Category}</div>`;
         var StyleLine = `<div>${d.Style}</div>`;
         var yLine = `<div>${currentY}: ${d[currentY]}%</div>`;
-        if (currentX === "ABV (avg)") {
+        if (currentX === "ABV_avg") {
           xLine = `<div>${currentX}: ${d[currentX]}%</div>`
         }
         else {
@@ -443,7 +432,7 @@ function drawScatter(data) {
             .call(xAxis);
 
           // Update location of the circles
-          d3.selectAll("circle").each(function () {
+          d3.selectAll(".stateCircle").each(function () {
             d3.select(this)
               .transition().duration(800)
               .attr("cx", function (d) {
@@ -475,7 +464,7 @@ function drawScatter(data) {
             .call(yAxis);
 
           // Update location of the circles
-          d3.selectAll("circle").each(function () {
+          d3.selectAll(".stateCircle").each(function () {
             d3.select(this)
               .transition().duration(800)
               .attr("cy", function (d) {

@@ -19,6 +19,8 @@
     <noscript>
         <link rel="stylesheet" href="../static/css/noscript.css" />
     </noscript>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/d3Style.css')}}">
 
     <!-- Jinja2 format to refer to css file
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
@@ -67,6 +69,7 @@
                 </div>
             </div>
         </div>
+        <div id="scatter"></div>
 
         <!-- Bar Chart for Top 25 Beer Styles -->
         <div class="row">
@@ -108,6 +111,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- Custom scripts for this template -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/jquery.poptrox.min.js"></script>
@@ -119,6 +123,7 @@
     <script src="../static/js/main.js"></script>
     <script src="../static/js/drawMap.js"></script>
     <script src="../static/js/drawBar.js"></script>
+    <script src="../static/js/drawScatter.js"></script>
 
 </body>
 
