@@ -19,8 +19,8 @@
     <noscript>
         <link rel="stylesheet" href="../static/css/noscript.css" />
     </noscript>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/d3Style.css')}}">
 
     <!-- Jinja2 format to refer to css file
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
@@ -59,6 +59,21 @@
             <hr>
         </div>
     </content>
+
+    <!-- US Breweries and Barrels Map Chart - BUTTON TOGGLE -->
+    <div class="container-fluid">
+
+        <div class="row center align-items-center" id="button">
+            <div class="col-md-12">
+
+            <button id="map1-btn" class="btn btn-outline-primary">Brewery Count per State</button>
+            <button id="map2-btn" class="btn btn-outline-primary">Beer Barrels per State</button>
+            </div>
+        </div>
+        <div id="heatMap"></div>
+
+    </div>
+
 
     <!-- BOOTSWATCH CARD SCROLL -->
     <div class="row">
@@ -152,6 +167,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
         <div id="scatter"></div>
 
         <!-- US Barrels Map Chart for Top 25 Beer Styles -->
@@ -218,9 +235,6 @@
     <!-- Custom scripts for this template -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
-    <script src="https://d3js.org/d3-color.v1.min.js"></script>
-    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/jquery.poptrox.min.js"></script>
