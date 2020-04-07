@@ -29,14 +29,25 @@
 
     <!-- Nav-Bar Header - Copy paste for every page-->
     <header id="header">
-        <h1><a href="#intro"><img src="../static/img/logo.png" style="width: 15%;"></h1>
-        <nav>
-            <ul>
+        <h1><a href="#intro"><img src="../static/img/logo.png" style="width: 15%; position: fixed;"></h1>
+        <nav class="navbar navbar-expand-lg navbar-fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+               
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                
+            </button>
+           
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="recommender.html"><i class="fa fa-beer" aria-hidden="true"></i> Beer Recommender &nbsp;</a></li>
                 <li><a href="dashboard.html"><i class="fa fa-th"></i> Beer Dashboard &nbsp;</a></li>
                 <li><a href="breweries.html"><i class="fa fa-search" aria-hidden="true"></i> Find Breweries &nbsp;</a></li>
                 <li><a href="#team"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
             </ul>
+            </div>
         </nav>
     </header>
 
@@ -75,7 +86,7 @@
                 <h2>Beer Recommender</h2>
             </header>
             <p>Are you a beer connoisseur? Or even new to the #beerlife experience? No matter what your level of expertise is,
-                <br>if you love to partake in a nice "cold one", then check out the recommender page.
+                if you love to partake in a nice "cold one", then check out the recommender page.
                 <br>We have scanned over a million beers and will match you to the top beers that best suit your palette.</p>
             <a href="recommender.html">
                 <button type="button center" class="btn btn-primary"> Click here! </button>
@@ -191,16 +202,15 @@
                         <a href="https://github.com/sheetalbongale" class="fa fa-lg fa-github"></a>
 
                     </div>
-                    <br>
-                    <br>
                 </div>
                 <!-- col-lg col-md-6 -->
             </div>
         </div>
     </section>
 
+    <h2 class="align-items-center centered">What's your favorite beer or beerstyle?🍺Tell us!</h2>
     <!-- begin wwww.htmlcommentbox.com -->
-    <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">What's your favorite beer or beerstyle? 🍺Tell us!</a> is loading comments...</div>
+    <div id="HCB_comment_box" style="padding-left: 10%; padding-right: 10%;"><a href="http://www.htmlcommentbox.com"></a> is loading comments...</div>
     <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
     <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sc12FQHJQLeK6s0uFv2wa%2F"+"&opts=16862&num=10&ts=1586137988264");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
     <!-- end www.htmlcommentbox.com -->

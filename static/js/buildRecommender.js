@@ -3,7 +3,7 @@ function drawGaugeABV(beerstyle) {
 
         d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-            let degree = parseFloat(e.ABV_avg) * (180/11);
+            let degree = parseInt(e.ABV_avg) * (180/11);
     
             let level = degree;
     
@@ -75,7 +75,7 @@ function drawGaugeABV(beerstyle) {
 
 function drawGaugeIBU(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
-        let degree = parseFloat(e.IBU_avg) * (180/11);
+        let degree = parseInt(e.IBU_avg) * (180/11);
 
         let level = degree;
 
@@ -103,7 +103,7 @@ function drawGaugeIBU(beerstyle) {
             hoverinfo: 'text+name'},
         { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50],
         rotation: 90,
-        text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}',''],
+        text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}'],
         textinfo: 'text',
         textposition:'inside',
         textfont:{
@@ -148,7 +148,7 @@ function drawGaugeIBU(beerstyle) {
 function drawGaugeSRM(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-        let degree = parseFloat(e.SRM_avg) * (180/11);
+        let degree = parseInt(e.SRM_avg) * (180/11);
 
         let level = degree;
 
@@ -174,7 +174,7 @@ function drawGaugeSRM(beerstyle) {
             name: 'SRM %',
             text: e.SRM_avg,
             hoverinfo: 'text+name'},
-        { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50/5, 50],
+        { values: [50/6, 50/6, 50/6, 50/6, 50/6, 50/6, 50],
         rotation: 90,
         text: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light'],
         textinfo: 'text',
@@ -266,6 +266,29 @@ function buildCharts(beerstyle){
 
     };
 
+    function buildRecommender(beerstyle){
+    
+        d3.json(`/recommender/${beerstyle}`).then(data => data.forEach(e => {
+            console.log(data)
+            let cardBody = d3.select("#top5")
+                .append("div")
+                .classed("card", true)
+                .append("div")
+                .classed("card-body", true)
+            cardBody.append("h4")
+                .classed("card-title", true)
+                .text(e.beer_name)
+            cardBody.append("h6")
+                .classed("card-subtitle mb-2 text-muted", true)
+                .text(e.brewery_name)
+            cardBody.append("p")
+                .classed("abv", true)
+                .text(e.abv);
+            }))
+
+
+        };
+
 
 //-----------------FUNCTION INITIATOR-----------------//
 function init() {
@@ -296,6 +319,7 @@ function init() {
         drawGaugeIBU(firstStyle);
         drawGaugeSRM(firstStyle);
         buildCharts(firstStyle);
+        buildRecommender(firstStyle);
     
 }
 
@@ -313,6 +337,8 @@ function optionChangedTwo(newBeerstyle) {
     drawGaugeABV(beerstyle);
     drawGaugeIBU(beerstyle);
     drawGaugeSRM(beerstyle);
+    d3.select('#recommender').html(""),
+    buildRecommender(beerstyle);
 
                         
 }

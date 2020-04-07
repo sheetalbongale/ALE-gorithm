@@ -19,6 +19,8 @@
     <noscript>
         <link rel="stylesheet" href="../static/css/noscript.css" />
     </noscript>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/d3Style.css')}}">
 
     <!-- Jinja2 format to refer to css file
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
@@ -57,6 +59,21 @@
             <hr>
         </div>
     </content>
+
+    <!-- US Breweries and Barrels Map Chart - BUTTON TOGGLE -->
+    <div class="container-fluid">
+
+        <div class="row center align-items-center" id="button">
+            <div class="col-md-12">
+
+            <button id="map1-btn" class="btn btn-outline-primary">Brewery Count per State</button>
+            <button id="map2-btn" class="btn btn-outline-primary">Beer Barrels per State</button>
+            </div>
+        </div>
+        <div id="heatMap"></div>
+
+    </div>
+
 
     <!-- BOOTSWATCH CARD SCROLL -->
     <div class="row">
@@ -150,6 +167,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+        <div id="scatter"></div>
 
         <!-- US Barrels Map Chart for Top 25 Beer Styles -->
         <div class="container">
@@ -180,46 +200,53 @@
                     <img src="../static/img/brewing.jpg">
                 </div>
             </div>
+          
+        <div class="container">
+            <img src="../static/img/brewing.jpg">
+        </div>
+    </div>
 
-            <!-- Footer -->
-            <footer id="footer">
+    <!-- Footer -->
+    <footer id="footer">
 
-                <!-- GitHub -->
-                <ul class="icons">
+        <!-- GitHub -->
+        <ul class="icons">
 
-                    <li>
-                        <a href="#" class="fa fa-lg fa-github"></a>
-                    </li>
-                    <li>Git-Hub Repository</li>
-                </ul>
+            <li>
+                <a href="https://github.com/sheetalbongale/ALE-gorithm" class="fa fa-lg fa-github"></a>
+            </li>
+            <li>Git-Hub Repository</li>
+        </ul>
 
-                <ul class="menu">
-                    <li>&copy; Ale-gorithm 2020</li>
-                    <li>Group 3</li>
-                    <li>UT Data Analysis and Visualization Bootcamp</a>
-                    </li>
-                </ul>
+        <ul class="menu">
+            <li>&copy; Ale-gorithm 2020</li>
+            <li>Group 3</li>
+            <li>UT Data Analysis and Visualization Bootcamp</a>
+            </li>
+        </ul>
 
-            </footer>
+    </footer>
 
-            <!-- Scripts -->
-            <!-- JavaScript Libraries -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-            <!-- Custom scripts for this template -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-            <script src="../static/js/jquery.min.js"></script>
-            <script src="../static/js/jquery.poptrox.min.js"></script>
-            <script src="../static/js/jquery.scrolly.min.js"></script>
-            <script src="../static/js/jquery.scrollex.min.js"></script>
-            <script src="../static/js/browser.min.js"></script>
-            <script src="../static/js/breakpoints.min.js"></script>
-            <script src="../static/js/util.js"></script>
-            <script src="../static/js/main.js"></script>
-            <script src="../static/js/drawMap.js"></script>
-            <script src="../static/js/drawBar.js"></script>
+    <!-- Scripts -->
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Custom scripts for this template -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.poptrox.min.js"></script>
+    <script src="../static/js/jquery.scrolly.min.js"></script>
+    <script src="../static/js/jquery.scrollex.min.js"></script>
+    <script src="../static/js/browser.min.js"></script>
+    <script src="../static/js/breakpoints.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/drawMap.js"></script>
+    <script src="../static/js/drawBar.js"></script>
+    <script src="../static/js/drawScatter.js"></script>
 
 </body>
 
