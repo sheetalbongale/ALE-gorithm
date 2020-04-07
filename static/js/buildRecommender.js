@@ -279,7 +279,7 @@ function buildCharts(beerstyle){
                 .classed("card-title", true)
                 .text(e.beer_name)
             cardBody.append("h6")
-                .classed("card-text", true)
+                .classed("card-subtitle mb-2 text-muted", true)
                 .text(e.brewery_name)
             cardBody.append("p")
                 .classed("abv", true)
