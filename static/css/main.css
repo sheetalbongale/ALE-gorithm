@@ -2270,7 +2270,6 @@ input, select, textarea {
 		background-position: top left, center center;
 	}
 
-	
 	  
 /* images */
 
@@ -2304,6 +2303,7 @@ input, select, textarea {
 			margin: 0;
 			padding: 0;
 		}
+
 		.aText {
 			font-family: sans-serif;
 			font-size: 18px;
@@ -2371,3 +2371,4 @@ input, select, textarea {
 			text-anchor: middle;
 			font-size: 0.75em;
 		  }
+

@@ -23,7 +23,27 @@ function drawBar(data){
     
                     let layout = {
                                 title: 'Top 25 Most Popular Beer Styles',
-                                barmode: 'stack'
+                                barmode: 'stack',
+                                showlegend:false,
+                                yaxis: {
+                                  autorange: 'reversed',
+                                  showticklabels: true,
+                                  side: 'left',
+                                  fixedrange:true,
+                                  automargin: true,
+                                  tickfont: {
+                                      size: 9
+                                    }
+                                },
+                                xaxis: {
+                                  fixedrange: true,
+                                  showline: true,
+                                  tickformat: 'g',
+                                //   title: 'Review Count',
+                                  tickfont: {
+                                    size: 9
+                                  }
+                                }
                                 };
     
                     Plotly.newPlot('barchart', barData, layout, { showLink: false });
