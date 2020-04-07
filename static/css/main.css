@@ -2371,4 +2371,59 @@ input, select, textarea {
 			text-anchor: middle;
 			font-size: 0.75em;
 		  }
+<<<<<<< HEAD
+		  .header{
+			margin-top: 0;
+			font-family: 'Roboto Condensed', sans-serif;
+			background: #e69806da;
+			color: white;
+			padding:20px;
+			padding-left: 60px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+		  }
+		  .title{
+			margin-top: 20px;
+		  }
+		  
+		  .iframeContainer {
+			padding: 20px;
+			border: 1px solid #e3e3e3;
+		  }
+		  
+		  /* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+		  html {
+			position: relative;
+			min-height: 100%;
+		  }
+		  
+		  body {
+			font-family: 'Playfair Display', serif;
+			background-image: url("../../images/background.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: bottom;
+			
+			/* Padding bottom by footer height */
+			padding-bottom: 80px;
+		  }
+		  
+		  #footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%; /* Set the fixed height of the footer here */
+			height: 10px;
+			padding-top: 20px;
+			padding-bottom: 40px;
+			text-align: center;
+			background-color: #f5f5f5;
+			opacity: 0.4;
+		  }
+		  
+		  #footer p {
+			margin: 0;
+			font-size: 16px;
+		  }		  
+=======
 
+>>>>>>> 29941df77f835d9f3a0c20954c3a0159e77ac359
