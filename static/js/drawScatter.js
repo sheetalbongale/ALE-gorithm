@@ -179,8 +179,8 @@ function drawScatter(data) {
 
     // Add legend: circles
     var valuesToShow = [10000000, 100000000, 1000000000]
-    var xCircle = 890
-    var xLabel = 940
+    var xCircle = 390
+    var xLabel = 440
     //  svg
     //    .selectAll("legend")
     //    .data(valuesToShow)
@@ -232,7 +232,7 @@ function drawScatter(data) {
       .data(allgroups)
       .enter()
       .append("circle")
-      .attr("cx", 690)
+      .attr("cx", 590)
       .attr("cy", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
       .attr("r", 7)
       .style("fill", function (d) { return myColor(d) })
@@ -280,7 +280,7 @@ function drawScatter(data) {
         .data(allgroups)
         .enter()
         .append("circle")
-        .attr("cx", 690)
+        .attr("cx", 590)
         .attr("cy", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("r", 7)
         .style("fill", function (d) { return myColor(d) })
