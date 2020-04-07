@@ -270,7 +270,7 @@ function buildCharts(beerstyle){
     
         d3.json(`/recommender/${beerstyle}`).then(data => data.forEach(e => {
             console.log(data)
-            let cardBody = d3.select("#recommender")
+            let cardBody = d3.select("#top5")
                 .append("div")
                 .classed("card", true)
                 .append("div")
