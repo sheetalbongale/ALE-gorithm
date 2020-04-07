@@ -21,6 +21,9 @@
     </noscript>
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/d3Style.css')}}">
+    <!-- Anychart -->
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
 
     <!-- Jinja2 format to refer to css file
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
@@ -36,7 +39,7 @@
                 <li><a href="recommender.html"><i class="fa fa-beer" aria-hidden="true"></i> Beer Recommender &nbsp;</a></li>
                 <li><a href="dashboard.html"><i class="fa fa-th"></i> Beer Dashboard &nbsp;</a></li>
                 <li><a href="breweries.html"><i class="fa fa-search" aria-hidden="true"></i> Find Breweries &nbsp;</a></li>
-                <li><a href="index.html"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
+                <li><a href="#team"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
             </ul>
         </nav>
     </header>
@@ -66,108 +69,26 @@
         <div class="row center align-items-center" id="button">
             <div class="col-md-12">
 
-            <button id="map1-btn" class="btn btn-outline-primary">Brewery Count per State</button>
-            <button id="map2-btn" class="btn btn-outline-primary">Beer Barrels per State</button>
+            <button id="map1-btn" class="btn btn-outline-primary"><b>Brewery Count per State</b></button>
+            <button id="map2-btn" class="btn btn-outline-primary"><b>Beer Barrels per State</b></button>
             </div>
         </div>
         <div id="heatMap"></div>
 
     </div>
 
-
-    <!-- BOOTSWATCH CARD SCROLL -->
-    <div class="row">
-        <div class="col-md-3">
-            <div class="jumbotron">
-                <div class="card example-1 square" style="height: 750px; overflow-y: scroll;">
-                    <div class="card">
-                        <h5 class="card-title">Bock</h5>
-                        <img class="card-img-top" src="../static/img/wordcloud/bock.svg" alt="Card image cap">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h5 class="card-title">Brown Ale</h5>
-                        <img class="card-img-top" src="../static/img/wordcloud/brown_ale.svg" alt="Card image cap">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h5 class="card-title">Dark Ale</h5>
-                        <img class="card-img-top" src="../static/img/wordcloud/dark_ale.svg" alt="Card image cap">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h5 class="card-title">Dark Lager</h5>
-                        <img class="card-img-top" src="../static/img/wordcloud/dark_lager.svg" alt="Card image cap">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h5 class="card-title">Hybrid Beer</h5>
-                        <img class="card-img-top" src="../static/img/wordcloud/hybrid_beer.svg" alt="Card image cap">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h5 class="card-title">IPA</h5>
-                        <img class="card-img-top" src="../static/img/wordcloud/ipa.svg" alt="Card image cap">
-                        <div class="card-body">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h5 class="card-title">Pale Ale</h5>
-                        <img class="card-img-top" src="../static/img/wordcloud/pale_ale.svg" alt="Card image cap">
-                        <div class="card-body">
-                        </div>
-                        <div class="card">
-                            <h5 class="card-title">Pilsener & Pale Lager</h5>
-                            <img class="card-img-top" src="../static/img/wordcloud/pilsner_pale_ale.svg" alt="Card image cap">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-title">Porter</h5>
-                            <img class="card-img-top" src="../static/img/wordcloud/porter.svg" alt="Card image cap">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-title">Specialty Beer</h5>
-                            <img class="card-img-top" src="../static/img/wordcloud/specialty_beer.svg" alt="Card image cap">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-title">Stout</h5>
-                            <img class="card-img-top" src="../static/img/wordcloud/stout.svg" alt="Card image cap">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-title">Strong Ale</h5>
-                            <img class="card-img-top" src="../static/img/wordcloud/strong_ale.svg" alt="Card image cap">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-title">Wheat Beer</h5>
-                            <img class="card-img-top" src="../static/img/wordcloud/wheat_beer.svg" alt="Card image cap">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h5 class="card-title">Wild and Sour Beer</h5>
-                            <img class="card-img-top" src="../static/img/wordcloud/wild_sour_beer.svg" alt="Card image cap">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <hr>
+    <!-- Popular Beers Wordcloud -->
+    <h2 class="title text-center">Beer Styles that are consistently popular</h2>
+    <div class="container-fluid" id="cloud" style="padding: 30px;">
+        <hr class="my-4">
+        <div class="row">
+            <div class="col-lg">
+                <div id="cloud"></div>
             </div>
         </div>
     </div>
+
 
         <div id="scatter"></div>
 
@@ -236,6 +157,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Anychart Cloud -->
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <!-- Local Files -->
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/jquery.poptrox.min.js"></script>
     <script src="../static/js/jquery.scrolly.min.js"></script>
@@ -247,6 +175,7 @@
     <script src="../static/js/drawMap.js"></script>
     <script src="../static/js/drawBar.js"></script>
     <script src="../static/js/drawScatter.js"></script>
+    <script src="../static/js/buildCloud.js"></script>
 
 </body>
 
