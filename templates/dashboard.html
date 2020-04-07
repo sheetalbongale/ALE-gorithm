@@ -43,41 +43,147 @@
 
     <!-- ABV IBU SRM -->
     <content>
-
         <div class="container-fluid" style="padding: 20px;">
-            <p><strong>Reference Method (SRM):</strong> Provides a numerical range representing the color of a beer. The common range is 2-50. The higher the SRM, the darker the beer. SRM represents the absorption of specific wavelengths of light. It provides an analytical method that brewers use to measure and quantify the color of a beer. The SRM concept was originally published by the American Society of Brewing Chemists.
-                <br>Examples: Very Light (1-1.5), Straw (2-3 SRM), Pale (4), Gold (5-6), Light Amber (7), Amber (8), Medium Amber (9), Copper/Garnet (10-12), Light Brown (13-15), Brown/Reddish Brown/Chestnut Brown (16-17), Dark Brown (18-24), Very Dark (25-39), Black (40+)</p>
+            <br>
+            <style>
+                h2 {
+                    text-align: center;
+                }
+            </style>
+            <h2><strong>So, what are all these letters about?</strong></h2>
             <p><strong>Alcohol By Volume (ABV):</strong> A measurement of the alcohol content in terms of the percentage volume of alcohol per volume of beer. Caution: This measurement is always higher than Alcohol by Weight (not included in this guide). To calculate the approximate volumetric alcohol content, subtract FG from OG and divide by 0.0075.
                 <br>Example: OG = 1.050, FG = 1.012 ABV = (1.050 – 1.012) / 0.0075 ABV = 0.038 / 0.0075 ABV = 5.067 ABV = 5% (approximately)</p>
             <p><strong>International Bitterness Units (IBUs):</strong> 1 bitterness unit = 1 milligram of isomerized (exposed to heat) hop alpha acids in one liter of beer. Can range from 0 (lowest—no bitterness) to above 100 IBUs. Usually the general population cannot perceive bitterness above or below a specific range of IBUs (said to be below 8 and above 80 IBUs by some sources).</p>
-
+            <p><strong>Reference Method (SRM):</strong> Provides a numerical range representing the color of a beer. The common range is 2-50. The higher the SRM, the darker the beer. SRM represents the absorption of specific wavelengths of light. It provides an analytical method that brewers use to measure and quantify the color of a beer. The SRM concept was originally published by the American Society of Brewing Chemists.
+                <br>Examples: Very Light (1-1.5), Straw (2-3 SRM), Pale (4), Gold (5-6), Light Amber (7), Amber (8), Medium Amber (9), Copper/Garnet (10-12), Light Brown (13-15), Brown/Reddish Brown/Chestnut Brown (16-17), Dark Brown (18-24), Very Dark (25-39), Black (40+)</p>
+            <hr>
         </div>
     </content>
 
-    <hr>
-    <!-- US Barrels Map Chart for Top 25 Beer Styles -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div id="heatMap"></div>
-            </div>
-            <div class="col-md-4">
-                <div class="jumbotron">
-                    <p>A Left Hand Milk Stout
-                        <br>The Busch requires assistance from a chain saw. When you see the Corona, it means that a carelessly loose hops ruminates.
-                    </p>
+    <!-- BOOTSWATCH CARD SCROLL -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="jumbotron">
+                <div class="card example-1 square" style="height: 750px; overflow-y: scroll;">
+                    <div class="card">
+                        <h5 class="card-title">Bock</h5>
+                        <img class="card-img-top" src="../static/img/wordcloud/bock.svg" alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-title">Brown Ale</h5>
+                        <img class="card-img-top" src="../static/img/wordcloud/brown_ale.svg" alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-title">Dark Ale</h5>
+                        <img class="card-img-top" src="../static/img/wordcloud/dark_ale.svg" alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-title">Dark Lager</h5>
+                        <img class="card-img-top" src="../static/img/wordcloud/dark_lager.svg" alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-title">Hybrid Beer</h5>
+                        <img class="card-img-top" src="../static/img/wordcloud/hybrid_beer.svg" alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-title">IPA</h5>
+                        <img class="card-img-top" src="../static/img/wordcloud/ipa.svg" alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-title">Pale Ale</h5>
+                        <img class="card-img-top" src="../static/img/wordcloud/pale_ale.svg" alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                        <div class="card">
+                            <h5 class="card-title">Pilsener & Pale Lager</h5>
+                            <img class="card-img-top" src="../static/img/wordcloud/pilsner_pale_ale.svg" alt="Card image cap">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-title">Porter</h5>
+                            <img class="card-img-top" src="../static/img/wordcloud/porter.svg" alt="Card image cap">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-title">Specialty Beer</h5>
+                            <img class="card-img-top" src="../static/img/wordcloud/specialty_beer.svg" alt="Card image cap">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-title">Stout</h5>
+                            <img class="card-img-top" src="../static/img/wordcloud/stout.svg" alt="Card image cap">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-title">Strong Ale</h5>
+                            <img class="card-img-top" src="../static/img/wordcloud/strong_ale.svg" alt="Card image cap">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-title">Wheat Beer</h5>
+                            <img class="card-img-top" src="../static/img/wordcloud/wheat_beer.svg" alt="Card image cap">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h5 class="card-title">Wild and Sour Beer</h5>
+                            <img class="card-img-top" src="../static/img/wordcloud/wild_sour_beer.svg" alt="Card image cap">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="scatter"></div>
 
-        <!-- Bar Chart for Top 25 Beer Styles -->
-        <div class="row">
-            <div class="col-md-12">
-                <div id="barchart"></div>
-            </div>
-        </div>
+        <!-- US Barrels Map Chart for Top 25 Beer Styles -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="heatMap"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div id="heatMap2"></div>
+                    </div>
+                </div>
 
+                <!-- Bar Chart for Top 25 Beer Styles -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="barchart"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="jumbotron">
+                        <p><b><i>IPA lot when I drink...</i></b>
+                            <br>And so does a majority of America. IPA takes the prize for most popular beer style, with Imperial Stout inching closely behind. *cracks a cold one*
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src="../static/img/brewing.jpg">
+                </div>
+            </div>
+          
         <div class="container">
             <img src="../static/img/brewing.jpg">
         </div>
@@ -90,7 +196,7 @@
         <ul class="icons">
 
             <li>
-                <a href="#" class="fa fa-lg fa-github"></a>
+                <a href="https://github.com/sheetalbongale/ALE-gorithm" class="fa fa-lg fa-github"></a>
             </li>
             <li>Git-Hub Repository</li>
         </ul>

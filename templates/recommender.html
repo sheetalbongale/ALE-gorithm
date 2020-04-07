@@ -82,59 +82,76 @@
                 <div class="col-lg-8 col-md">
                     <div id="description" class="card bg-default mb-3" style="max-width: 20rem;">
                         <div class="card-body text-center">
-                            <h2 class="card-title text-center">You have chosen</h2>
                             <h4 class="card-title"></h4>
                             <p class="card-text"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md">
-                    <div id="description" class="card bg-default mb-3"></div>
+                    <div id="description" class="card bg-default mb-3">
+                        <div class="col-lg-1 col-md">
                     <div class="card-body text-center">
-                        <h5 class="card-text">Min ABV  </h5>
+                        <h4 class="card-title text-center">Min ABV  </h4>
                         <p class="chosenbeerabvmin"></p>
-
-                        <h5 class="card-text">Max ABV  </h5>
+                    </div>
+                </div>
+                    <div class="col-lg-1 col-md">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-center">Min ABV  </h4>
                         <p class="chosenbeerabvmax"></p>
-                        <br>
-                        <h5 class="card-text">Min IBU  </h5>
+                    </div>
+                </div>
+                    <div class="col-lg-1 col-md">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-center">Min ABV  </h4>
                         <p class="chosenbeeribumin"></p>
-
-                        <h5 class="card-text">Max IBU  </h5>
+                    </div>
+                </div>
+                    <div class="col-lg-1 col-md">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-center">Min ABV  </h4>
                         <p class="chosenbeeribumax"></p>
-                        <br>
-                        <h5 class="card-text">Min SRM  </h5>
+                    </div>
+                </div>
+                    <div class="col-lg-1 col-md">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-center">Min ABV  </h4>
                         <p class="chosenbeersrmmin"></p>
-
-                        <h5 class="card-text">Max SRM  </h5>
+                    </div>
+                </div>
+                    <div class="col-lg-1 col-md">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-center">Min ABV  </h4>
                         <p class="chosenbeersrmmax"></p>
                     </div>
+                </div>
+                </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Gauge Charts -->
-    <div class="container-fluid" style="padding: 1px;">
+    <div class="container-fluid" style="padding-right: 20px;">
 
-        <div class="row">
+        <div class="img-fluid" alt="responsive image">
 
-            <div class="col-lg-4  col-md-6">
+            <div class="col-lg col-md">
                 <div id="gauge_abv"></div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg col-md">
                 <div id="gauge_ibu"></div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg col-md">
                 <div id="gauge_srm"></div>
             </div>
         </div>
     </div>
 
     <!-- Card deck -->
-    <h4 class="title text-center">Our Beer Recommendations based on your selection</h4>
+    <h4 class="title text-center" id="recommender">Our Beer Recommendations based on your selection</h4>
     <div class="container-fluid" style="padding: 30px;">
         <div class="row">
             <div class="card-deck text-black">
@@ -142,7 +159,7 @@
                     <div class="card-body">
                         <h4 class="card-title beer">Beer Name</h4>
                         <h6 class="card-subtitle mb-2 text-muted">Brewery</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text abv">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                     </div>
@@ -151,7 +168,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Beer Name</h4>
                         <h6 class="card-subtitle mb-2 text-muted">Brewery</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text abv">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                     </div>
@@ -160,7 +177,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Beer Name</h4>
                         <h6 class="card-subtitle mb-2 text-muted">Brewery</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text abv">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                     </div>
@@ -169,7 +186,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Beer Name</h4>
                         <h6 class="card-subtitle mb-2 text-muted">Brewery</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text abv">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                     </div>
@@ -178,7 +195,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Beer Name</h4>
                         <h6 class="card-subtitle mb-2 text-muted">Brewery</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text abv">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                     </div>
@@ -204,7 +221,7 @@
         <!-- GitHub -->
         <ul class="icons">
             <li>
-                <a href="#" class="fa fa-lg fa-github"></a>
+                <a href="https://github.com/sheetalbongale/ALE-gorithm" class="fa fa-lg fa-github"></a>
             </li>
             <li>Git-Hub Repository</li>
         </ul>

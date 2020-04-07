@@ -2270,7 +2270,6 @@ input, select, textarea {
 		background-position: top left, center center;
 	}
 
-	
 	  
 /* images */
 
@@ -2304,6 +2303,7 @@ input, select, textarea {
 			margin: 0;
 			padding: 0;
 		}
+
 		.aText {
 			font-family: sans-serif;
 			font-size: 18px;
@@ -2371,6 +2371,7 @@ input, select, textarea {
 			text-anchor: middle;
 			font-size: 0.75em;
 		  }
+<<<<<<< HEAD
 		  .header{
 			margin-top: 0;
 			font-family: 'Roboto Condensed', sans-serif;
@@ -2423,3 +2424,6 @@ input, select, textarea {
 			margin: 0;
 			font-size: 16px;
 		  }		  
+=======
+
+>>>>>>> 29941df77f835d9f3a0c20954c3a0159e77ac359
