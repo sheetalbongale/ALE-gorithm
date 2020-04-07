@@ -5,7 +5,7 @@ function drawScatter(data) {
   // Define SVG attributes
   var width = parseInt(d3.select('#scatter')
     .style("width"));
-  var legendxpos = width - 200;
+  var legendxpos = width -200;
   var height = width * 2 / 3;
   var margin = 10;
   var labelArea = 110;
