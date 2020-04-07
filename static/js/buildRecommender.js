@@ -103,7 +103,7 @@ function drawGaugeIBU(beerstyle) {
             hoverinfo: 'text+name'},
         { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50],
         rotation: 90,
-        text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}'],
+        text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}', ''],
         textinfo: 'text',
         textposition:'inside',
         textfont:{
@@ -174,17 +174,18 @@ function drawGaugeSRM(beerstyle) {
             name: 'SRM %',
             text: e.SRM_avg,
             hoverinfo: 'text+name'},
-        { values: [50/6, 50/6, 50/6, 50/6, 50/6, 50/6, 50],
-        rotation: 90,
-        text: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light'],
-        textinfo: 'text',
-        textposition:'inside',
-        textfont:{
-            size : 10,
+        {   
+            values: [ 50/6, 50/6, 50/6, 50/6, 50/6, 50/6, 50],
+            rotation: 90,
+            text: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light', ''],
+            textinfo: 'text',
+            textposition:'inside',
+            textfont:{
+                size : 10,
             },
-        marker: {colors:['rgb(115, 77, 1)', 'rgb(166, 114, 10)', 'rgb(224, 193, 56)', 'rgb(255, 229, 117)', 'rgb(255, 243, 191)','rgba(255, 255, 255, 0)'
+        marker: {colors:['rgb(54, 46, 14)','rgb(115, 77, 1)', 'rgb(166, 114, 10)', 'rgb(224, 193, 56)', 'rgb(255, 229, 117)', 'rgb(255, 243, 191)','rgba(255, 255, 255, 0)'
                         ]},
-        labels: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light'],
+        labels: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light', ''],
         hoverinfo: data.SRM_avg,
         hole: .5,
         type: 'pie',
@@ -337,7 +338,7 @@ function optionChangedTwo(newBeerstyle) {
     drawGaugeABV(beerstyle);
     drawGaugeIBU(beerstyle);
     drawGaugeSRM(beerstyle);
-    d3.select('#recommender').html(""),
+    d3.select('#top5').html(""),
     buildRecommender(beerstyle);
 
                         
