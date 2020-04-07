@@ -41,7 +41,11 @@ def index():
 
 @app.route('/recommender.html')
 def recommender():
-    return render_template('recommender.html')
+    TABLENAME = 'ba_beerstyles'
+    query = f"SELECT DISTINCT Category FROM {TABLENAME}"
+    df = pd.read_sql_query(query, sql_engine)
+    categories = df['Category'].tolist()
+    return render_template('recommender.html',value=categories)
 
 # populate category dropdown
 @app.route("/category_names")
