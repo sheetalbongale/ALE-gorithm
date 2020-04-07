@@ -90,10 +90,10 @@ def top_beerstyles():
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
 # route to add beerstyle image
-@app.route("/beer_styles_links")
-def beer_style_links():
+@app.route("/beerstyles_links/<beerstyle>")
+def beer_style_links(beerstyle):
     TABLENAME = 'beer_styles_links'
-    query = f"SELECT * FROM {TABLENAME}"
+    query = f"SELECT * FROM {TABLENAME} WHERE beer_style = '{beerstyle}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
