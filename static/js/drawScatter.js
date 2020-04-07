@@ -5,7 +5,7 @@ function drawScatter(data) {
   // Define SVG attributes
   var width = parseInt(d3.select('#scatter')
     .style("width"));
-
+  var legendxpos = width -200;
   var height = width * 2 / 3;
   var margin = 10;
   var labelArea = 110;
@@ -143,10 +143,10 @@ function drawScatter(data) {
   var cRadius;
   function adjustRadius() {
     if (width <= 530) {
-      cRadius = 10;
+      cRadius = 5;
     }
     else {
-      cRadius = 15;
+      cRadius = 7;
     }
   }
   adjustRadius();
@@ -174,7 +174,7 @@ function drawScatter(data) {
     var myColor = d3.scaleOrdinal()
       .domain(["Bock", "Brown Ale", " Dark Ale", "Dark Lager", "Hybrid Beer", " India Pale Ale", "Pale Ale", " Pilsener & Pale Lager",
         "Porter", "Specialty Beer", "Stout", "Strong Ale", "Wheat Beer", "Wild / Sour Beer"])
-      .range(d3.schemeSet1);
+      .range(d3.schemePaired);
 
 
     // Add legend: circles
@@ -206,23 +206,23 @@ function drawScatter(data) {
     //      .style('stroke-dasharray', ('2,2'))
 
     // Add legend: labels
-    svg
-      .selectAll("legend")
-      .data(valuesToShow)
-      .enter()
-      .append("text")
-      .attr('x', xLabel)
-      .attr('y', function (d) { return height - 100 - z(d) })
-      .text(function (d) { return d / 1000000 })
-      .style("font-size", 10)
-      .attr('alignment-baseline', 'middle')
+    // svg
+    //   .selectAll("legend")
+    //   .data(valuesToShow)
+    //   .enter()
+    //   .append("text")
+    //   .attr('x', xLabel)
+    //   .attr('y', function (d) { return height - 100 - z(d) })
+    //   .text(function (d) { return d / 1000000 })
+    //   .style("font-size", 10)
+    //   .attr('alignment-baseline', 'middle')
 
     // Legend title
-    svg.append("text")
-      .attr('x', xCircle)
-      .attr("y", height - 100 + 30)
-      .text("Category")
-      .attr("text-anchor", "middle")
+    // svg.append("text")
+    //   .attr('x', xCircle)
+    //   .attr("y", height - 100 + 30)
+    //   .text("Category")
+    //   .attr("text-anchor", "middle")
 
     // Add one dot in the legend for each name.
     var size = 20
@@ -232,7 +232,7 @@ function drawScatter(data) {
       .data(allgroups)
       .enter()
       .append("circle")
-      .attr("cx", 590)
+      .attr("cx", legendxpos)
       .attr("cy", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
       .attr("r", 7)
       .style("fill", function (d) { return myColor(d) })
@@ -240,7 +240,18 @@ function drawScatter(data) {
       .on("mouseleave", noHighlight)
 
   // Add labels beside legend dots
-
+    svg.selectAll("mylabels")
+    .data(allgroups)
+    .enter()
+    .append("text")
+    .attr("x",legendxpos + 10 + size * .8)
+    .attr("y", function (d, i) { return i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
+    .style("fill", function (d) { return myColor(d) })
+    .text(function (d) { return d })
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+    .on("mouseover", highlight)
+    .on("mouseleave", noHighlight)
 
 
     // Tool Tip info box (state, X stats,  Y stats)
@@ -280,7 +291,7 @@ function drawScatter(data) {
         .data(allgroups)
         .enter()
         .append("circle")
-        .attr("cx", 590)
+        .attr("cx", legendxpos)
         .attr("cy", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("r", 7)
         .style("fill", function (d) { return myColor(d) })
@@ -314,7 +325,7 @@ function drawScatter(data) {
     var xScale = d3
       .scaleLinear()
       .domain([xMin, xMax])
-      .range([margin + labelArea, width - margin])
+      .range([margin + labelArea, width -200 - margin])
 
     var yScale = d3
       .scaleLinear()
