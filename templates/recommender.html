@@ -2,28 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Ale-gorithm Project</title>
-  
-  <!-- Favicons -->
-  <link href="../static/img/favicon1.png" rel="icon">
-  <!-- Bootstrap CSS File -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css">
-  <!-- Main Stylesheet File -->
-  <link rel="stylesheet" href="../static/css/main.css"/>
-  <!-- Font-awesome  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="..static/css/icomoon.css" rel="stylesheet">
-  <!-- No Script CSS  -->
-  <noscript><link rel="stylesheet" href="../static/css/noscript.css" /></noscript>
-  
-  <!-- Jinja2 format to refer to css file
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ale-gorithm Project</title>
+
+    <!-- Favicons -->
+    <link href="../static/img/favicon1.png" rel="icon">
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css">
+    <!-- Main Stylesheet File -->
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <!-- Font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- No Script CSS  -->
+    <noscript>
+        <link rel="stylesheet" href="../static/css/noscript.css" />
+    </noscript>
+    <!-- Anychart -->
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
+
+    <!-- Jinja2 format to refer to css file
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   -->
 </head>
-
 
 <body class="is-preload">
 
@@ -35,7 +38,7 @@
                 <li><a href="recommender.html"><i class="fa fa-beer" aria-hidden="true"></i> Beer Recommender &nbsp;</a></li>
                 <li><a href="dashboard.html"><i class="fa fa-th"></i> Beer Dashboard &nbsp;</a></li>
                 <li><a href="breweries.html"><i class="fa fa-search" aria-hidden="true"></i> Find Breweries &nbsp;</a></li>
-                <li><a href="team.html"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
+                <li><a href="index.html#team"><i class="fa fa-user"></i> About Us &nbsp;</a></li>
             </ul>
         </nav>
     </header>
@@ -43,57 +46,218 @@
     <!-- Banner - Main Selection Page-->
     <section id="recommenderpage" class="main style3 primary">
         <div class="content">
-            <div class="container" >
-                <h2 class="align-items-center centered">Welcome to Ale-gorithm Beer Recommender</h2>
+            <div class="container-fluid">
+                <h2 class="align-items-center centered">Welcome to Ale-gorithm <br> The Beer Recommender</h2>
                 <hr>
 
-                <p>Find the best beers here - Need good catchy line here</p>
+                <p>Get Your Drink On</p>
 
                 <ul class="actions special">
-                    <li><select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedOne(this.value)">
-                        <option selected class="custom-option">Select Category</option>
-                    </select></li>
-                    <li><select class="custom-select button secondary" id="selDatasetThree" onchange="optionChangedTwo(this.value)">
-                        <option selected class="custom-option">Select Beer Style</option>
-                    </select></li>
-
+                    <li>
+                        <select class="custom-select button secondary" id="selDatasetOne" onchange="optionChangedOne(this.value)">
+                            <option selected class="custom-option">Select Category</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedTwo(this.value)">
+                            <option selected class="custom-option">Select Beer Style</option>
+                        </select>
+                    </li>
                 </ul>
+            </div>
+        </div>
     </section>
+    <br>
+
+    </div>
+    <br>
+    <h3 class="title text-center">Good Choice! Know more about this Beer Style</h3>
+
+    <!-- Description about the selected Beer Style -->
+
+    <div class="container-fluid" id="description" style="padding: 30px;">
+        <div class="row">
+            <div class="card-deck">
+                <div class="col-lg-8 col-md">
+                    <div id="description" class="card bg-default mb-3" style="max-width: 20rem;">
+                        <div class="card-body text-center">
+                            <h4 class="card-title"></h4>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md" id="beerstyleimage">
+                    <div class="card mb-3">
+                        <h3 class="card-header"></h3>
+                        <img id="beerstyleimage" style="height: 100%; width: 100%; display: block;" src="" alt="Card image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
 
-<!-- Footer -->
-<footer id="footer">
 
-    <!-- GitHub -->
-    <ul class="icons">
-        
-        <li><a href="#" class="fa fa-lg fa-github"></a></li><li>Git-Hub Repository</li>
-    </ul>
+    <!-- Gauge Charts -->
+    <div class="container-fluid">
 
-    <ul class="menu">
-        <li>&copy; Ale-gorithm 2020</li><li>Group 3</li><li>UT Data Analysis and Visualization Bootcamp</a></li>
-    </ul>
+        <div class="row img-fluid align-items-center" alt="responsive image">
 
-</footer>
+            <div class="col-lg-4 col-md align-items-center">
+                <div id="gauge_abv"></div>
+            </div>
 
-<!-- Scripts -->
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<!-- Custom scripts for this template -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="../static/js/jquery.min.js"></script>
-<script src="../static/js/jquery.poptrox.min.js"></script>
-<script src="../static/js/jquery.scrolly.min.js"></script>
-<script src="../static/js/jquery.scrollex.min.js"></script>
-<script src="../static/js/browser.min.js"></script>
-<script src="../static/js/breakpoints.min.js"></script>
-<script src="../static/js/util.js"></script>
-<script src="../static/js/main.js"></script>
+            <div class="col-lg-4 col-md align-items-center">
+                <div id="gauge_ibu"></div>
+            </div>
+
+            <div class="col-lg-4 col-md align-items-center">
+                <div id="gauge_srm"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card deck -->
+    <h4 class="title text-center">Our Beer Recommendations based on your selection</h4>
+    <div class="container-fluid" style="padding: 30px;">
+        <div class="row">
+            <div class="card-deck text-black" id="top5">
+                <div class="col-lg col-md-6" id="top5">
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text abv"></p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6" id="top5">
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text abv"></p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6" id="top5">
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text abv"></p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6" id="top5">
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text abv"></p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-6" id="top5">
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text abv"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <br>
+
+    <!-- Beer Style Scroll Box -->
+    <div class="horizontal-scroll-wrapper squares">
+        <style>
+            div.scrollmenu {
+            background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+            }
+            
+            div.scrollmenu a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+            } 
+        </style>
+            <div class="scrollmenu">
+                <a><b>Bock</b></a>
+                <img src="../static/img/wordcloud/bock.svg" width="350px" height="300px">
+                <a><b>Brown Ale</b></a>
+                <img src="../static/img/wordcloud/brown_ale.svg" width="350px" height="300px"> 
+                <a><b>Dark Ale</b></a>
+                <img src="../static/img/wordcloud/dark_ale.svg" width="350px" height="300px">
+                <a><b>Dark Lager</b></a>
+                <img src="../static/img/wordcloud/dark_lager.svg" width="350px" height="300px">
+                <a><b>Hybrid Beer</b></a>
+                <img src="../static/img/wordcloud/hybrid_beer.svg" width="350px" height="300px">
+                <a><b>IPA</b></a>
+                <img src="../static/img/wordcloud/ipa.svg" width="350px" height="300px">
+                <a><b>Pale Ale</b></a>
+                <img src="../static/img/wordcloud/pale_ale.svg" width="350px" height="300px">
+                <a><b>Pilsener & Pale Lager</b></a>
+                <img src="../static/img/wordcloud/pilsner_pale_ale.svg" width="350px" height="300px">
+                <a><b>Porter</b></a>
+                <img src="../static/img/wordcloud/porter.svg" width="350px" height="300px"> 
+                <a><b>Specialty</b></a>
+                <img src="../static/img/wordcloud/specialty_beer.svg" width="350px" height="300px">
+                <a><b>Stout</b></a>
+                <img src="../static/img/wordcloud/stout.svg" width="350px" height="300px">
+                <a><b>Strong Ale</b></a>
+                <img src="../static/img/wordcloud/strong_ale.svg" width="350px" height="300px">
+                <a><b>Wheat</b></a>
+                <img src="../static/img/wordcloud/wheat_beer.svg" width="350px" height="300px">
+                <a><b>Wild & Sour</b></a>
+                <img src="../static/img/wordcloud/wild_sour_beer.svg" width="350px" height="300px">
+                </div>
+            </div>  
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <!-- GitHub -->
+        <ul class="icons">
+            <li>
+                <a href="https://github.com/sheetalbongale/ALE-gorithm" class="fa fa-lg fa-github"></a>
+            </li>
+            <li>Git-Hub Repository</li>
+        </ul>
+        <ul class="menu">
+            <li>&copy; Ale-gorithm 2020</li>
+            <li>Group 3</li>
+            <li>UT Data Analysis and Visualization Bootcamp</a>
+            </li>
+        </ul>
+
+    </footer>
+
+    <!-- Scripts -->
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Custom scripts for this template -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.poptrox.min.js"></script>
+    <script src="../static/js/jquery.scrolly.min.js"></script>
+    <script src="../static/js/jquery.scrollex.min.js"></script>
+    <script src="../static/js/browser.min.js"></script>
+    <script src="../static/js/breakpoints.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <!--script src="{{ url_for('static', filename='js/drawGauge_abv.js') }}"></script-->
+    <script src="../static/js/buildRecommender.js"></script>
+    <script src="../static/js/buildCloud.js"></script>
 
 </body>
+
 </html>
-
-
