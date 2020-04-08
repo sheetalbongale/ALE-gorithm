@@ -174,7 +174,11 @@ function drawScatter(data) {
     var myColor = d3.scaleOrdinal()
       .domain(["Bock", "Brown Ale", " Dark Ale", "Dark Lager", "Hybrid Beer", " India Pale Ale", "Pale Ale", " Pilsener & Pale Lager",
         "Porter", "Specialty Beer", "Stout", "Strong Ale", "Wheat Beer", "Wild / Sour Beer"])
+<<<<<<< HEAD
+      .range(["#FFA07A","#E9967A","#FA8072","#F08080","#CD5C5C","#F7C1A6","#FFC300","#FF0000","#900C3F","#581845","#C70039","#714C29","#DC720E","#80162C"]);
+=======
       .range(d3.schemeSet1);
+>>>>>>> aa2473e1e11eb20d7cfb825e7179a05bc249664b
 
 
     // Add legend: circles
