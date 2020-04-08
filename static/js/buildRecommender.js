@@ -284,7 +284,7 @@ function buildCharts(beerstyle){
             
 
 
-    // Function to display top 5 beers:
+    // Function to display top 5 beers
     function buildRecommender(beerstyle){
     
         d3.json(`/recommender/${beerstyle}`).then(data => data.forEach(e => {
@@ -312,6 +312,9 @@ function buildCharts(beerstyle){
             cardBody.append("p")
                 .classed("abv", true)
                 .text(`ABV: ${e.abv}`);
+            cardBody.append("p")
+                .classed("availability", true)
+                .text(`Availability: ${e.availability}`);
             }))
         };
     
@@ -350,7 +353,7 @@ function init() {
     
 }
 
-// create event listeners:
+//--------create event listeners--------//
 function optionChangedOne(newCategory) {
     category = newCategory;
 }
