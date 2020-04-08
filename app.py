@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import sqlalchemy as sql
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
@@ -7,6 +7,7 @@ import pymysql
 import json
 import pandas as pd
 from flask import Response
+import json
 
 ################################################################
 #               Flask Setup and Database Connection            #
@@ -45,7 +46,7 @@ def recommender():
     query = f"SELECT DISTINCT Category FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
     categories = df['Category'].tolist()
-    return render_template('recommender.html',value=categories)
+    return render_template('recommender.html', categories=categories)
 
 # populate category dropdown
 @app.route("/category_names")

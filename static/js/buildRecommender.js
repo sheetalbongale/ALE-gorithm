@@ -311,15 +311,7 @@ function buildCharts(beerstyle){
 //-----------------FUNCTION INITIATOR-----------------//
 function init() {
 
-    var selectorOne = d3.select("#selDatasetOne");
-        d3.json("/category_names").then((dropdown1Names) => {
-            dropdown1Names.forEach((category) => {
-            selectorOne
-            .append("option")
-            .text(category.Category)
-            .property("value", category.Category);
-        });
-        })
+   
 
         var selectorTwo = d3.select('#selDatasetTwo');
         d3.json("/beerstyle_names").then((dropdown2Names) =>{
