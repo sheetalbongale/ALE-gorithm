@@ -1,9 +1,11 @@
-# ALE-gorithm: Web-app and Dashboard for all things beer!🍺 
+# ALE-gorithm
+### Recommender Web-app & Educational Dashboard for all things beer!🍺 | UT Data Analysis & Visualization 2020
+
 ### Group Members: 
 Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi | Sheetal Bongale
 
 <details>
-<summary>Project Requirements - Click the drop down! 🔽</summary>
+<summary>Project Requirements - Click the drop down!  🔽</summary>
 
 + Proposal
     + Must submit a one page proposal before starting
@@ -42,13 +44,14 @@ Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi |
 Role assignment is recommended to accomplish specific tasks and delegate responsibilities!
 Here are some example roles:
 ```
-- Project manager
-- Lead Developer
-- Frontend Developer 
+- Project manager: Barry Haygood
+- Lead Developer: Sheetal Bongale
+- Frontend Developer
 - Backend Developer 
 - Tester
 ```
-
 </details>
+
+![beers gif](http://www.visitcalifornia.com/now/sites/default/files/styles/article_hero/public/cn_blog_nationalbeerday_marencaruso_1632x1088_v3.gif?itok=CFMn1bLv)
 
 
