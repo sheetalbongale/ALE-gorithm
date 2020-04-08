@@ -1,8 +1,16 @@
-# ALE-gorithm
-### Recommender Web-app & Educational Dashboard for all things beer!🍺 | UT Data Analysis & Visualization 2020
+# ALE-gorithm - Drink Good Beer
+### Recommender Web-app & Educational Dashboard for all things beer!🍺
 
 ### Group Members: 
-`Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi | Sheetal Bongale`
+```
+- Barry Haygood - Project manager
+- Sheetal Bongale - Lead Developer
+- Cathy Egboh
+- Maya Saeidi
+- Michelle Brucato
+- Sahar Mohammadi
+- Sheetal Bongale
+```
 
 <details>
 <summary>Project Requirements - Click the drop down!  🔽</summary>
@@ -62,18 +70,20 @@ The goal of the ALE-gorithm web application & dashboard is to educate consumers 
 ### Technologies used to build Ale-gorithm:
 ```
 - App Back-End: Python Flask | SQLAlchemy
-- Database: MySQL | GCP 
-- Data Visualization: Javascript | Plotly.js | D3.js
+- Database: MySQL | Google Cloud Platform (GCP) 
+- Data Visualization: Javascript | Plotly.js | D3.js | AnyChart.js
 - Front-End: HTML | Bootstrap | CSS
+- Testing: Postman
 ```
+
 ### Deployment:
 Ale-gorithm is deployed on GCP.
 
 ### Data Sources:
-- [Beer Advocate Beer, Brewery and Beer Reviews - Kaggle Dataset](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews/activity)
+- [Beer Advocate Kaggle Dataset](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews/activity)
 
 ### Additional Data Resources:
-* [BeerAdvocate](https://www.beeradvocate.com/beer/top-rated/)
+* [BeerAdvocate](https://www.beeradvocate.com)
 * [CraftBeer](https://www.craftbeer.com)
 * [Brewers Association ](https://www.brewersassociation.org)
 * [RateBeer](https://www.ratebeer.com)
