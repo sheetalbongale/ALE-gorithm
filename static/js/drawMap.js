@@ -18,7 +18,7 @@ function drawMap1(data) {
         [1, "rgb(84,39,143)"]
         ],
         colorbar: {
-        title: "<b>Brewery Count per State</b>",
+        title: "<b>Brewery Count</b>",
         thickness: 6
         },
         marker: {
@@ -31,7 +31,7 @@ function drawMap1(data) {
         ];
     
         let layout = {
-        title: "<b>Breweries by State</b>",
+        title: "<b>State Breweries</b>",
         geo: {
             scope: "usa",
             showlakes: true,
@@ -74,7 +74,7 @@ function drawMap2(data) {
         ];
 
         let layout = {
-        title: "<b>Beer Barrels Produced by State</b>",
+        title: "<b>Beer Barrels Produced</b>",
         geo: {
             scope: "usa",
             showlakes: true,

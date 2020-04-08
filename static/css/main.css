@@ -2274,10 +2274,10 @@ input, select, textarea {
 /* images */
 
 	#recommenderpage {
-		background-image: url('../img/recommender2.jpg');
+		background-image: url('../img/recommender4.jpg');
 		background-size: cover;
 		background-attachment: fixed, fixed;
-		background-position: bottom center;
+		background-position: bottom;
 		
 	  }
 
@@ -2304,6 +2304,12 @@ input, select, textarea {
 			padding: 0;
 		}
 
+	#scatter{
+			width: 80%;
+			height: 100%;
+			margin-bottom: 20px
+		}
+
 		.aText {
 			font-family: sans-serif;
 			font-size: 18px;
@@ -2312,20 +2318,20 @@ input, select, textarea {
 		  
 		  .active {
 			font-weight: bold;
-			fill: rgb(255, 116, 2);
+			fill: rgb(14, 13, 13);
 			transition: fill 0.5s ease-out;
 			text-anchor: middle;
 		  }
 		  
 		  .inactive {
 			font-weight: lighter;
-			fill: #ca0d0d;
+			fill: #494747;
 			transition: fill 0.5s ease-out;
 			text-anchor: middle;
 		  }
 		  
 		  .inactive:hover {
-			fill: rgb(245, 3, 3);
+			fill: rgb(59, 57, 57);
 			cursor: pointer;
 		  }
 		  
