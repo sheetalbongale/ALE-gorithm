@@ -1,9 +1,9 @@
-// build Charts
+// build Gauge Charts
 function drawGaugeABV(beerstyle) {
 
         d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-            let degree = parseInt(e.ABV_avg) * (180/11);
+            let degree = parseFloat(e.ABV_avg) * 20;
     
             let level = degree;
     
@@ -14,7 +14,7 @@ function drawGaugeABV(beerstyle) {
             let x = radius * Math.cos(radians);
             let y = radius * Math.sin(radians);
     
-            // Path: may have to change to create a better triangle
+           
             let mainPath = 'M -.0 -0.025 L .0 0.025 L ',
             pathX = String(x),
             space = ' ',
@@ -75,7 +75,7 @@ function drawGaugeABV(beerstyle) {
 
 function drawGaugeIBU(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
-        let degree = parseInt(e.IBU_avg) * (180/11);
+        let degree = parseFloat(e.IBU_avg) * 20;
 
         let level = degree;
 
@@ -86,7 +86,7 @@ function drawGaugeIBU(beerstyle) {
         let x = radius * Math.cos(radians);
         let y = radius * Math.sin(radians);
 
-        // Path: may have to change to create a better triangle
+        
         let mainPath = 'M -.0 -0.025 L .0 0.025 L ',
             pathX = String(x),
             space = ' ',
@@ -148,7 +148,7 @@ function drawGaugeIBU(beerstyle) {
 function drawGaugeSRM(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-        let degree = parseInt(e.SRM_avg) * (180/11);
+        let degree = parseFloat(e.SRM_avg) * 20;
 
         let level = degree;
 
@@ -159,7 +159,7 @@ function drawGaugeSRM(beerstyle) {
         let x = radius * Math.cos(radians);
         let y = radius * Math.sin(radians);
 
-        // Path: may have to change to create a better triangle
+       
         let mainPath = 'M -.0 -0.025 L .0 0.025 L ',
             pathX = String(x),
             space = ' ',
@@ -240,22 +240,13 @@ function buildCharts(beerstyle){
             .text(`Glassware: ${e.Glassware}`)
         cardBody.append("p")
             .classed("glassware", true)
-            .text(`ABV Minimum: ${e.ABV_min}`)
+            .text(`ABV Minimum: ${e.ABV_min} | ABV Maximum: ${e.ABV_max}`)
         cardBody.append("p")
             .classed("glassware", true)
-            .text(`ABV Maximum: ${e.ABV_max}`)
+            .text(`IBU Minimum: ${e.IBU_min} | IBU Maximum: ${e.IBU_max}`)
         cardBody.append("p")
             .classed("glassware", true)
-            .text(`IBU Minimum: ${e.IBU_min}`)
-        cardBody.append("p")
-            .classed("glassware", true)
-            .text(`IBU Minimum: ${e.IBU_max}`)
-        cardBody.append("p")
-            .classed("glassware", true)
-            .text(`SRM Minimum: ${e.SRM_min}`)
-        cardBody.append("p")
-            .classed("glassware", true)
-            .text(`SRM Maximum: ${e.SRM_max}`);
+            .text(`SRM Minimum: ${e.SRM_min} | SRM Maximum: ${e.SRM_max}`)
 
         }))
 
