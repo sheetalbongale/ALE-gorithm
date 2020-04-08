@@ -6,13 +6,12 @@
 
 ### Group Members: 
 ```
-- Barry Haygood - Project manager
-- Sheetal Bongale - Lead Developer
-- Cathy Egboh
-- Maya Saeidi
-- Michelle Brucato
-- Sahar Mohammadi
-- Sheetal Bongale
++ Barry Haygood - Project manager
++ Sheetal Bongale - Lead Developer
++ Cathy Egboh
++ Maya Saeidi
++ Michelle Brucato
++ Sahar Mohammadi
 ```
 
 <details>
@@ -68,7 +67,7 @@ Have you ever wandered down the beer aisle feeling overwhelmed by options? Do yo
 Then you’ve come to the right place!
 The goal of the ALE-gorithm web application & dashboard is to educate consumers on the craft beer space including styles, flavor profiles.
 
-### Technologies used to build Ale-gorithm:
+### Technologies used to build ALE-gorithm:
 ```
 - App Back-End: Python Flask | SQLAlchemy
 - Database: MySQL | Google Cloud Platform (GCP) 
@@ -78,7 +77,7 @@ The goal of the ALE-gorithm web application & dashboard is to educate consumers 
 ```
 
 ### Deployment:
-Ale-gorithm is deployed on GCP.
+ALE-gorithm is deployed on GCP.
 
 ### Data Sources:
 - [Beer Advocate Kaggle Dataset](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews/activity)
