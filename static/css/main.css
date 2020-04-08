@@ -621,6 +621,7 @@ input, select, textarea {
 		margin-bottom: 1em;
 	}
 
+
 /* Box */
 
 	.box {
@@ -1003,6 +1004,10 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
+		
+			.center {
+				border-radius: 50%;
+			  }
 
 /* List */
 
