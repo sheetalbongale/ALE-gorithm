@@ -2,7 +2,7 @@
 ### Recommender Web-app & Educational Dashboard for all things beer!🍺 | UT Data Analysis & Visualization 2020
 
 ### Group Members: 
-Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi | Sheetal Bongale
+`Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi | Sheetal Bongale`
 
 <details>
 <summary>Project Requirements - Click the drop down!  🔽</summary>
@@ -54,4 +54,30 @@ Here are some example roles:
 
 ![beers gif](http://www.visitcalifornia.com/now/sites/default/files/styles/article_hero/public/cn_blog_nationalbeerday_marencaruso_1632x1088_v3.gif?itok=CFMn1bLv)
 
+### What is ALE-gorithm?
+Have you ever wandered down the beer aisle feeling overwhelmed by options? Do you have a thirst for deliciously brewed craft beer, but don’t know which to choose?
+Then you’ve come to the right place!
+The goal of the ALE-gorithm web application & dashboard is to educate consumers on the craft beer space including styles, flavor profiles.
 
+### Technologies used to build Ale-gorithm:
+```
+- App Back-End: Python Flask | SQLAlchemy
+- Database: MySQL | GCP 
+- Data Visualization: Javascript | Plotly.js | D3.js
+- Front-End: HTML | Bootstrap | CSS
+```
+### Deployment:
+Ale-gorithm is deployed on GCP.
+
+### Data Sources:
+- [Beer Advocate Beer, Brewery and Beer Reviews - Kaggle Dataset](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews/activity)
+
+### Additional Data Resources:
+* [BeerAdvocate](https://www.beeradvocate.com/beer/top-rated/)
+* [CraftBeer](https://www.craftbeer.com)
+* [Brewers Association ](https://www.brewersassociation.org)
+* [RateBeer](https://www.ratebeer.com)
+
+
+### Copyright 
+Team Ale-gorithm © 2020 | UT Data Analysis and Visualization Nov 2019 - May 2020
