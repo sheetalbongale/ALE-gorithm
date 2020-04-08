@@ -1,9 +1,9 @@
-// build Charts
+// build Gauge Charts
 function drawGaugeABV(beerstyle) {
 
         d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-            let degree = parseInt(e.ABV_avg) * (180/11);
+            let degree = parseFloat(e.ABV_avg) * 180/14;
     
             let level = degree;
     
@@ -14,7 +14,7 @@ function drawGaugeABV(beerstyle) {
             let x = radius * Math.cos(radians);
             let y = radius * Math.sin(radians);
     
-            // Path: may have to change to create a better triangle
+           
             let mainPath = 'M -.0 -0.025 L .0 0.025 L ',
             pathX = String(x),
             space = ' ',
@@ -26,12 +26,12 @@ function drawGaugeABV(beerstyle) {
             x: [0], y:[0],
             marker: {size: 28, color:'190707'},
             showlegend: false,
-            name: 'ABV %',
+            name: 'ABV',
             text: e.ABV_avg,
             hoverinfo: 'text+name'},
             { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50],
             rotation: 90,
-            text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}',''],
+            text: ['\u{1F974}','\u{1F92A}','\u{1F923}','\u{1F606}','\u{1F609}',''],
             textinfo: 'text',
             textposition:'inside',
             textfont:{
@@ -57,7 +57,7 @@ function drawGaugeABV(beerstyle) {
                 }
             }],
     
-            title: `<b> ABV % for </b> <br>${e.Style}<br>`,
+            title: `<b> ABV for </b> <br>${e.Style}<br>`,
             height: 550,
             width: 550,
             xaxis: {zeroline:false, showticklabels:false,
@@ -75,7 +75,7 @@ function drawGaugeABV(beerstyle) {
 
 function drawGaugeIBU(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
-        let degree = parseInt(e.IBU_avg) * (180/11);
+        let degree = parseFloat(e.IBU_avg) * 180/84;
 
         let level = degree;
 
@@ -86,7 +86,7 @@ function drawGaugeIBU(beerstyle) {
         let x = radius * Math.cos(radians);
         let y = radius * Math.sin(radians);
 
-        // Path: may have to change to create a better triangle
+        
         let mainPath = 'M -.0 -0.025 L .0 0.025 L ',
             pathX = String(x),
             space = ' ',
@@ -98,21 +98,19 @@ function drawGaugeIBU(beerstyle) {
             x: [0], y:[0],
             marker: {size: 28, color:'190707'},
             showlegend: false,
-            name: 'IBU %',
+            name: 'IBU',
             text: e.IBU_avg,
             hoverinfo: 'text+name'},
-        { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50],
+        { values: [50/6, 50/6, 50/6, 50/6, 50/6, 50/6, 50],
         rotation: 90,
-        text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}', ''],
+        text: [ 'Most Bitter(75-85)', '60-75', '45-60','30-45','15-30', 'Least Bitter(0-15)', ''],
         textinfo: 'text',
         textposition:'inside',
         textfont:{
-            size : 30,
+            size : 10,
             },
-        marker: {colors:['rgb(227, 153, 7)','rgb(224, 164, 45)',
-        'rgb(227, 179, 84)', 'rgb(227, 202, 152)', 
-        'rgb(232, 222, 202)','rgba(255, 255, 255, 0)'
-                        ]},
+        marker: {colors:['rgb(54, 46, 14)','rgb(115, 77, 1)', 'rgb(166, 114, 10)', 'rgb(224, 193, 56)', 'rgb(255, 229, 117)', 'rgb(255, 243, 191)','rgba(255, 255, 255, 0)'
+    ]},
         hoverinfo: 'text',
         hole: .5,
         type: 'pie',
@@ -129,7 +127,7 @@ function drawGaugeIBU(beerstyle) {
             }
             }],
 
-        title: `<b> IBU % for </b> <br>${e.Style}<br>`,
+        title: `<b> IBU for </b> <br>${e.Style}<br>`,
         height: 550,
         width: 550,
         xaxis: {zeroline:false, showticklabels:false,
@@ -148,7 +146,7 @@ function drawGaugeIBU(beerstyle) {
 function drawGaugeSRM(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-        let degree = parseInt(e.SRM_avg) * (180/11);
+        let degree = parseFloat(e.SRM_avg) * 180/36;
 
         let level = degree;
 
@@ -159,7 +157,7 @@ function drawGaugeSRM(beerstyle) {
         let x = radius * Math.cos(radians);
         let y = radius * Math.sin(radians);
 
-        // Path: may have to change to create a better triangle
+       
         let mainPath = 'M -.0 -0.025 L .0 0.025 L ',
             pathX = String(x),
             space = ' ',
@@ -171,7 +169,7 @@ function drawGaugeSRM(beerstyle) {
             x: [0], y:[0],
             marker: {size: 28, color:'190707'},
             showlegend: false,
-            name: 'SRM %',
+            name: 'SRM',
             text: e.SRM_avg,
             hoverinfo: 'text+name'},
         {   
@@ -186,7 +184,7 @@ function drawGaugeSRM(beerstyle) {
         marker: {colors:['rgb(54, 46, 14)','rgb(115, 77, 1)', 'rgb(166, 114, 10)', 'rgb(224, 193, 56)', 'rgb(255, 229, 117)', 'rgb(255, 243, 191)','rgba(255, 255, 255, 0)'
                         ]},
         labels: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light', ''],
-        hoverinfo: data.SRM_avg,
+        hoverinfo: e.SRM_avg,
         hole: .5,
         type: 'pie',
         showlegend: false
@@ -202,7 +200,7 @@ function drawGaugeSRM(beerstyle) {
             }
             }],
 
-        title: `<b> SRM % for </b> <br>${e.Style}<br>`,
+        title: `<b> SRM for </b> <br>${e.Style}<br>`,
         height: 550,
         width: 550,
         xaxis: {zeroline:false, showticklabels:false,
@@ -240,22 +238,13 @@ function buildCharts(beerstyle){
             .text(`Glassware: ${e.Glassware}`)
         cardBody.append("p")
             .classed("glassware", true)
-            .text(`ABV Minimum: ${e.ABV_min}`)
+            .text(`ABV Minimum: ${e.ABV_min} | ABV Maximum: ${e.ABV_max}`)
         cardBody.append("p")
             .classed("glassware", true)
-            .text(`ABV Maximum: ${e.ABV_max}`)
+            .text(`IBU Minimum: ${e.IBU_min} | IBU Maximum: ${e.IBU_max}`)
         cardBody.append("p")
             .classed("glassware", true)
-            .text(`IBU Minimum: ${e.IBU_min}`)
-        cardBody.append("p")
-            .classed("glassware", true)
-            .text(`IBU Minimum: ${e.IBU_max}`)
-        cardBody.append("p")
-            .classed("glassware", true)
-            .text(`SRM Minimum: ${e.SRM_min}`)
-        cardBody.append("p")
-            .classed("glassware", true)
-            .text(`SRM Maximum: ${e.SRM_max}`);
+            .text(`SRM Minimum: ${e.SRM_min} | SRM Maximum: ${e.SRM_max}`)
 
         }))
 
@@ -284,7 +273,7 @@ function buildCharts(beerstyle){
             
 
 
-    // Function to display top 5 beers:
+    // Function to display top 5 beers
     function buildRecommender(beerstyle){
     
         d3.json(`/recommender/${beerstyle}`).then(data => data.forEach(e => {
@@ -312,6 +301,9 @@ function buildCharts(beerstyle){
             cardBody.append("p")
                 .classed("abv", true)
                 .text(`ABV: ${e.abv}`);
+            cardBody.append("p")
+                .classed("availability", true)
+                .text(`Availability: ${e.availability}`);
             }))
         };
     
@@ -350,7 +342,7 @@ function init() {
     
 }
 
-// create event listeners:
+//--------create event listeners--------//
 function optionChangedOne(newCategory) {
     category = newCategory;
 }
