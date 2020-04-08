@@ -36,7 +36,8 @@ function drawCloud() {
         colorRange
                 .enabled(true)
                 // sets color line size
-                .colorLineSize(15);
+                .colorLineSize(15)
+                .length(1500);;
 
         // set container id for the chart
         chart.container('cloud');
