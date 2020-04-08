@@ -237,12 +237,51 @@ function buildCharts(beerstyle){
             .text(e.Description)
         cardBody.append("h4")
             .classed("glassware", true)
-            .text(e.Glassware);
+            .text(`Glassware: ${e.Glassware}`)
+        cardBody.append("p")
+            .classed("glassware", true)
+            .text(`ABV Minimum: ${e.ABV_min}`)
+        cardBody.append("p")
+            .classed("glassware", true)
+            .text(`ABV Maximum: ${e.ABV_max}`)
+        cardBody.append("p")
+            .classed("glassware", true)
+            .text(`IBU Minimum: ${e.IBU_min}`)
+        cardBody.append("p")
+            .classed("glassware", true)
+            .text(`IBU Minimum: ${e.IBU_max}`)
+        cardBody.append("p")
+            .classed("glassware", true)
+            .text(`SRM Minimum: ${e.SRM_min}`)
+        cardBody.append("p")
+            .classed("glassware", true)
+            .text(`SRM Maximum: ${e.SRM_max}`);
 
         }))
 
 
     };
+
+    // Function to create the description section for beerstyle
+    function buildImage(beerstyle){
+        
+        d3.json(`/beerstyles_links/${beerstyle}`).then(data => data.forEach(e => {
+            console.log(data)
+            let cardBody = d3.select("#beerstyleimage")
+            .append("div")
+                .classed("card", true)
+                .append("div")
+            cardBody.append("h3")
+                .classed("card-header", true)
+                .text(e.beer_style)
+            cardBody.append("img")
+                .attr("src", e.image_link)
+                .classed("beerstyleimage", true)
+            }))
+
+
+        };
+            
 
 
     // Function to display top 5 beers:
@@ -260,53 +299,21 @@ function buildCharts(beerstyle){
                 .text(e.beer_name)
             cardBody.append("h6")
                 .classed("card-subtitle mb-2 text-muted", true)
-                .text(e.brewery_name)
+                .text(`Brewery: ${e.brewery_name}`)
+            cardBody.append("p")
+                .classed("city", true)
+                .text(`City: ${e.city}`)
+            cardBody.append("p")
+                .classed("state", true)
+                .text(`State: ${e.state}`)
+            cardBody.append("p")
+                .classed("country", true)
+                .text(`Country: ${e.country}`)
             cardBody.append("p")
                 .classed("abv", true)
-                .text(e.abv);
+                .text(`ABV: ${e.abv}`);
             }))
-
-
         };
-
-function drawTable(beerstyle){
-
-    d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e => {
-
-        let ABV_min = data.map(e => e.ABV_min),
-        ABV_max = data.map(e => e.ABV_max),
-        IBU_min = data.map(e => e.IBU_min),
-        IBU_max = data.map(e => e.IBU_max),
-        SRM_min = data.map(e => e.SRM_min),
-		SRM_max = data.map(e => e.SRM_max);
-		
-
-	var values = [
-    	['ABV min','ABV max', "IBU min","IBU max","SRM min","SRM max"],
-        [ABV_min, ABV_max, IBU_min, IBU_max, SRM_min, SRM_max]
-    ]
-        
-
-            var tableData = [{
-              type: 'table',
-              columnorder: [1,2],
-              columnwidth: [80,400],
-
-              
-            cells: {
-                values: values,
-                align: ["left", "center"],
-                 height: 30,
-                line: {color: "#506784", width: 1},
-                 fill: {color: ['#ffea8c', 'white']},
-                font: {family: "Source Sans Pro", size: 14, color: ["#506784"]}
-              }
-            }]
-            
-            Plotly.newPlot('styletable', tableData);
-
-        }));
-    }
     
 
 //-----------------FUNCTION INITIATOR-----------------//
@@ -339,6 +346,7 @@ function init() {
         drawGaugeSRM(firstStyle);
         buildCharts(firstStyle);
         buildRecommender(firstStyle);
+        buildImage(firstStyle);
     
 }
 
@@ -352,8 +360,8 @@ function optionChangedTwo(newBeerstyle) {
     console.log(beerstyle);
     d3.select('#description').html(""),
     buildCharts(beerstyle);
-    d3.select('#styletable').html(""),
-    drawTable(beerstyle);
+    d3.select('#beerstyleimage').html(""),
+    buildImage(beerstyle);
     d3.select('#top5').html(""),
     buildRecommender(beerstyle);
 
