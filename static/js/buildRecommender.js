@@ -103,7 +103,7 @@ function drawGaugeIBU(beerstyle) {
             hoverinfo: 'text+name'},
         { values: [50/5, 50/5, 50/5, 50/5, 50/5, 50],
         rotation: 90,
-        text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}'],
+        text: [ '\u{1F929}', '\u{1F603}', '\u{1F642}','\u{1F610}','\u{1F641}', ''],
         textinfo: 'text',
         textposition:'inside',
         textfont:{
@@ -174,17 +174,18 @@ function drawGaugeSRM(beerstyle) {
             name: 'SRM %',
             text: e.SRM_avg,
             hoverinfo: 'text+name'},
-        { values: [50/6, 50/6, 50/6, 50/6, 50/6, 50/6, 50],
-        rotation: 90,
-        text: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light'],
-        textinfo: 'text',
-        textposition:'inside',
-        textfont:{
-            size : 10,
+        {   
+            values: [50/6, 50/6, 50/6, 50/6, 50/6, 50/6, 50],
+            rotation: 90,
+            text: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light', ''],
+            textinfo: 'text',
+            textposition:'inside',
+            textfont:{
+                size : 10,
             },
-        marker: {colors:['rgb(115, 77, 1)', 'rgb(166, 114, 10)', 'rgb(224, 193, 56)', 'rgb(255, 229, 117)', 'rgb(255, 243, 191)','rgba(255, 255, 255, 0)'
+        marker: {colors:['rgb(54, 46, 14)','rgb(115, 77, 1)', 'rgb(166, 114, 10)', 'rgb(224, 193, 56)', 'rgb(255, 229, 117)', 'rgb(255, 243, 191)','rgba(255, 255, 255, 0)'
                         ]},
-        labels: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light'],
+        labels: ['Black', 'Dark Brown','Brown','Amber','Pale','Very Light', ''],
         hoverinfo: data.SRM_avg,
         hole: .5,
         type: 'pie',
@@ -238,34 +239,13 @@ function buildCharts(beerstyle){
             .classed("glassware", true)
             .text(e.Glassware);
 
-        cardBody.append("p")
-            .classed("chosenbeername", true)
-            .text(e.Style);
-        cardBody.append("p")
-            .classed("chosenbeerabvmin", true)
-            .text(e.ABV_min);
-        cardBody.append("p")
-            .classed("chosenbeerabvmax", true)
-            .text(e.ABV_max);
-        cardBody.append("p")
-            .classed("chosenbeeribumin", true)
-            .text(e.IBU_min);
-        cardBody.append("p")
-            .classed("chosenbeeribumax", true)
-            .text(e.IBU_min);
-        cardBody.append("p")
-            .classed("chosenbeersrmmin", true)
-            .text(e.SRM_min);
-        cardBody.append("p")
-            .classed("chosenbeersrmmax", true)
-            .text(e.SRM_min);
-
-        
-    }))
+        }))
 
 
     };
 
+
+    // Function to display top 5 beers:
     function buildRecommender(beerstyle){
     
         d3.json(`/recommender/${beerstyle}`).then(data => data.forEach(e => {
@@ -289,6 +269,45 @@ function buildCharts(beerstyle){
 
         };
 
+function drawTable(beerstyle){
+
+    d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e => {
+
+        let ABV_min = data.map(e => e.ABV_min),
+        ABV_max = data.map(e => e.ABV_max),
+        IBU_min = data.map(e => e.IBU_min),
+        IBU_max = data.map(e => e.IBU_max),
+        SRM_min = data.map(e => e.SRM_min),
+		SRM_max = data.map(e => e.SRM_max);
+		
+
+	var values = [
+    	['ABV min','ABV max', "IBU min","IBU max","SRM min","SRM max"],
+        [ABV_min, ABV_max, IBU_min, IBU_max, SRM_min, SRM_max]
+    ]
+        
+
+            var tableData = [{
+              type: 'table',
+              columnorder: [1,2],
+              columnwidth: [80,400],
+
+              
+            cells: {
+                values: values,
+                align: ["left", "center"],
+                 height: 30,
+                line: {color: "#506784", width: 1},
+                 fill: {color: ['#ffea8c', 'white']},
+                font: {family: "Source Sans Pro", size: 14, color: ["#506784"]}
+              }
+            }]
+            
+            Plotly.newPlot('styletable', tableData);
+
+        }));
+    }
+    
 
 //-----------------FUNCTION INITIATOR-----------------//
 function init() {
@@ -333,12 +352,15 @@ function optionChangedTwo(newBeerstyle) {
     console.log(beerstyle);
     d3.select('#description').html(""),
     buildCharts(beerstyle);
+    d3.select('#styletable').html(""),
+    drawTable(beerstyle);
+    d3.select('#top5').html(""),
+    buildRecommender(beerstyle);
 
     drawGaugeABV(beerstyle);
     drawGaugeIBU(beerstyle);
     drawGaugeSRM(beerstyle);
-    d3.select('#recommender').html(""),
-    buildRecommender(beerstyle);
+
 
                         
 }

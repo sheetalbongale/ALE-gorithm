@@ -24,7 +24,7 @@
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
 
     <!-- Jinja2 format to refer to css file
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   -->
 </head>
 
@@ -68,7 +68,6 @@
         </div>
     </section>
     <br>
-    <div id="chosenbeer">
 
     </div>
     <br>
@@ -87,64 +86,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md">
-                    <div id="description" class="card bg-default mb-3">
-                        <div class="col-lg-1 col-md">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-center">Min ABV  </h4>
-                        <p class="chosenbeerabvmin"></p>
-                    </div>
-                </div>
-                    <div class="col-lg-1 col-md">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-center">Min ABV  </h4>
-                        <p class="chosenbeerabvmax"></p>
-                    </div>
-                </div>
-                    <div class="col-lg-1 col-md">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-center">Min ABV  </h4>
-                        <p class="chosenbeeribumin"></p>
-                    </div>
-                </div>
-                    <div class="col-lg-1 col-md">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-center">Min ABV  </h4>
-                        <p class="chosenbeeribumax"></p>
-                    </div>
-                </div>
-                    <div class="col-lg-1 col-md">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-center">Min ABV  </h4>
-                        <p class="chosenbeersrmmin"></p>
-                    </div>
-                </div>
-                    <div class="col-lg-1 col-md">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-center">Min ABV  </h4>
-                        <p class="chosenbeersrmmax"></p>
-                    </div>
-                </div>
-                </div>
-                </div>
             </div>
         </div>
     </div>
 
+    <div class="container-fluid">
+        <div class="row">
+                <div class="col-lg-8 col-md">
+                    <div id="styletable"></div>
+                <div class="col-lg-4 col-md">
+                    <div id="beerstyleimage"></div>                
+                 </div>
+                </div>
+            </div>
+    </div>
+    
+
+
+
     <!-- Gauge Charts -->
     <div class="container-fluid">
 
-        <div class="row img-fluid" alt="responsive image">
+        <div class="row img-fluid align-items-center" alt="responsive image">
 
-            <div class="col-lg col-md">
+            <div class="col-lg-4 col-md align-items-center">
                 <div id="gauge_abv"></div>
             </div>
 
-            <div class="col-lg col-md">
+            <div class="col-lg-4 col-md align-items-center">
                 <div id="gauge_ibu"></div>
             </div>
 
-            <div class="col-lg col-md">
+            <div class="col-lg-4 col-md align-items-center">
                 <div id="gauge_srm"></div>
             </div>
         </div>
@@ -162,21 +135,21 @@
                         <p class="card-text abv"></p>
                     </div>
                 </div>
-                <div class="col-lg col-md-6" id="top5" >
+                <div class="col-lg col-md-6" id="top5">
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
                         <p class="card-text abv"></p>
                     </div>
                 </div>
-                <div class="col-lg col-md-6" id="top5" >
+                <div class="col-lg col-md-6" id="top5">
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
                         <p class="card-text abv"></p>
                     </div>
                 </div>
-                <div class="col-lg col-md-6" id="top5" >
+                <div class="col-lg col-md-6" id="top5">
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
