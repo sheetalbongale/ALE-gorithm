@@ -3,7 +3,7 @@ function drawGaugeABV(beerstyle) {
 
         d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-            let degree = parseFloat(e.ABV_avg) * 20;
+            let degree = parseFloat(e.ABV_avg) * 180/14;
     
             let level = degree;
     
@@ -57,7 +57,7 @@ function drawGaugeABV(beerstyle) {
                 }
             }],
     
-            title: `<b> ABV % for </b> <br>${e.Style}<br>`,
+            title: `<b> ABV for </b> <br>${e.Style}<br>`,
             height: 550,
             width: 550,
             xaxis: {zeroline:false, showticklabels:false,
@@ -75,7 +75,7 @@ function drawGaugeABV(beerstyle) {
 
 function drawGaugeIBU(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
-        let degree = parseFloat(e.IBU_avg) * 20;
+        let degree = parseFloat(e.IBU_avg) * 180/84;
 
         let level = degree;
 
@@ -129,7 +129,7 @@ function drawGaugeIBU(beerstyle) {
             }
             }],
 
-        title: `<b> IBU % for </b> <br>${e.Style}<br>`,
+        title: `<b> IBU for </b> <br>${e.Style}<br>`,
         height: 550,
         width: 550,
         xaxis: {zeroline:false, showticklabels:false,
@@ -148,7 +148,7 @@ function drawGaugeIBU(beerstyle) {
 function drawGaugeSRM(beerstyle) {
     d3.json(`/beerstyle/${beerstyle}`).then(data => data.forEach(e =>{
 
-        let degree = parseFloat(e.SRM_avg) * 20;
+        let degree = parseFloat(e.SRM_avg) * 180/36;
 
         let level = degree;
 
@@ -202,7 +202,7 @@ function drawGaugeSRM(beerstyle) {
             }
             }],
 
-        title: `<b> SRM % for </b> <br>${e.Style}<br>`,
+        title: `<b> SRM for </b> <br>${e.Style}<br>`,
         height: 550,
         width: 550,
         xaxis: {zeroline:false, showticklabels:false,
