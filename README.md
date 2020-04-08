@@ -1,9 +1,22 @@
-# ALE-gorithm: Web-app and Dashboard for all things beer!🍺 
+# ALE-gorithm - Drink Good Beer
+### Recommender Web-app & Educational Dashboard for all things beer!🍺
+
+![beers gif](static/img/BeerExplosion.gif)
+
+
 ### Group Members: 
-Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi | Sheetal Bongale
+```
+- Barry Haygood - Project manager
+- Sheetal Bongale - Lead Developer
+- Cathy Egboh
+- Maya Saeidi
+- Michelle Brucato
+- Sahar Mohammadi
+- Sheetal Bongale
+```
 
 <details>
-<summary>Project Requirements - Click the drop down! 🔽</summary>
+<summary>Project Requirements - Click the drop down!  🔽</summary>
 
 + Proposal
     + Must submit a one page proposal before starting
@@ -42,13 +55,40 @@ Barry Haygood | Cathy Egboh | Maya Saeidi | Michelle Brucato | Sahar Mohammadi |
 Role assignment is recommended to accomplish specific tasks and delegate responsibilities!
 Here are some example roles:
 ```
-- Project manager
-- Lead Developer
-- Frontend Developer 
+- Project manager: Barry Haygood
+- Lead Developer: Sheetal Bongale
+- Frontend Developer
 - Backend Developer 
 - Tester
 ```
-
 </details>
 
+### What is ALE-gorithm?
+Have you ever wandered down the beer aisle feeling overwhelmed by options? Do you have a thirst for deliciously brewed craft beer, but don’t know which to choose?
+Then you’ve come to the right place!
+The goal of the ALE-gorithm web application & dashboard is to educate consumers on the craft beer space including styles, flavor profiles.
 
+### Technologies used to build Ale-gorithm:
+```
+- App Back-End: Python Flask | SQLAlchemy
+- Database: MySQL | Google Cloud Platform (GCP) 
+- Data Visualization: Javascript | Plotly.js | D3.js | AnyChart.js
+- Front-End: HTML | Bootstrap | CSS
+- Testing: Postman
+```
+
+### Deployment:
+Ale-gorithm is deployed on GCP.
+
+### Data Sources:
+- [Beer Advocate Kaggle Dataset](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews/activity)
+
+### Additional Data Resources:
+* [BeerAdvocate](https://www.beeradvocate.com)
+* [CraftBeer](https://www.craftbeer.com)
+* [Brewers Association ](https://www.brewersassociation.org)
+* [RateBeer](https://www.ratebeer.com)
+
+
+### Copyright 
+Team Ale-gorithm © 2020 | UT Data Analysis and Visualization Nov 2019 - May 2020
