@@ -1,6 +1,9 @@
 # ALE-gorithm - Drink Good Beer
 ### Recommender Web-app & Educational Dashboard for all things beer!🍺
 
+![beers gif](static/img/BeerExplosion.gif)
+
+
 ### Group Members: 
 ```
 - Barry Haygood - Project manager
@@ -59,8 +62,6 @@ Here are some example roles:
 - Tester
 ```
 </details>
-
-![beers gif](http://www.visitcalifornia.com/now/sites/default/files/styles/article_hero/public/cn_blog_nationalbeerday_marencaruso_1632x1088_v3.gif?itok=CFMn1bLv)
 
 ### What is ALE-gorithm?
 Have you ever wandered down the beer aisle feeling overwhelmed by options? Do you have a thirst for deliciously brewed craft beer, but don’t know which to choose?
