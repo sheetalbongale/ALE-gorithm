@@ -694,6 +694,7 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			text-indent: -10em;
 			overflow: hidden;
+			opacity: 60%;
 		}
 
 			input[type="button"].down.anchored,
@@ -732,6 +733,7 @@ input, select, textarea {
 		button:active {
 			background-color: #cebf3d;
 		}
+
 
 		input[type="button"].style2,
 		input[type="submit"].style2,
