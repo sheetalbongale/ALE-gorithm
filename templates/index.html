@@ -271,6 +271,19 @@
     <script src="../static/js/breakpoints.min.js"></script>
     <script src="../static/js/util.js"></script>
     <script src="../static/js/main.js"></script>
+    <script type="text/javascript">
+        window.onload = function confirm_box()
+        {
+        var x=confirm("You must be 21 or over to access this site. Do you want to proceed?")
+        if (x==true)
+        {
+        }
+        else
+        {
+        window.location = "http://www.google.com/"
+        }
+        }
+        </script>
 
 </body>
 

@@ -283,7 +283,7 @@ yMinMax();
     var xScale = d3
       .scaleLinear()
       .domain([xMin, xMax])
-      .range([margin + labelArea, width -200 - margin])
+      .range([margin + labelArea, width - margin])
 
     var yScale = d3
       .scaleLinear()
