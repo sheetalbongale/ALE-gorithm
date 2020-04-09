@@ -621,6 +621,7 @@ input, select, textarea {
 		margin-bottom: 1em;
 	}
 
+
 /* Box */
 
 	.box {
@@ -1003,6 +1004,10 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
+		
+			.center {
+				border-radius: 50%;
+			  }
 
 /* List */
 
@@ -2306,6 +2311,12 @@ input, select, textarea {
 			padding: 0;
 		}
 
+	#scatter{
+			width: 80%;
+			height: 100%;
+			margin-bottom: 20px
+		}
+
 		.aText {
 			font-family: sans-serif;
 			font-size: 18px;
@@ -2314,20 +2325,20 @@ input, select, textarea {
 		  
 		  .active {
 			font-weight: bold;
-			fill: rgb(255, 116, 2);
+			fill: rgb(14, 13, 13);
 			transition: fill 0.5s ease-out;
 			text-anchor: middle;
 		  }
 		  
 		  .inactive {
 			font-weight: lighter;
-			fill: #ca0d0d;
+			fill: #494747;
 			transition: fill 0.5s ease-out;
 			text-anchor: middle;
 		  }
 		  
 		  .inactive:hover {
-			fill: rgb(245, 3, 3);
+			fill: rgb(59, 57, 57);
 			cursor: pointer;
 		  }
 		  
@@ -2372,6 +2383,5 @@ input, select, textarea {
 			font-family: 'Playfair Display',sans-serif;
 			text-anchor: middle;
 			font-size: 0.75em;
-
 		  }
 

@@ -5,7 +5,7 @@ function drawScatter(data) {
   // Define SVG attributes
   var width = parseInt(d3.select('#scatter')
     .style("width"));
-
+  var legendxpos = width -200;
   var height = width * 2 / 3;
   var margin = 10;
   var labelArea = 110;
@@ -113,22 +113,50 @@ function drawScatter(data) {
     .attr("class", "aText inactive y")
     .text("SRM");
 
+    var currentX = "ABV_avg";
+    var currentY = "SRM_avg"; 
+    var xMin;
+    var xMax;
+    var yMin;
+    var yMax;
+// Find the data max & min values for scaling
+function xMinMax() {
+  xMin = d3.min(data, function (d) {
+    return parseFloat(d[currentX]) * 0.7;
+  });
+  xMax = d3.max(data, function (d) {
+    return parseFloat(d[currentX]) * 1.15;
+  });
+}
 
-  const xScale = d3.scaleLinear();
-  const yScale = d3.scaleLinear();
+function yMinMax() {
+  yMin = d3.min(data, function (d) {
+    return parseFloat(d[currentY]) * 0.7;
+  });
+  yMax = d3.max(data, function (d) {
+    return parseFloat(d[currentY]) * 1.15;
+  });
+}
+
+// Scatter plot X & Y axis computation
+xMinMax();
+yMinMax();
+
+  const xScale = d3.scaleLinear().domain([xMin,xMax]).range([margin+labelArea,width-margin]);
+  const yScale = d3.scaleLinear().domain([yMin,yMax]).range([height-margin-labelArea,margin]);
   const colorScale = d3.scaleOrdinal()
     .range(d3.schemeCategory10);
 
-  const xAxis = d3.axisBottom()
-    .scale(xScale)
-    .tickPadding(15)
-    .tickSize(-innerHeight);
+  const xAxis = d3.axisBottom(xScale)
+   // .scale(xScale)
+   // .tickPadding(15)
+   // .tickSize(-innerHeight);
 
-  const yAxis = d3.axisLeft()
-    .scale(yScale)
-    .ticks(5)
-    .tickPadding(15)
-    .tickSize(-innerWidth);
+  const yAxis = d3.axisLeft(yScale)
+   // .scale(yScale)
+   // .ticks(5)
+    //.tickPadding(15)
+    //.tickSize(-innerWidth);
 
 
   const row = d => {
@@ -143,10 +171,10 @@ function drawScatter(data) {
   var cRadius;
   function adjustRadius() {
     if (width <= 530) {
-      cRadius = 10;
+      cRadius = 5;
     }
     else {
-      cRadius = 15;
+      cRadius = 7;
     }
   }
   adjustRadius();
@@ -157,14 +185,9 @@ function drawScatter(data) {
  // });
 
   function visualize(csvData) {
-    var xMin;
-    var xMax;
-    var yMin;
-    var yMax;
 
     // Current X & Y default selections
-    var currentX = "ABV_avg";
-    var currentY = "SRM_avg";
+
 
 
     var z = d3.scaleSqrt()
@@ -174,56 +197,14 @@ function drawScatter(data) {
     var myColor = d3.scaleOrdinal()
       .domain(["Bock", "Brown Ale", " Dark Ale", "Dark Lager", "Hybrid Beer", " India Pale Ale", "Pale Ale", " Pilsener & Pale Lager",
         "Porter", "Specialty Beer", "Stout", "Strong Ale", "Wheat Beer", "Wild / Sour Beer"])
-      .range(["#FFA07A","#E9967A","#FA8072","#F08080","#CD5C5C","#F7C1A6","#FFC300","#FF0000","#900C3F","#581845","#C70039","#714C29","#DC720E","#80162C"]);
+      .range(["#FFA07A","#F4D03F","#EB984E","#F5C00C","#F4D03F","#DB6A3C","#FFC300","#FBFB11","#900C3F","#581845","#C70039","#CA6F1E","#DC720E","#80162C"]);
 
 
     // Add legend: circles
     var valuesToShow = [10000000, 100000000, 1000000000]
     var xCircle = 390
     var xLabel = 440
-    //  svg
-    //    .selectAll("legend")
-    //    .data(valuesToShow)
-    //    .enter()
-    //    .append("circle")
-    //      .attr("cx", xCircle)
-    //      .attr("cy", function(d){ return height - 100 - z(d) } )
-    //      .attr("r", function(d){ return z(d) })
-    //      .style("fill", "none")
-    //      .attr("stroke", "black")
-
-    //  // Add legend: segments
-    //  svg
-    //    .selectAll("legend")
-    //    .data(valuesToShow)
-    //    .enter()
-    //    .append("line")
-    //      .attr('x1', function(d){ return xCircle + z(d) } )
-    //      .attr('x2', xLabel)
-    //      .attr('y1', function(d){ return height - 100 - z(d) } )
-    //      .attr('y2', function(d){ return height - 100 - z(d) } )
-    //      .attr('stroke', 'black')
-    //      .style('stroke-dasharray', ('2,2'))
-
-    // Add legend: labels
-    svg
-      .selectAll("legend")
-      .data(valuesToShow)
-      .enter()
-      .append("text")
-      .attr('x', xLabel)
-      .attr('y', function (d) { return height - 100 - z(d) })
-      .text(function (d) { return d / 1000000 })
-      .style("font-size", 10)
-      .attr('alignment-baseline', 'middle')
-
-    // Legend title
-    svg.append("text")
-      .attr('x', xCircle)
-      .attr("y", height - 100 + 30)
-      .text("Category")
-      .attr("text-anchor", "middle")
-
+    
     // Add one dot in the legend for each name.
     var size = 20
     var allgroups = ["Bock", "Brown Ale", " Dark Ale", "Dark Lager", "Hybrid Beer", " India Pale Ale", "Pale Ale", " Pilsener & Pale Lager",
@@ -232,7 +213,7 @@ function drawScatter(data) {
       .data(allgroups)
       .enter()
       .append("circle")
-      .attr("cx", 590)
+      .attr("cx", legendxpos)
       .attr("cy", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
       .attr("r", 7)
       .style("fill", function (d) { return myColor(d) })
@@ -240,7 +221,18 @@ function drawScatter(data) {
       .on("mouseleave", noHighlight)
 
   // Add labels beside legend dots
-
+    svg.selectAll("mylabels")
+    .data(allgroups)
+    .enter()
+    .append("text")
+    .attr("x",legendxpos + 10 + size * .8)
+    .attr("y", function (d, i) { return i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
+    .style("fill", function (d) { return myColor(d) })
+    .text(function (d) { return d })
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+    .on("mouseover", highlight)
+    .on("mouseleave", noHighlight)
 
 
     // Tool Tip info box (state, X stats,  Y stats)
@@ -280,41 +272,18 @@ function drawScatter(data) {
         .data(allgroups)
         .enter()
         .append("circle")
-        .attr("cx", 590)
-        .attr("cy", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("cx", function(d){xScale(d[currentX])})
+        .attr("cy", function(d){yScale(d[currentY])}) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("r", 7)
         .style("fill", function (d) { return myColor(d) })
         .on("mouseover", highlight)
         .on("mouseleave", noHighlight)
     }
 
-    // Find the data max & min values for scaling
-    function xMinMax() {
-      xMin = d3.min(csvData, function (d) {
-        return parseFloat(d[currentX]) * 0.85;
-      });
-      xMax = d3.max(csvData, function (d) {
-        return parseFloat(d[currentX]) * 1.15;
-      });
-    }
-
-    function yMinMax() {
-      yMin = d3.min(csvData, function (d) {
-        return parseFloat(d[currentY]) * 0.85;
-      });
-      yMax = d3.max(csvData, function (d) {
-        return parseFloat(d[currentY]) * 1.15;
-      });
-    }
-
-    // Scatter plot X & Y axis computation
-    xMinMax();
-    yMinMax();
-
     var xScale = d3
       .scaleLinear()
       .domain([xMin, xMax])
-      .range([margin + labelArea, width - margin])
+      .range([margin + labelArea, width -200 - margin])
 
     var yScale = d3
       .scaleLinear()

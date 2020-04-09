@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import sqlalchemy as sql
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
@@ -7,6 +7,7 @@ import pymysql
 import json
 import pandas as pd
 from flask import Response
+import json
 
 ################################################################
 #               Flask Setup and Database Connection            #
@@ -41,16 +42,12 @@ def index():
 
 @app.route('/recommender.html')
 def recommender():
-    return render_template('recommender.html')
-
-# populate category dropdown
-@app.route("/category_names")
-def category():
     TABLENAME = 'ba_beerstyles'
     query = f"SELECT DISTINCT Category FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
-    # return json of the dataframe
-    return Response(df.to_json(orient = "records"), mimetype='application/json')
+    categories = df['Category'].tolist()
+    categories.insert(0,"Choose a Category")
+    return render_template('recommender.html', categories=categories)
 
 # populate beerstyle dropdown - * Needs work(Dynamic Dropdown) *
 @app.route("/beerstyle_names")
@@ -117,7 +114,7 @@ def state_data():
 @app.route("/style_rank")
 def style_rank():
     TABLENAME = 'beer_style_pop'
-    query = f"SELECT beer_style, review_count FROM {TABLENAME} ORDER BY review_count DESC LIMIT 25"
+    query = f"SELECT beer_style, review_count FROM {TABLENAME} ORDER BY review_count DESC LIMIT 10"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')

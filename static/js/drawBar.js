@@ -10,10 +10,10 @@ function drawBar(data){
                         textposition: 'auto',
                         hoverinfo: 'none',
                         marker: {
-                                color: 'rgb(255,205,88)',
-                                opacity: 0.4,
+                                color: 'rgb(244,214,84)',
+                                opacity: 0.8,
                                 line: {
-                                color: 'rgb(255,182,12)',
+                                color: 'rgb(244,214,84)',
                                 width: 1.5
                                 }
                             }
@@ -22,7 +22,7 @@ function drawBar(data){
                       
     
                     let layout = {
-                                title: 'Top 25 Most Popular Beer Styles',
+                                title: 'Top 10 Most Popular Beer Styles',
                                 barmode: 'stack',
                                 showlegend:false,
                                 yaxis: {
@@ -32,16 +32,16 @@ function drawBar(data){
                                   fixedrange:true,
                                   automargin: true,
                                   tickfont: {
-                                      size: 9
+                                      size: 12
                                     }
                                 },
                                 xaxis: {
                                   fixedrange: true,
                                   showline: true,
                                   tickformat: 'g',
-                                //   title: 'Review Count',
+                                  title: 'Review Count',
                                   tickfont: {
-                                    size: 9
+                                    size: 12
                                   }
                                 }
                                 };
