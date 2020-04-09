@@ -2385,3 +2385,28 @@ input, select, textarea {
 			font-size: 0.75em;
 		  }
 
+		  
+		.dbhero {
+			background-image: linear-gradient(rgba(160, 113, 66, 0.2), rgba(153,102,51,0.2)), url(../img/hero5.jpg);
+			height: 100vh;
+			background-size: cover;
+			padding-top: 8vh;
+			padding-bottom: 30vh;
+		}
+	
+		.dashboard {
+			font-family: 'Open Sans Condensed', sans-serif;
+			text-transform: uppercase;
+			font-size: 4rem;
+			color: white;
+			text-shadow: 1px 1px 1px #000;
+			height: 100%;
+		}
+	
+		.dashboardh7 {
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: 1.3rem;
+			line-height: 1.3;
+			text-shadow: 1px 1px 1px #000;
+			padding-left: 0.2rem;
+		}
