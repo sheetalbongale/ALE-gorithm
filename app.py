@@ -46,6 +46,7 @@ def recommender():
     query = f"SELECT DISTINCT Category FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
     categories = df['Category'].tolist()
+    categories.insert(0,"Choose a Category")
     return render_template('recommender.html', categories=categories)
 
 # populate category dropdown
