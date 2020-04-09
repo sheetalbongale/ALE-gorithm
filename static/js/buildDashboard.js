@@ -34,7 +34,8 @@ function init(){
             .property("value", state.state);
         });
         })
-
+        d3.select('#statestat').html(""),
+        buildDashboard('Texas');
 };
 
 function optionChangedThree(newState) {
