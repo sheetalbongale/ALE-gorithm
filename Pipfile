@@ -11,8 +11,10 @@ pandas = "*"
 plotly = "*"
 flask = "*"
 pymysql = "*"
-sqlalchemy = "*"
 nb-black = "*"
+unicorn = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.8"
