@@ -2274,10 +2274,10 @@ input, select, textarea {
 /* images */
 
 	#recommenderpage {
-		background-image: url('../img/recommender2.jpg');
+		background-image: url('../img/recommender4.jpg');
 		background-size: cover;
 		background-attachment: fixed, fixed;
-		background-position: bottom center;
+		background-position: bottom;
 		
 	  }
 
@@ -2377,3 +2377,4 @@ input, select, textarea {
 			text-anchor: middle;
 			font-size: 0.75em;
 		  }
+
