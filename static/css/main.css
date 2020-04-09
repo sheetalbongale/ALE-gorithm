@@ -2316,6 +2316,7 @@ input, select, textarea {
 			height: 100%;
 			margin-bottom: 20px
 		}
+	.chart {position: absolute;}
 
 		.aText {
 			font-family: sans-serif;

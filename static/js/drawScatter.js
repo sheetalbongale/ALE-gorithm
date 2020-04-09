@@ -4,12 +4,14 @@ function drawScatter(data) {
     {}]
   // Define SVG attributes
   var width = parseInt(d3.select('#scatter')
-    .style("width"));
-  var legendxpos = width -200;
+    .style("width"))-200;
+  var legendxpos = width;
   var height = width * 2 / 3;
   var margin = 10;
   var labelArea = 110;
   var padding = 45;
+
+ 
 
   // Create SVG object 
   var svg = d3.select("#scatter")
@@ -17,6 +19,12 @@ function drawScatter(data) {
     .attr("width", width)
     .attr("height", height)
     .attr("class", "chart");
+    
+    var svglegend = d3.select("#scatter")
+  .append("svg")
+  .attr("width", width + 200)
+  .attr("height", height)
+  .attr("class", "chartlegend");
 
   // Labels for axes=================================
   // Add first g - tag for x axis text (css class)
@@ -38,7 +46,7 @@ function drawScatter(data) {
   // What to do when one group is hovered
   var highlight = function (d) {
     // reduce opacity of all groups
-    d3.selectAll(".bubbles").style("opacity", .05)
+    d3.selectAll(".bubbles").style("opacity", .7)
     // expect the one that is hovered
     // d3.selectAll("."+d).style("opacity", 1)
   }
@@ -197,7 +205,7 @@ yMinMax();
     var myColor = d3.scaleOrdinal()
       .domain(["Bock", "Brown Ale", " Dark Ale", "Dark Lager", "Hybrid Beer", " India Pale Ale", "Pale Ale", " Pilsener & Pale Lager",
         "Porter", "Specialty Beer", "Stout", "Strong Ale", "Wheat Beer", "Wild / Sour Beer"])
-      .range(["#FFA07A","#F4D03F","#EB984E","#F5C00C","#F4D03F","#DB6A3C","#FFC300","#FBFB11","#900C3F","#581845","#C70039","#CA6F1E","#DC720E","#80162C"]);
+      .range(["#FBFB11","#FAEC05","#FAD905","#F4D03F","#F5C00C","#F4D03F","#FFC300","#FA9E06","#DB6A3C","#EC7505","#FFA07A","#FA4506","#FA5906","#DB6A3C"]);
 
 
     // Add legend: circles
@@ -209,7 +217,8 @@ yMinMax();
     var size = 20
     var allgroups = ["Bock", "Brown Ale", " Dark Ale", "Dark Lager", "Hybrid Beer", " India Pale Ale", "Pale Ale", " Pilsener & Pale Lager",
       "Porter", "Specialty Beer", "Stout", "Strong Ale", "Wheat Beer", "Wild / Sour Beer"]
-    svg.selectAll("myrect")
+
+    svglegend.selectAll("myrect")
       .data(allgroups)
       .enter()
       .append("circle")
@@ -221,7 +230,7 @@ yMinMax();
       .on("mouseleave", noHighlight)
 
   // Add labels beside legend dots
-    svg.selectAll("mylabels")
+  svglegend.selectAll("mylabels")
     .data(allgroups)
     .enter()
     .append("text")
@@ -343,7 +352,7 @@ yMinMax();
         toolTip.show(d, this);
         // Highlight circle border
         d3.select(this).style("stroke", "#323232");
-        d3.select(this).style("opacity", .8)
+        d3.select(this).style("opacity", .6)
       })
       .on("mouseout", function (d) {
         // Remove the tooltip
