@@ -58,6 +58,15 @@ def beer_style():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
+# populate beerstyle dropdown based upon Category input 
+@app.route("/beerstyle_filtered/<category>")
+def beer_style_filtered(category):
+    TABLENAME = "ba_beerstyles"
+    query = f"SELECT Style FROM {TABLENAME} WHERE Category = '{category}'"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient="records"), mimetype="application/json")
+
 # selector for beerstyle for gaugechart
 @app.route("/beerstyle/<beerstyle>")
 def guagechart(beerstyle):
