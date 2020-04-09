@@ -49,15 +49,6 @@ def recommender():
     categories.insert(0,"Choose a Category")
     return render_template('recommender.html', categories=categories)
 
-# populate category dropdown
-@app.route("/category_names")
-def category():
-    TABLENAME = 'ba_beerstyles'
-    query = f"SELECT DISTINCT Category FROM {TABLENAME}"
-    df = pd.read_sql_query(query, sql_engine)
-    # return json of the dataframe
-    return Response(df.to_json(orient = "records"), mimetype='application/json')
-
 # populate beerstyle dropdown - * Needs work(Dynamic Dropdown) *
 @app.route("/beerstyle_names")
 def beer_style():
