@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS File -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css">
     <!-- Main Stylesheet File -->
-    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/main.css" />
     <!-- Font-awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- No Script CSS  -->
@@ -25,7 +25,6 @@
     <!-- Anychart -->
     <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
-
 
     <!-- Jinja2 format to refer to css file
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
@@ -45,10 +44,10 @@
             </ul>
         </nav>
     </header>
-    
+
     <!-- Hero -->
     <section class="dbhero">
-        <div class="container" >
+        <div class="container">
             <h1 class="col-lg-12 mb-1 dashboard">“...Beer 
                 <br class="mb-4">is proof
                 <br class="mb-4">that 
@@ -61,7 +60,7 @@
                 <br class="mb-4">to be
                 <br class="mb-4">happy...”
             </h1>
-             <p class="mt-4 dashboardh7"> – Benjamin Franklin</p>   
+            <p class="mt-4 dashboardh7"> – Benjamin Franklin</p>
         </div>
     </section>
 
@@ -84,24 +83,45 @@
         </div>
     </content>
 
-    <!-- US Breweries and Barrels Map Chart - BUTTON TOGGLE -->
+    <!-- US Breweries and Barrels Map Chart - BUTTON TOGGLE & STATE DROPDOWN -->
     <div class="container-fluid">
-
         <h2 class="title text-center">Beer Breakdown by State</h2>
-
-        <div class="row center align-items-center" id="button">
-            <div class="col-md-12">
-
-            <button id="map1-btn" class="btn btn-outline-primary"><b>State Breweries</b></button>
-            <button id="map2-btn" class="btn btn-outline-primary"><b>Beer Barrels Produced</b></button>
+        <br>
+        <div class="row center align-items-center">
+            <div class="col-lg-4 col-md-12">
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <select class="custom-select button secondary" id="selDatasetThree" onchange="optionChangedThree(this.value)">
+                    <option selected class="custom-option">Select State</option>
+                </select>
             </div>
         </div>
+        <br>
+        <br>
+        <div class="row center align-items-center" id="button">
+            <div class="col-lg-8 col-md-12">
 
-        <div id="heatMap"></div>
+                <button id="map1-btn" class="btn btn-outline-primary"><b>State Breweries</b></button>
+                <button id="map2-btn" class="btn btn-outline-primary"><b>Beer Barrels Produced</b></button>
 
+                <div id="heatMap"></div>
+            </div>
+            <div class="col-lg-3 col-md-12" id="statestat">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">State</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">Number of breweries</h6>
+                        <p class="card-text">State Stats</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <br>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
     <br>
     <!-- Popular Beers Wordcloud -->
     <h2 class="title text-center">Beer Styles that are consistently popular</h2>
@@ -114,37 +134,38 @@
         </div>
     </div>
     <br>
+    <hr>
+    <br>
 
+    <div id="scatter"></div>
 
-        <div id="scatter"></div>
-
-        <!-- US Barrels Map Chart for Top 25 Beer Styles -->
-        <div class="container">
+    <!-- US Barrels Map Chart for Top 25 Beer Styles -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="heatMap"></div>
+            </div>
             <div class="row">
                 <div class="col-md-8">
-                    <div id="heatMap"></div>
+                    <div id="heatMap2"></div>
                 </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div id="heatMap2"></div>
-                    </div>
-                </div>
-
-                <!-- Bar Chart for Top 25 Beer Styles -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="barchart"></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="jumbotron">
-                        <p><b><i>IPA lot when I drink...</i></b>
-                            <br>And so does a majority of America. IPA takes the prize for most popular beer style, with Imperial Stout inching closely behind. *cracks a cold one*
-                        </p>
-                    </div>
-                </div>               
             </div>
-          
+
+            <!-- Bar Chart for Top 25 Beer Styles -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="barchart"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <p><b><i>IPA lot when I drink...</i></b>
+                        <br>And so does a majority of America. IPA takes the prize for most popular beer style, with Imperial Stout inching closely behind. *cracks a cold one*
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <img src="../static/img/brewing.jpg">
         </div>
@@ -152,10 +173,8 @@
 
     <!-- Footer -->
     <footer id="footer">
-
         <!-- GitHub -->
         <ul class="icons">
-
             <li>
                 <a href="https://github.com/sheetalbongale/ALE-gorithm" class="fa fa-lg fa-github"></a>
             </li>
@@ -199,6 +218,7 @@
     <script src="../static/js/drawBar.js"></script>
     <script src="../static/js/drawScatter.js"></script>
     <script src="../static/js/buildCloud.js"></script>
+    <script src="../static/js/buildDashboard.js"></script>
 
 </body>
 
