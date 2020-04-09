@@ -621,6 +621,7 @@ input, select, textarea {
 		margin-bottom: 1em;
 	}
 
+
 /* Box */
 
 	.box {
@@ -694,6 +695,7 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			text-indent: -10em;
 			overflow: hidden;
+			opacity: 60%;
 		}
 
 			input[type="button"].down.anchored,
@@ -732,6 +734,7 @@ input, select, textarea {
 		button:active {
 			background-color: #cebf3d;
 		}
+
 
 		input[type="button"].style2,
 		input[type="submit"].style2,
@@ -1001,6 +1004,10 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
+		
+			.center {
+				border-radius: 50%;
+			  }
 
 /* List */
 
@@ -2274,10 +2281,10 @@ input, select, textarea {
 /* images */
 
 	#recommenderpage {
-		background-image: url('../img/recommender2.jpg');
+		background-image: url('../img/recommender4.jpg');
 		background-size: cover;
 		background-attachment: fixed, fixed;
-		background-position: bottom center;
+		background-position: bottom;
 		
 	  }
 
@@ -2304,6 +2311,12 @@ input, select, textarea {
 			padding: 0;
 		}
 
+	#scatter{
+			width: 80%;
+			height: 100%;
+			margin-bottom: 20px
+		}
+
 		.aText {
 			font-family: sans-serif;
 			font-size: 18px;
@@ -2312,20 +2325,20 @@ input, select, textarea {
 		  
 		  .active {
 			font-weight: bold;
-			fill: rgb(255, 116, 2);
+			fill: rgb(14, 13, 13);
 			transition: fill 0.5s ease-out;
 			text-anchor: middle;
 		  }
 		  
 		  .inactive {
 			font-weight: lighter;
-			fill: #ca0d0d;
+			fill: #494747;
 			transition: fill 0.5s ease-out;
 			text-anchor: middle;
 		  }
 		  
 		  .inactive:hover {
-			fill: rgb(245, 3, 3);
+			fill: rgb(59, 57, 57);
 			cursor: pointer;
 		  }
 		  
@@ -2372,3 +2385,30 @@ input, select, textarea {
 			font-size: 0.75em;
 		  }
 
+		  
+		.dbhero {
+			background-image: linear-gradient(rgba(160, 113, 66, 0.2), rgba(153,102,51,0.2)), url(../img/hero5.jpg);
+			height: 100vh;
+			background-size: cover;
+			padding-top: 8vh;
+			padding-bottom: 30vh;
+		}
+	
+		.dashboard {
+			font-family: 'Open Sans Condensed', sans-serif;
+			text-transform: uppercase;
+			font-size: 4rem;
+			line-height: 0.8;
+			color: white;
+			text-shadow: 1px 1px 1px #000;
+			height: 100%;
+			
+		}
+	
+		.dashboardh7 {
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: 1.3rem;
+			line-height: 1.3;
+			text-shadow: 1px 1px 1px #000;
+			padding-left: 0.2rem;
+		}
