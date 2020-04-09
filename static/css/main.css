@@ -2398,9 +2398,11 @@ input, select, textarea {
 			font-family: 'Open Sans Condensed', sans-serif;
 			text-transform: uppercase;
 			font-size: 4rem;
+			line-height: 0.8;
 			color: white;
 			text-shadow: 1px 1px 1px #000;
 			height: 100%;
+			
 		}
 	
 		.dashboardh7 {
