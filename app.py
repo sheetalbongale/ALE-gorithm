@@ -127,6 +127,16 @@ def category_data():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
+
+# state selector
+@app.route("/statedata/<state>")
+def state_stat(state):
+    TABLENAME = 'us_state_data'
+    query = f"SELECT * FROM {TABLENAME} WHERE state = '{state}'"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient = "records"), mimetype='application/json')
+
 #--------------------------------------------------------------#
 #                       breweries routes                       #
 #--------------------------------------------------------------#
