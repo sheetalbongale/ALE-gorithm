@@ -53,26 +53,23 @@
 
                     <p>Get Your Drink On</p>
 
-
-                <ul class="actions special">
-                    <li>
-                        <select class="custom-select button secondary" id="selDatasetOne" onchange="optionChangedOne(this.value)">
-                            {% for category in categories %}
-                            <option selected class="custom-option">{{category}}</option>
-                            {% endfor %}
-                        </select>
-                    </li>
-                    <li>
-                        <select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedTwo(this.value)">
-                            <option selected class="custom-option">Select Beer Style</option>
-                        </select>
-                    </li>
-                </ul>
-            </header>
-            <footer>
-                <a href="#beerrecommendation" class="button style2 down align-items-center">More</a>
-            </footer>
-
+                    <ul class="actions special">
+                        <li>
+                            <select class="custom-select button secondary" id="selDatasetOne" onchange="optionChangedOne(this.value)">
+                                <option selected class="custom-option">Select Category</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedTwo(this.value)">
+                                <option selected class="custom-option">Select Beer Style</option>
+                            </select>
+                        </li>
+                    </ul>
+                </header>
+                <footer>
+                    <br>
+                    <a href="#beerrecommendation" class="button down align-items-center">More</a>
+                </footer>
             </div>
         </div>
     </section>
