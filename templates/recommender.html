@@ -57,7 +57,9 @@
                     <ul class="actions special">
                         <li>
                             <select class="custom-select button secondary" id="selDatasetOne" onchange="optionChangedOne(this.value)">
-                                <option selected class="custom-option">Select Category</option>
+                                {% for category in categories %}
+                                <option selected class="custom-option">{{category}}</option>
+                                {% endfor %}
                             </select>
                         </li>
                         <li>
