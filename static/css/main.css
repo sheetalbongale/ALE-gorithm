@@ -964,10 +964,6 @@ input, select, textarea {
 		height: 100%;
 	}
 
-	.zoom:hover {
-		transform: scale(1.25);
-	}
-
 	.image {
 		position: relative;
 		display: inline-block;
@@ -2440,6 +2436,7 @@ input, select, textarea {
 			position: relative;
 			background-color: #fff;
 		}
+		
 
 		.profile {
 			height: 400px;
