@@ -2388,7 +2388,7 @@ input, select, textarea {
 
 		  
 		.dbhero {
-			background-image: linear-gradient(rgba(160, 113, 66, 0.2), rgba(153,102,51,0.2)), url(../img/hero5.jpg);
+			background-image: linear-gradient(rgba(160, 113, 66, 0.2), rgba(153,102,51,0.2)), url('../img/hero5.jpg');
 			height: 100vh;
 			background-size: cover;
 			padding-top: 8vh;
