@@ -256,20 +256,18 @@ function buildCharts(beerstyle){
         
         d3.json(`/beerstyles_links/${beerstyle}`).then(data => data.forEach(e => {
             console.log(data)
-            let cardBody = d3.select("#beerstyleimage")
+            let cardBody = d3.select("#beerimage")
             .append("div")
                 .classed("card", true)
                 .append("div")
-            cardBody.append("h3")
-                .classed("card-header", true)
-                .text(e.beer_style)
             cardBody.append("img")
                 .attr("src", e.image_link)
-                .classed("beerstyleimage", true)
+                .classed("card-img-top beerimage",true)
             }))
 
 
         };
+    
             
 
 
@@ -342,7 +340,7 @@ function optionChangedTwo(newBeerstyle) {
     console.log(beerstyle);
     d3.select('#description').html(""),
     buildCharts(beerstyle);
-    d3.select('#beerstyleimage').html(""),
+    d3.select('#beerimage').html(""),
     buildImage(beerstyle);
     d3.select('#top5').html(""),
     buildRecommender(beerstyle);
