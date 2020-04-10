@@ -64,6 +64,7 @@
         </div>
     </section>
 
+
     <!-- ABV IBU SRM -->
     <content>
         <div class="container-fluid" style="padding: 20px;">
@@ -83,9 +84,10 @@
         </div>
     </content>
 
+
     <!-- US Breweries and Barrels Map Chart - BUTTON TOGGLE & STATE DROPDOWN -->
     <div class="container-fluid">
-        <h2 class="title text-center">Beer Breakdown by State</h2>
+        <h2 class="title text-center">Breakdown by State</h2>
         <br>
         <div class="row center align-items-center">
             <div class="col-lg-4 col-md-12">
@@ -119,15 +121,19 @@
         </div>
     </div>
 
+
+    <!-- Progress Bar -->
     <br>
     <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
     </div>
     <br>
+
+
     <!-- Popular Beers Wordcloud -->
-    <h2 class="title text-center">Beer Styles that are consistently popular</h2>
+    <h2 class="title text-center">Most Popular Beer Styles</h2>
     <div class="container-fluid" id="cloud" style="padding: 30px;">
-        <hr class="my-4">
+        <!-- <hr class="my-4"> -->
         <div class="row">
             <div class="col-lg">
                 <div id="cloud"></div>
@@ -135,10 +141,7 @@
         </div>
     </div>
     <br>
-    <hr>
-    <br>
 
-    <div id="scatter"></div>
 
     <!-- US Barrels Map Chart for Top 25 Beer Styles -->
     <div class="container">
@@ -166,11 +169,42 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container">
-            <img src="../static/img/brewing.jpg">
+
+    <!-- Progress Bar -->
+    <br>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
+    <br>
+
+
+    <!-- D3 Scatter Chart -->
+    <!-- <div id="scatter"></div> -->
+    <h2 class="title text-center">Breakdown by Beer Style</h2>
+    <div class="container-fluid" id="scatter" style="padding: 30px;">
+        <!-- <hr class="my-4"> -->
+        <div class="row">
+            <div class="col-lg">
+                <div id="scatter"></div>
+            </div>
         </div>
     </div>
+
+
+    <!-- Progress Bar -->
+    <br>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
+
+    <!-- Brewing Image -->
+    <div class="container">
+            <img src="../static/img/brewing.jpg" height="700" width="1150">
+    </div>
+    </div>
+
 
     <!-- Footer -->
     <footer id="footer">
@@ -188,7 +222,6 @@
             <li>UT Data Analysis and Visualization Bootcamp</a>
             </li>
         </ul>
-
     </footer>
 
     <!-- Scripts -->
