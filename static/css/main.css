@@ -2374,10 +2374,10 @@ input, select, textarea {
 			font-size: 12px;
 			line-height: 1;
 			line-height: 1.5em;
-			color: rgb(92, 22, 22);
+			color: rgb(12, 6, 6);
 			text-align: center;
 			text-transform: capitalize;
-			background: rgb(233, 118, 118);
+			background: rgb(211, 211, 211);
 			border-radius: 4px;
 		  }
 		  
