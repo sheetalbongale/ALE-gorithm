@@ -310,17 +310,6 @@ function buildCharts(beerstyle){
 
 //-----------------FUNCTION INITIATOR-----------------//
 function init() {
-   
-
-        // var selectorTwo = d3.select('#selDatasetTwo');
-        // d3.json("/beerstyle_names").then((dropdown2Names) =>{
-        // dropdown2Names.forEach((beerstyle) =>{
-        //     selectorTwo
-        //     .append("option")
-        //     .text(beerstyle.Style)
-        //     .property("value", beerstyle.Style);
-        // });
-        // })
 
         const firstStyle = dropdown2Names[1];
 
