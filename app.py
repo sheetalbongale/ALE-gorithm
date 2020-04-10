@@ -58,6 +58,17 @@ def beer_style():
     # return json of the dataframe
     return Response(df.to_json(orient = "records"), mimetype='application/json')
 
+# populate beerstyle dropdown based upon Category input 
+@app.route("/beerstyle_filtered/<category>")
+def beer_style_filtered(category):
+    TABLENAME = "ba_beerstyles"
+    query = f"SELECT Style FROM {TABLENAME} WHERE Category = '{category}'"
+    df = pd.read_sql_query(query, sql_engine)
+    df2 = pd.DataFrame({"Style":["Select a Beer Style"]})
+    df = df2.append(df)
+    # return json of the dataframe
+    return Response(df.to_json(orient="records"), mimetype="application/json")
+
 # selector for beerstyle for gaugechart
 @app.route("/beerstyle/<beerstyle>")
 def guagechart(beerstyle):
@@ -74,6 +85,10 @@ def selector(beerstyle):
     TABLENAME2 = 'final_beers'
     query = f"select {TABLENAME2}.*, {TABLENAME1}.avg_rating, {TABLENAME1}.review_count from {TABLENAME2} cross join {TABLENAME1} on {TABLENAME1}.beer_id = {TABLENAME2}.beer_id where {TABLENAME1}.beer_style = '{beerstyle}'"
     df = pd.read_sql_query(query, sql_engine)
+    isempty = df.empty
+    if isempty == True:
+          df2 = pd.DataFrame({"beer_name":["Sorry, we dont have a recommendation for that style"]})
+          df = df2.append(df)
     # return json of the dataframe
     return Response(df.to_json(orient = "records"),mimetype='application/json')
 
