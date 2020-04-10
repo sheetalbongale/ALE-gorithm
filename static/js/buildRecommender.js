@@ -256,20 +256,18 @@ function buildCharts(beerstyle){
         
         d3.json(`/beerstyles_links/${beerstyle}`).then(data => data.forEach(e => {
             console.log(data)
-            let cardBody = d3.select("#beerstyleimage")
+            let cardBody = d3.select("#beerimage")
             .append("div")
                 .classed("card", true)
                 .append("div")
-            cardBody.append("h3")
-                .classed("card-header", true)
-                .text(e.beer_style)
             cardBody.append("img")
                 .attr("src", e.image_link)
-                .classed("beerstyleimage", true)
+                .classed("card-img-top beerimage zoom",true)
             }))
 
 
         };
+    
             
 
 
@@ -311,18 +309,6 @@ function buildCharts(beerstyle){
 //-----------------FUNCTION INITIATOR-----------------//
 function init() {
 
-   
-
-        var selectorTwo = d3.select('#selDatasetTwo');
-        d3.json("/beerstyle_names").then((dropdown2Names) =>{
-        dropdown2Names.forEach((beerstyle) =>{
-            selectorTwo
-            .append("option")
-            .text(beerstyle.Style)
-            .property("value", beerstyle.Style);
-        });
-        })
-
         const firstStyle = dropdown2Names[1];
 
         drawGaugeABV(firstStyle);
@@ -337,6 +323,16 @@ function init() {
 //--------create event listeners--------//
 function optionChangedOne(newCategory) {
     category = newCategory;
+    d3.select('#selDatasetTwo').html("");
+    var selectorTwo = d3.select('#selDatasetTwo');
+    d3.json(`/beerstyle_filtered/${category}`).then((dropdown2Names) =>{
+    dropdown2Names.forEach((beerstyle) =>{
+        selectorTwo
+        .append("option")
+        .text(beerstyle.Style)
+        .property("value", beerstyle.Style);
+    });
+    })
 }
 
 function optionChangedTwo(newBeerstyle) {
@@ -344,7 +340,7 @@ function optionChangedTwo(newBeerstyle) {
     console.log(beerstyle);
     d3.select('#description').html(""),
     buildCharts(beerstyle);
-    d3.select('#beerstyleimage').html(""),
+    d3.select('#beerimage').html(""),
     buildImage(beerstyle);
     d3.select('#top5').html(""),
     buildRecommender(beerstyle);

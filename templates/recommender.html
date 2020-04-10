@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- No Script CSS  -->
     <noscript>
-        <link rel="stylesheet" href="../static/css/noscript.css" />
+    <link rel="stylesheet" href="../static/css/noscript.css" />
     </noscript>
     <!-- Anychart -->
     <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
@@ -48,45 +48,44 @@
         <div class="content">
             <div class="container-fluid">
                 <header>
+                    <br>
                     <h2 class="align-items-center centered">Welcome to Ale-gorithm <br> The Beer Recommender</h2>
                     <hr>
-
                     <p>Get Your Drink On</p>
+                    <br>
 
-
-                <ul class="actions special">
-                    <li>
-                        <select class="custom-select button secondary" id="selDatasetOne" onchange="optionChangedOne(this.value)">
-                            {% for category in categories %}
-                            <option selected class="custom-option">{{category}}</option>
-                            {% endfor %}
-                        </select>
-                    </li>
-                    <li>
-                        <select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedTwo(this.value)">
-                            <option selected class="custom-option">Select Beer Style</option>
-                        </select>
-                    </li>
-                </ul>
-            </header>
-            <footer>
-                <a href="#beerrecommendation" class="button style2 down align-items-center">More</a>
-            </footer>
-
+                    <ul class="actions special">
+                        <li>
+                            <select class="custom-select button secondary" id="selDatasetOne" onchange="optionChangedOne(this.value)">
+                                {% for category in categories %}
+                                <option selected class="custom-option">{{category}}</option>
+                                {% endfor %}
+                            </select>
+                        </li>
+                        <li>
+                            <select class="custom-select button secondary" id="selDatasetTwo" onchange="optionChangedTwo(this.value)">
+                                <option selected class="custom-option">Select Beer Style</option>
+                            </select>
+                        </li>
+                    </ul>
+                </header>
+                <footer>
+                    <br>
+                    <a href="#beerrecommendation" class="button down align-items-center">More</a>
+                </footer>
             </div>
         </div>
     </section>
 
     <section id="beerrecommendation">
         <br>
-        <br>
-        <h3 class="title text-center">Good Choice! Know more about this Beer Style</h3>
+        <h2 class="title text-center">Good Choice! Learn more about this Beer Style</h2>
 
         <!-- Description about the selected Beer Style -->
-        <div class="container-fluid" id="description" style="padding: 30px;">
+        <div class="container-fluid" style="padding: 30px;">
             <div class="row">
                 <div class="card-deck">
-                    <div class="col-lg-8 col-md">
+                    <div class="col-lg-9 col-md" id="description">
                         <div id="description" class="card bg-default mb-3" style="max-width: 20rem;">
                             <div class="card-body text-center">
                                 <h4 class="card-title"></h4>
@@ -95,11 +94,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md" id="beerstyleimage">
-                        <div class="card mb-3">
-                            <h3 class="card-header"></h3>
-                            <img id="beerstyleimage" class="beerstyleimage" style="height: 100%; width: 100%; display: block;" src="" alt="">
-                        </div>
+                    <div class="col-lg-3 col-md" id="beerimage">
+                        <img src="..." class="card-img-top beerimage zoom" alt="...">
                     </div>
                 </div>
             </div>
@@ -171,54 +167,55 @@
     <hr>
     <br>
 
-    <!-- Beer Style Scroll Box -->
-    <div class="horizontal-scroll-wrapper squares">
-        <style>
-            div.scrollmenu {
-                background-color: #333;
-                overflow: auto;
-                white-space: nowrap;
-            }
-            
-            div.scrollmenu a {
-                display: inline-block;
-                color: white;
-                text-align: center;
-                padding: 14px;
-                text-decoration: none;
-            }
-        </style>
-        <div class="scrollmenu">
-            <a><b>Bock</b></a>
-            <img src="../static/img/wordcloud/bock.svg" width="350px" height="300px">
-            <a><b>Brown Ale</b></a>
-            <img src="../static/img/wordcloud/brown_ale.svg" width="350px" height="300px">
-            <a><b>Dark Ale</b></a>
-            <img src="../static/img/wordcloud/dark_ale.svg" width="350px" height="300px">
-            <a><b>Dark Lager</b></a>
-            <img src="../static/img/wordcloud/dark_lager.svg" width="350px" height="300px">
-            <a><b>Hybrid Beer</b></a>
-            <img src="../static/img/wordcloud/hybrid_beer.svg" width="350px" height="300px">
-            <a><b>IPA</b></a>
-            <img src="../static/img/wordcloud/ipa.svg" width="350px" height="300px">
-            <a><b>Pale Ale</b></a>
-            <img src="../static/img/wordcloud/pale_ale.svg" width="350px" height="300px">
-            <a><b>Pilsener & Pale Lager</b></a>
-            <img src="../static/img/wordcloud/pilsner_pale_ale.svg" width="350px" height="300px">
-            <a><b>Porter</b></a>
-            <img src="../static/img/wordcloud/porter.svg" width="350px" height="300px">
-            <a><b>Specialty</b></a>
-            <img src="../static/img/wordcloud/specialty_beer.svg" width="350px" height="300px">
-            <a><b>Stout</b></a>
-            <img src="../static/img/wordcloud/stout.svg" width="350px" height="300px">
-            <a><b>Strong Ale</b></a>
-            <img src="../static/img/wordcloud/strong_ale.svg" width="350px" height="300px">
-            <a><b>Wheat</b></a>
-            <img src="../static/img/wordcloud/wheat_beer.svg" width="350px" height="300px">
-            <a><b>Wild & Sour</b></a>
-            <img src="../static/img/wordcloud/wild_sour_beer.svg" width="350px" height="300px">
-        </div>
+   <!-- Beer Style Scroll Box -->
+   <div class="horizontal-scroll-wrapper squares">
+    <style>
+        div.scrollmenu {
+            background-color: rgb(255, 255, 255);
+            overflow: auto;
+            white-space: nowrap;
+        }
+        
+        div.scrollmenu a {
+            display: inline-block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+    </style>
+    <div class="scrollmenu">
+        <a><b>Bock</b></a>
+        <img src="../static/img/wordcloud/bock.svg" width="350px" height="300px">
+        <a><b>Brown Ale</b></a>
+        <img src="../static/img/wordcloud/brown_ale.svg" width="350px" height="300px">
+        <a><b>Dark Ale</b></a>
+        <img src="../static/img/wordcloud/dark_ale.svg" width="350px" height="300px">
+        <a><b>Dark Lager</b></a>
+        <img src="../static/img/wordcloud/dark_lager.svg" width="350px" height="300px">
+        <a><b>Hybrid Beer</b></a>
+        <img src="../static/img/wordcloud/hybrid_beer.svg" width="350px" height="300px">
+        <a><b>IPA</b></a>
+        <img src="../static/img/wordcloud/ipa.svg" width="350px" height="300px">
+        <a><b>Pale Ale</b></a>
+        <img src="../static/img/wordcloud/pale_ale.svg" width="350px" height="300px">
+        <a><b>Pilsener & Pale Lager</b></a>
+        <img src="../static/img/wordcloud/pilsner_pale_ale.svg" width="350px" height="300px">
+        <a><b>Porter</b></a>
+        <img src="../static/img/wordcloud/porter.svg" width="350px" height="300px">
+        <a><b>Specialty</b></a>
+        <img src="../static/img/wordcloud/specialty_beer.svg" width="350px" height="300px">
+        <a><b>Stout</b></a>
+        <img src="../static/img/wordcloud/stout.svg" width="350px" height="300px">
+        <a><b>Strong Ale</b></a>
+        <img src="../static/img/wordcloud/strong_ale.svg" width="350px" height="300px">
+        <a><b>Wheat</b></a>
+        <img src="../static/img/wordcloud/wheat_beer.svg" width="350px" height="300px">
+        <a><b>Wild & Sour</b></a>
+        <img src="../static/img/wordcloud/wild_sour_beer.svg" width="350px" height="300px">
     </div>
+</div>
+
 
     <!-- Footer -->
     <footer id="footer">
@@ -246,6 +243,13 @@
     <!-- Custom scripts for this template -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Anychart -->
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+    <!-- Local Scripts -->
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/jquery.poptrox.min.js"></script>
     <script src="../static/js/jquery.scrolly.min.js"></script>
@@ -254,12 +258,6 @@
     <script src="../static/js/breakpoints.min.js"></script>
     <script src="../static/js/util.js"></script>
     <script src="../static/js/main.js"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-data-adapter.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-    <!--script src="{{ url_for('static', filename='js/drawGauge_abv.js') }}"></script-->
     <script src="../static/js/buildRecommender.js"></script>
     <script src="../static/js/buildCloud.js"></script>
 

@@ -20,11 +20,12 @@ sql_engine = sql.create_engine(SQLALCHEMY_DATABASE_URL)
 ################################################################
 #                        Flask Routes                          #
 ################################################################
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template("verification.html")
 
-@app.route('/index.html')
+
+@app.route("/index.html")
 def index():
     return render_template("index.html")
 
@@ -33,15 +34,15 @@ def index():
 #                       recommender routes                     #
 # --------------------------------------------------------------#
 
-
 @app.route("/recommender.html")
 def recommender():
-    TABLENAME = 'ba_beerstyles'
+    TABLENAME = "ba_beerstyles"
     query = f"SELECT DISTINCT Category FROM {TABLENAME}"
     df = pd.read_sql_query(query, sql_engine)
-    categories = df['Category'].tolist()
-    categories.insert(0,"Choose a Category")
-    return render_template('recommender.html', categories=categories)
+    categories = df["Category"].tolist()
+    categories.insert(0, "Choose a Category")
+    return render_template("recommender.html", categories=categories)
+
 
 # populate beerstyle dropdown - * Needs work(Dynamic Dropdown) *
 @app.route("/beerstyle_names")
@@ -52,6 +53,16 @@ def beer_style():
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
 
+# populate beerstyle dropdown based upon Category input
+@app.route("/beerstyle_filtered/<category>")
+def beer_style_filtered(category):
+    TABLENAME = "ba_beerstyles"
+    query = f"SELECT Style FROM {TABLENAME} WHERE Category = '{category}'"
+    df = pd.read_sql_query(query, sql_engine)
+    df2 = pd.DataFrame({"Style": ["Select a Beer Style"]})
+    df = df2.append(df)
+    # return json of the dataframe
+    return Response(df.to_json(orient="records"), mimetype="application/json")
 
 # selector for beerstyle for gaugechart
 @app.route("/beerstyle/<beerstyle>")
@@ -70,6 +81,12 @@ def selector(beerstyle):
     TABLENAME2 = "final_beers"
     query = f"select {TABLENAME2}.*, {TABLENAME1}.avg_rating, {TABLENAME1}.review_count from {TABLENAME2} cross join {TABLENAME1} on {TABLENAME1}.beer_id = {TABLENAME2}.beer_id where {TABLENAME1}.beer_style = '{beerstyle}'"
     df = pd.read_sql_query(query, sql_engine)
+    isempty = df.empty
+    if isempty == True:
+        df2 = pd.DataFrame(
+            {"beer_name": ["Sorry, we dont have a recommendation for that style"]}
+        )
+        df = df2.append(df)
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
 
@@ -87,17 +104,15 @@ def top_beerstyles():
 # route to add beerstyle image
 @app.route("/beerstyles_links/<beerstyle>")
 def beer_style_links(beerstyle):
-    TABLENAME = 'beer_styles_links'
+    TABLENAME = "beer_styles_links"
     query = f"SELECT * FROM {TABLENAME} WHERE beer_style = '{beerstyle}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
 
-
 # --------------------------------------------------------------#
 #                       dashboard routes                       #
 # --------------------------------------------------------------#
-
 
 @app.route("/dashboard.html")
 def dashboard():
@@ -115,7 +130,7 @@ def state_data():
 
 @app.route("/style_rank")
 def style_rank():
-    TABLENAME = 'beer_style_pop'
+    TABLENAME = "beer_style_pop"
     query = f"SELECT beer_style, review_count FROM {TABLENAME} ORDER BY review_count DESC LIMIT 10"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
@@ -126,6 +141,15 @@ def style_rank():
 def category_data():
     TABLENAME = "ba_beerstyles"
     query = f"SELECT * FROM {TABLENAME}"
+    df = pd.read_sql_query(query, sql_engine)
+    # return json of the dataframe
+    return Response(df.to_json(orient="records"), mimetype="application/json")
+
+# state selector
+@app.route("/statedata/<state>")
+def state_stat(state):
+    TABLENAME = "us_state_data"
+    query = f"SELECT * FROM {TABLENAME} WHERE state = '{state}'"
     df = pd.read_sql_query(query, sql_engine)
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
@@ -144,3 +168,4 @@ def breweries():
 ################################################################
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
+
