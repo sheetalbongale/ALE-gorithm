@@ -2393,23 +2393,34 @@ input, select, textarea {
 			background-size: cover;
 			padding-top: 8vh;
 			padding-bottom: 30vh;
+			z-index: -1;
 		}
 	
 		.dashboard {
 			font-family: 'Open Sans Condensed', sans-serif;
 			text-transform: uppercase;
-			font-size: 4rem;
+			font-size: 4.5vw;
 			line-height: 0.8;
 			color: white;
 			text-shadow: 1px 1px 1px #000;
 			height: 100%;
-			
 		}
 	
 		.dashboardh7 {
 			font-family: 'Open Sans Condensed', sans-serif;
-			font-size: 1.3rem;
+			font-size: 1.8vw;
 			line-height: 1.3;
 			text-shadow: 1px 1px 1px #000;
 			padding-left: 0.2rem;
+		}
+
+		.dashalign {
+			z-index: -1;
+			position: relative;
+		}
+
+		.dashfront {
+			z-index: 2;
+			position: relative;
+			background-color: #fff;
 		}
