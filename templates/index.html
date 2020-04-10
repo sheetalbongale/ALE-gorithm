@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- No Script CSS  -->
     <noscript>
-        <link rel="stylesheet" href="../static/css/noscript.css" />
+    <link rel="stylesheet" href="../static/css/noscript.css" />
     </noscript>
 
     <!-- Jinja2 format to refer to css file
@@ -73,6 +73,10 @@
                     <br> Then you’ve come to the right place!
                     <br>The goal of the ALE-gorithm web application & dashboard is to educate consumers on the craft beer space including styles, flavor profiles.
                     <br>
+                    <!-- Progress Bar -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
                     <br> Drink Good Beer</p>
             </header>
         </div>
@@ -119,10 +123,7 @@
                     <img src="../static/img/Life-is-Better-with-Beer.jpg" style="width: 100%;">
                 </div>
                 <div class="col-lg-5">
-                    <br>
-                    <br>
-                    <br>
-                    <h2>Find a Brewery near you!</h2>
+                    <h2 style="padding-top: 20%;">Find a Brewery near you!</h2>
                     <p>Looking for a fun beer night or taste some new craft beers? Search to find all the breweries around you or any city around the world!</p>
                     <p><a href="breweries.html" class="btn btn-primary">Search</a></p>
                 </div>
@@ -132,98 +133,81 @@
     </section>
 
     <!-- ==== TEAM MEMBERS ==== -->
-    <section id="team" class="main style3 primary">
+    <section class="main style3 primary">
             <div class="container-fluid align-items-center" id="team" name="team">
-                <hr>
                 <div class="content">
                 <img src="../static/img/logo2.png" style="width: 20%;" class="center align-items-center">
                 </div>
-                <h2 class="align-items-center centered">Meet Our Awesome & Brewtiful Team</h2>
+                <h2 id="team" class="align-items-center centered">Meet Our Awesome & Brewtiful Team</h2>
                 <hr>
 
                 <div class="row white align-items-center main style3 primary">
-                    <div class="col-lg col-md-4 col-sm-6">
-                        <img class="circle" src="../static/img/BarryHaygood.jpg" alt="Avatar" style="width:200px">
+                    <figure class="figure profile">
+                        <img class="circle" src="../static/img/BarryHaygood.jpg" alt="Avatar" height="200" width="200">
                         <br>
                         <h4><b>Barry Haygood</b></h4>
                         <a href="https://www.linkedin.com/in/barry-haygood-7427993a/" class="fa fa-lg fa-linkedin"></a>
                         <a href="https://github.com/tamu94" class="fa fa-lg fa-github"></a>
-                        <p>🍺 Austin Beerworks Flavor Country</p>
-                        <p>🍺 Thirsty Goat</p>
-                        <p>🍺 Ayinger Celebrator</p>
-                        <p><h6><br></h6></p>
-                        
-
-                    </div>
+                        <figcaption class="figure-caption text-left">🍺 Austin Beerworks Flavor Country</figcaption>
+                        <figcaption class="figure-caption text-left">🍺 Thirsty Goat</figcaption>
+                        <figcaption class="figure-caption text-left">🍺 Ayinger Celebrator</figcaption>                      
+                    </figure>
                     
 
-                    <div class="col-lg col-md-4 col-sm-6">
-                        <img class="circle" src="../static/img/CathyEgboh.jpg" alt="Avatar" style="width:200px">
+                    <figure class="figure profile">
+                        <img class="circle" src="../static/img/CathyEgboh.jpg" alt="Avatar" height="200" width="200">
                         <br>
                         <h4><b>Cathy Egboh</b></h4>
                         <a href="https://www.linkedin.com/in/catherine-egboh-36400b104/" class="fa fa-lg fa-linkedin"></a>
                         <a href="#https://github.com/CatEggs" class="fa fa-lg fa-github"></a>
-                        <p>🍺 Revolver Blood and Honey</p>
-                        <p>🍺 Austin Amber</p>
-                        <p><h6><br></h6></p>
-                        <p><h6><br></h6></p>
-
-                    </div>
+                        <figcaption class="figure-caption text-left">🍺 Revolver Blood and Honey</figcaption>
+                        <figcaption class="figure-caption text-left">🍺 Austin Amber</figcaption>
+                    </figure>
                     
 
-                    <div class="col-lg col-md-4 col-sm-6">
-                        <img class="circle" src="../static/img/team/maya.JPG" alt="Avatar" style="width:200px; height:200px">
+                    <figure class="figure profile">
+                        <img class="circle" src="../static/img/team/MayaSaeidi.jpg" alt="Avatar" height="200" width="200">
                         <br>
                         <h4><b>Maya Saeidi</b></h4>
                         <a href="https://www.linkedin.com/in/maya-saeidi/" class="fa fa-lg fa-linkedin"></a>
                         <a href="https://github.com/S-Maya" class="fa fa-lg fa-github"></a>
-                        <p><h>🍺 Corona Extra</h></p>
-                        <p><h6><br></h6></p>
-                        <p><h6><br></h6></p>
-                        <p><h6><br></h6></p>
-                    </div>
+                        <figcaption class="figure-caption text-left"><h>🍺 Corona Extra</h></figcaption>
+                    </figure>
                     
 
-                    <div class="col-lg col-md-4 col-sm-6">
-                        <img class="circle" src="../static/img/MichelleBrucato.jpg" alt="Avatar" style="width:200px">
+                    <figure class="figure profile">
+                        <img class="circle" src="../static/img/MichelleBrucato.jpg" alt="Avatar" height="200" width="200">
                         <br>
                         <h4><b>Michelle Brucato</b></h4>
                         <a href="https://www.linkedin.com/in/michelle-brucato/" class="fa fa-lg fa-linkedin"></a>
                         <a href="https://github.com/michellebrucato" class="fa fa-lg fa-github"></a>
-                        <p><h>🍺 Victory Sour Monkey</h></p>
-                        <p><h>🍺 Pinthouse Electric Jellyfish</h></p>
-                        <p><h6><br></h6></p>
-                        <p><h6><br></h6></p>
-                    </div>
+                        <figcaption class="figure-caption text-left"><h>🍺 Victory Sour Monkey</h></figcaption>
+                        <figcaption class="figure-caption text-left"><h>🍺 Pinthouse Electric Jellyfish</h></figcaption>
+                    </figure>
                     
 
-                    <div class="col-lg col-md-4 col-sm-6">
-                        <img class="circle" src="../static/img/SaharMohammadi.jpg" alt="Avatar" style="width:200px">
+                    <figure class="figure profile">
+                        <img class="circle" src="../static/img/SaharMohammadi.jpg" alt="Avatar" height="200" width="200">
                         <br>
                         <h4><b>Sahar Mohammadi</b></h4>
                         <a href="https://www.linkedin.com/in/sahar-mohammadi-1425691a3/" class="fa fa-lg fa-linkedin"></a>
                         <a href="https://github.com/sahar3267" class="fa fa-lg fa-github"></a>
-                        <p><h>🍺 Pilsner</h></p>
-                        <p><h>🍺 American Amber</h></p>
-                        <p><h>🍺 Heineken</h></p>
-                        <p><h6><br></h6></p>
-                        <p><h6></h6></p>
-                        <br>
-                    </div>
+                        <figcaption class="figure-caption text-left"><h>🍺 Pilsner</h></figcaption>
+                        <figcaption class="figure-caption text-left"><h>🍺 American Amber</h></figcaption>
+                        <figcaption class="figure-caption text-left"><h>🍺 Heineken</h></figcaption>
+                    </figure>
                     
 
-                    <div class="col-lg col-md-4 col-sm-6">
-                        <img class="circle" src="../static/img/SheetalBongale.jpg" alt="Avatar" style="width:200px">
+                    <figure class="figure profile">
+                        <img class="circle" src="../static/img/SheetalBongale.jpg" alt="Avatar" height="200" width="200">
                         <br>
                         <h4><b>Sheetal Bongale</b></h4>
                         <a href="https://www.linkedin.com/in/sheetal-bongale/" class="fa fa-lg fa-linkedin"></a>
                         <a href="https://github.com/sheetalbongale" class="fa fa-lg fa-github"></a>
-                        <p><h>🍺 Karbach Hopadillo IPA</h></p>
-                        <p><h>🍺 Fat Tire Amber Ale</h></p>
-                        <p><h>🍺 Deschutes Fresh Squeezed IPA</h></p>
-                        <p><h6><br></h6></p>
-
-                    </div>
+                        <figcaption class="figure-caption text-left"><h>🍺 Karbach Hopadillo IPA</h></figcaption>
+                        <figcaption class="figure-caption text-left"><h>🍺 Fat Tire Amber Ale</h></figcaption>
+                        <figcaption class="figure-caption text-left"><h>🍺 Deschutes Fresh Squeezed IPA</h></figcaption>
+                    </figure>
                 </div>
                 <!-- col-lg col-md-6 -->
             </div>
@@ -236,6 +220,7 @@
     <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
     <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24Sc12FQHJQLeK6s0uFv2wa%2F"+"&opts=16862&num=10&ts=1586137988264");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
     <!-- end www.htmlcommentbox.com -->
+    
 
     <!-- Footer - Copy paste for every page -->
     <footer id="footer">
@@ -262,6 +247,7 @@
     <!-- Custom scripts for this template -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Local Stripts -->
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/jquery.poptrox.min.js"></script>
     <script src="../static/js/jquery.scrolly.min.js"></script>
@@ -270,19 +256,6 @@
     <script src="../static/js/breakpoints.min.js"></script>
     <script src="../static/js/util.js"></script>
     <script src="../static/js/main.js"></script>
-    <script type="text/javascript">
-        window.onload = function confirm_box()
-        {
-        var x=confirm("You must be 21 or over to access this site. Do you want to proceed?")
-        if (x==true)
-        {
-        }
-        else
-        {
-        window.location = "http://www.google.com/"
-        }
-        }
-        </script>
 
 </body>
 

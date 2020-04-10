@@ -205,9 +205,8 @@ yMinMax();
     var myColor = d3.scaleOrdinal()
       .domain(["Bock", "Brown Ale", " Dark Ale", "Dark Lager", "Hybrid Beer", " India Pale Ale", "Pale Ale", " Pilsener & Pale Lager",
         "Porter", "Specialty Beer", "Stout", "Strong Ale", "Wheat Beer", "Wild / Sour Beer"])
-      .range(["#FBFB11","#FAEC05","#FAD905","#F4D03F","#F5C00C","#F4D03F","#FFC300","#FA9E06","#DB6A3C","#EC7505","#FFA07A","#FA4506","#FA5906","#DB6A3C"]);
-
-
+        .range(["#FAD905","#F4D03F","#F6D88D","#FDC350","#F5A510","#E9BC01","#D57406","#C85F02","#9F3A08","#8D2603","#761701","#630802","#4A0707","#360808"]);
+        
     // Add legend: circles
     var valuesToShow = [10000000, 100000000, 1000000000]
     var xCircle = 390

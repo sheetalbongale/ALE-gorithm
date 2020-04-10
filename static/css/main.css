@@ -2044,7 +2044,7 @@ input, select, textarea {
 
 		.main.style3 {
 			text-align: center;
-			padding: 6em 0 6em 0;
+			padding: 5em 0 5em 0;
 		}
 
 			.main.style3 .content > header {
@@ -2303,6 +2303,13 @@ input, select, textarea {
 			}
 
 		}
+	#verification {
+			background: url("../img/beerfriends.gif") no-repeat left bottom;
+			background-size: 30%;
+			background-attachment: fixed, fixed;
+			background-position: bottom left;
+			background-color: #ffd020;
+		}
 
 	#cloud {
 			width: 100%;
@@ -2367,10 +2374,10 @@ input, select, textarea {
 			font-size: 12px;
 			line-height: 1;
 			line-height: 1.5em;
-			color: rgb(92, 22, 22);
+			color: rgb(12, 6, 6);
 			text-align: center;
 			text-transform: capitalize;
-			background: rgb(233, 118, 118);
+			background: rgb(211, 211, 211);
 			border-radius: 4px;
 		  }
 		  
@@ -2388,7 +2395,7 @@ input, select, textarea {
 
 		  
 		.dbhero {
-			background-image: linear-gradient(rgba(160, 113, 66, 0.2), rgba(153,102,51,0.2)), url(../img/hero5.jpg);
+			background-image: linear-gradient(rgba(160, 113, 66, 0.2), rgba(153,102,51,0.2)), url('../img/hero5.jpg');
 			height: 100vh;
 			background-size: cover;
 			padding-top: 8vh;
@@ -2423,4 +2430,10 @@ input, select, textarea {
 			z-index: 2;
 			position: relative;
 			background-color: #fff;
+
+		.profile {
+			height: 400px;
+			width: 200px;
+			margin-left: auto;
+			margin-right: auto;
 		}

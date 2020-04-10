@@ -8,7 +8,7 @@ function drawBar(data){
                         orientation: 'h',
                         type: 'bar',
                         textposition: 'auto',
-                        hoverinfo: 'none',
+                        hoverinfo: data.map(e => e.review_count ),
                         marker: {
                                 color: 'rgb(244,214,84)',
                                 opacity: 0.8,
