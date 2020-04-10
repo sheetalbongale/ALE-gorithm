@@ -262,7 +262,7 @@ function buildCharts(beerstyle){
                 .append("div")
             cardBody.append("img")
                 .attr("src", e.image_link)
-                .classed("card-img-top beerimage",true)
+                .classed("card-img-top beerimage zoom",true)
             }))
 
 
