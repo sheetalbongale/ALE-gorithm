@@ -2,28 +2,20 @@ from flask import Flask, render_template, request, jsonify
 import sqlalchemy as sql
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-import config
 import pymysql
 import json
 import pandas as pd
 from flask import Response
-import json
+import os
 
 ################################################################
 #               Flask Setup and Database Connection            #
 ################################################################
 app = Flask(__name__)
 
-USER = "root"
-PASSWORD = config.password
-HOST = "127.0.0.1"
-PORT = "3306"
-DATABASE = "alegorithm_db"
+SQLALCHEMY_DATABASE_URL = os.getenv("DB_CONN")
 
-CONN = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
-
-sql_engine = sql.create_engine(CONN)
-
+sql_engine = sql.create_engine(SQLALCHEMY_DATABASE_URL)
 
 ################################################################
 #                        Flask Routes                          #
@@ -41,7 +33,6 @@ def index():
 # --------------------------------------------------------------#
 #                       recommender routes                     #
 # --------------------------------------------------------------#
-
 
 @app.route("/recommender.html")
 def recommender():
@@ -62,7 +53,6 @@ def beer_style():
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
 
-
 # populate beerstyle dropdown based upon Category input
 @app.route("/beerstyle_filtered/<category>")
 def beer_style_filtered(category):
@@ -73,7 +63,6 @@ def beer_style_filtered(category):
     df = df2.append(df)
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
-
 
 # selector for beerstyle for gaugechart
 @app.route("/beerstyle/<beerstyle>")
@@ -121,11 +110,9 @@ def beer_style_links(beerstyle):
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
 
-
 # --------------------------------------------------------------#
 #                       dashboard routes                       #
 # --------------------------------------------------------------#
-
 
 @app.route("/dashboard.html")
 def dashboard():
@@ -158,7 +145,6 @@ def category_data():
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
 
-
 # state selector
 @app.route("/statedata/<state>")
 def state_stat(state):
@@ -181,4 +167,5 @@ def breweries():
 #                           Main                               #
 ################################################################
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
+
