@@ -2044,7 +2044,7 @@ input, select, textarea {
 
 		.main.style3 {
 			text-align: center;
-			padding: 6em 0 6em 0;
+			padding: 5em 0 5em 0;
 		}
 
 			.main.style3 .content > header {
@@ -2302,6 +2302,13 @@ input, select, textarea {
 				padding: 1em 1em 2em 1em;
 			}
 
+		}
+	#verification {
+			background: url("../img/beerfriends.gif") no-repeat left bottom;
+			background-size: 30%;
+			background-attachment: fixed, fixed;
+			background-position: bottom left;
+			background-color: #ffd020;
 		}
 
 	#cloud {
