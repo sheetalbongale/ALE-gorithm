@@ -30,7 +30,7 @@ sql_engine = sql.create_engine(CONN)
 ################################################################
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("verification.html")
 
 
 @app.route("/index.html")
