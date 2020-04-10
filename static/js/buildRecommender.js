@@ -310,7 +310,6 @@ function buildCharts(beerstyle){
 
 //-----------------FUNCTION INITIATOR-----------------//
 function init() {
-
    
 
         // var selectorTwo = d3.select('#selDatasetTwo');
@@ -337,7 +336,7 @@ function init() {
 //--------create event listeners--------//
 function optionChangedOne(newCategory) {
     category = newCategory;
-
+    d3.select('#selDatasetTwo').html("");
     var selectorTwo = d3.select('#selDatasetTwo');
     d3.json(`/beerstyle_filtered/${category}`).then((dropdown2Names) =>{
     dropdown2Names.forEach((beerstyle) =>{

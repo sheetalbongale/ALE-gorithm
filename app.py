@@ -64,6 +64,8 @@ def beer_style_filtered(category):
     TABLENAME = "ba_beerstyles"
     query = f"SELECT Style FROM {TABLENAME} WHERE Category = '{category}'"
     df = pd.read_sql_query(query, sql_engine)
+    df2 = pd.DataFrame({"Style":["Select a Beer Style"]})
+    df = df2.append(df)
     # return json of the dataframe
     return Response(df.to_json(orient="records"), mimetype="application/json")
 
