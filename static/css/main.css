@@ -2413,3 +2413,10 @@ input, select, textarea {
 			text-shadow: 1px 1px 1px #000;
 			padding-left: 0.2rem;
 		}
+
+		.profile {
+			height: 400px;
+			width: 200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
