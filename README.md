@@ -3,8 +3,6 @@
 
 ![beers gif](static/img/BeerExplosion.gif)
 
-https://alegorithm-fxljyqhslq-uc.a.run.app/
-
 
 ### Group Members: 
 ```
@@ -92,7 +90,7 @@ Looking for a fun beer night or taste some new craft beers? Search to find all t
 ```
 
 ### Deployment:
-ALE-gorithm is deployed on GCP.
+ALE-gorithm is deployed on GCP > [Click here!](https://alegorithm-fxljyqhslq-uc.a.run.app/)
 
 ### Data Sources:
 - [Beer Advocate Kaggle Dataset](https://www.kaggle.com/ehallmar/beers-breweries-and-beer-reviews/activity)
