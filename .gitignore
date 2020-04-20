@@ -140,6 +140,7 @@ final_merged_data.csv
 brewery_address_final.csv
 final_merged_data_renamed.csv
 final_beers.csv
+beer_reviews.csv
 
 # Configuration files
 db/config.py
